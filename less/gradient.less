@@ -1,0 +1,23 @@
+#gradient {
+    .horizontal(@start-color; @end-color; @start-percent; @end-percent) {
+        // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); 
+        background-repeat: repeat-x;
+        // IE9 and down
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); 
+    }
+    .vertical(@start-color; @end-color; @start-percent; @end-percent) {
+        // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); 
+        background-repeat: repeat-x;
+        // IE9 and down
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); 
+    }
+    .directional (@deg; @start-color; @end-color) {
+        background-image: linear-gradient(@deg, @start-color, @end-color); 
+    }
+}
+
+.reset-filter() {
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
