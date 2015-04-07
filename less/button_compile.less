@@ -7,13 +7,18 @@
     display: inline-block;
     border-radius: 2px;
     border: 1px solid transparent;
-    &:hover{
-        text-decoration: none;
-    }
+    line-height: normal !important; //ff lineheight not work, input a button use padding
 }
 
 .btn-cursor(){
     cursor: pointer;
+    text-decoration: none;
+    &:link,
+    &:visited,
+    &:hover,
+    &:active{
+        text-decoration: none;
+    }
 }
 
 @default: {
@@ -185,20 +190,17 @@
      .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootst>
      background-repeat: repeat-x;
      border-color: darken(@btn-color, 14%);
-     color: @color;
+     color:@color;
      &:hover,
      &:focus{
-        color: @color;
+        color:@color;
         background-color: darken(@btn-color, 12%);
         background-position: 0 -15px;
      }
      &:active,
      &.active {
-        color: @color;
+        color:@color;
         background-color: darken(@btn-color, 12%);
         border-color: darken(@btn-color, 14%);
      }
 }
-
-.make-btn-style();
-.make-btn-size();
