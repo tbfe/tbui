@@ -309,18 +309,21 @@
     }
 }
 
-.btn-styles(@btn-color: #555) {
+.btn-styles(@color: #fff, @btn-color: #555) {
      #gradient > .vertical(@btn-color, darken(@btn-color, 12%), 0, 100%);
      .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootst>
      background-repeat: repeat-x;
      border-color: darken(@btn-color, 14%);
+     color: @color;
      &:hover,
      &:focus{
+        color: @color;
         background-color: darken(@btn-color, 12%);
         background-position: 0 -15px;
      }
      &:active,
      &.active {
+        color: @color;
         background-color: darken(@btn-color, 12%);
         border-color: darken(@btn-color, 14%);
      }
