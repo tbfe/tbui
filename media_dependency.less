@@ -95,6 +95,18 @@
 @disable-text: @gray-lighter;
 @disable-bg: #dfdfdf;
 @disable-border: #dfdfdf;
+
+.a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color) {
+    color: @link;
+    &:visited {
+        color: @visited;
+    }
+    &:hover,
+    &:focus {
+        color: @hover;
+    }
+}
+
 .make-horizontal-media(@width, @height, @gutter){
     .media_left{
         .size(@width, @height);
