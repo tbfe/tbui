@@ -1,0 +1,658 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  outline: none;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+
+/*button component*/
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+html,
+body,
+div,
+p,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+pre,
+code,
+table,
+tr,
+td,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+textarea,
+input {
+  outline: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="file"] {
+    padding: 1px 6px;
+  }
+}
+
+/*button component*/
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.text_overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.center_text {
+  display: block;
+  text-align: center;
+}
+.pull_left {
+  float: left !important;
+}
+.pull_right {
+  float: right !important;
+}
+.hide_text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+/*button component*/
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+/*三栏布局共有属性*/
+.col3_body,
+.col3_left,
+.col3_right {
+  float: left;
+  height: 100%;
+}
+.col3_body {
+  width: 100%;
+}
+.col3_main {
+  height: 100%;
+}
+/*两栏布局共有属性*/
+.col2_left {
+  float: left;
+  min-height: 1px;
+}
+.col2_right {
+  position: relative;
+  min-height: 1px;
+}
+
+/*button component*/
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+.thumbnail {
+  position: relative;
+  display: inline-block;
+}
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+.thumbnail .thumbnail_caption {
+  position: absolute;
+}
+.thumbnail_border_inset:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*button component*/
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+.btn,
+.btn_default,
+.btn_sub,
+.btn_attention {
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:link,
+.btn_default:link,
+.btn_sub:link,
+.btn_attention:link,
+.btn:visited,
+.btn_default:visited,
+.btn_sub:visited,
+.btn_attention:visited,
+.btn:hover,
+.btn_default:hover,
+.btn_sub:hover,
+.btn_attention:hover,
+.btn:active,
+.btn_default:active,
+.btn_sub:active,
+.btn_attention:active {
+  text-decoration: none;
+}
+.btn,
+.btn_default,
+.btn_sub,
+.btn_disable,
+.btn_attention {
+  display: inline-block;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  line-height: normal !important;
+}
+.btn_default {
+  color: #ffffff;
+  background: #398bfc;
+  border-bottom-color: #3782f0;
+}
+.btn_default:hover,
+.btn_default:focus {
+  background-image: -webkit-linear-gradient(top, #3887fa 0, #3782f0 100%);
+  background-image: linear-gradient(to bottom, #3887fa 0, #3782f0 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3887fa', endColorstr='#ff3782f0', GradientType=1);
+  border-bottom-color: #296cee;
+  color: #ffffff;
+}
+.btn_default:visited {
+  color: #ffffff;
+}
+.btn_default:active {
+  background: #317ef3;
+  border-top-color: #317ef3;
+  box-shadow: inset 0 1px 1px #317ef3;
+  color: #ffffff;
+}
+.btn_sub {
+  background-image: -webkit-linear-gradient(top, #f1f1f1 0, #f2f2f2 100%);
+  background-image: linear-gradient(to bottom, #f1f1f1 0, #f2f2f2 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff1f1f1', endColorstr='#fff2f2f2', GradientType=1);
+  color: #333333;
+  border-color: #cccccc;
+}
+.btn_sub:hover,
+.btn_sub:focus {
+  background-image: -webkit-linear-gradient(top, #f8f8f8 0, #e9e9e9 100%);
+  background-image: linear-gradient(to bottom, #f8f8f8 0, #e9e9e9 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f8f8', endColorstr='#ffe9e9e9', GradientType=1);
+  border-color: #ababab;
+  color: #333333;
+}
+.btn_sub:visited {
+  color: #333333;
+}
+.btn_sub:active {
+  background: #d8d8d8;
+  border-top-color: #cccccc;
+  box-shadow: inset 0 1px 1px #cccccc;
+  color: #333333;
+}
+.btn_disable {
+  color: #999999;
+  background: #dfdfdf;
+  border-color: #dfdfdf;
+}
+.btn_disable:hover,
+.btn_disable:focus {
+  background: #dfdfdf;
+  color: #999999;
+}
+.btn_disable:visited {
+  color: #999999;
+}
+.btn_disable:active {
+  background: #dfdfdf;
+  color: #999999;
+}
+.btn_attention {
+  color: #ffffff;
+  background: #e64845;
+  border-bottom-color: #ad3331;
+}
+.btn_attention:hover,
+.btn_attention:focus {
+  background-image: -webkit-linear-gradient(top, #f64d4a 0, #db4437 100%);
+  background-image: linear-gradient(to bottom, #f64d4a 0, #db4437 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff64d4a', endColorstr='#ffdb4437', GradientType=1);
+  border-bottom-color: #a50e0b;
+  color: #ffffff;
+}
+.btn_attention:visited {
+  color: #ffffff;
+}
+.btn_attention:active {
+  background: #d23c30;
+  border-top-color: #a50e0b;
+  box-shadow: inset 0 1px 1px #a50e0b;
+  color: #ffffff;
+}
+.btn_small {
+  padding: 4px 12px;
+  font-size: 12px;
+}
+.btn_middle {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+.btn_larger {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/*button component*/
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+.unordered_list_dot li:before {
+  content: '\2022';
+  margin-right: 6px;
+  color: #666666;
+}
+
+/*button component*/
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+/**
+* @author: yuanzhen
+* @date: 15/01/08
+* @desc: 
+*/
+/*=================================
+* 水平方向媒体对象公共样式demo
+* <div class="media_horizontal">
+*     <a class="media_left">
+*         <img src="" alt="" />
+*         <span class="media_caption">头像的边角，类似hot/new这样的标志</span>
+*     </a>
+*     <div class="media_right"></div>
+*     <div class="media_absolute">需要绝对定位的元素</div>
+* </div>
+*===============================*/
+.media_horizontal {
+  position: relative;
+}
+.media_left,
+.media_right {
+  vertical-align: top;
+}
+.media_left {
+  position: relative;
+  float: left;
+}
+.media_left img {
+  width: 100%;
+  height: 100%;
+}
+.media_right {
+  position: relative;
+}
+.media_right img,
+.media_right input,
+.media_right a,
+.media_right span,
+.media_right strong,
+.media_right i,
+.media_right em,
+.media_right ins,
+.media_right b,
+.media_right button {
+  vertical-align: middle;
+}
+/*=================================
+* 竖直方向媒体对象公共样式demo
+* <div class="media_vertical">
+*     <a class="media_top">
+*         <img src="" alt="" />
+*         <span class="media_caption">头像的边角，类似hot/new这样的标志</span>
+*     </a>
+*     <div class="media_bottom"></div>
+*     <div class="media_absolute">需要绝对定位的元素</div>
+* </div>
+*===============================*/
+.media_vertical {
+  position: relative;
+}
+.media_top {
+  display: inline-block;
+  position: relative;
+}
+.media_top img {
+  width: 100%;
+  height: 100%;
+}
+/*媒体图像角标*/
+.media_caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/*需要绝对定位的元素, 不在正常的媒体对象里*/
+.media_absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*button component*/
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+.icon_tbean {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(http://static.fes8.tieba.baidu.com/tb/static-common/images/icon_tbean_260c930.png) no-repeat;
+}
+
+/*button component*/
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+* {
+  box-sizing: content-box;
+}
+*:before,
+*:after {
+  box-sizing: content-box;
+}
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333333;
+  line-height: 22px;
+}
+/*公用属性*/
+a {
+  color: #2d64b3;
+  text-decoration: none;
+}
+a:visited {
+  color: #653096;
+}
+a:hover,
+a:focus {
+  color: #2d64b3;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+ins {
+  text-decoration: none;
+}
+ins:visited {
+  text-decoration: none;
+}
+ins:hover,
+ins:focus {
+  text-decoration: none;
+}
+h4 {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "microsoft yahei" simhei sans-serif;
+}
+.orange_text {
+  color: #f8984a !important;
+}
+.red_text,
+.vip_red,
+.vip_red:hover,
+.vip_red:visited {
+  color: #f74d4a !important;
+}
