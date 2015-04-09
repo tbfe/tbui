@@ -95,6 +95,59 @@
 @disable-text: @gray-lighter;
 @disable-bg: #dfdfdf;
 @disable-border: #dfdfdf;
+.font-size-12(){
+    font-size: 12px;
+}
+
+.font-size-14(){
+    font-size: 14px;
+}
+
+.font-size-16(){
+    font-size: 16px;
+}
+
+.font-size-20(){
+    font-size: 20px;
+}
+
+.font-weight-normal(){
+    font-weight: normal;
+}
+
+.font-weight-bold(){
+    font-weight: bold;
+}
+
+.font-family-sans-serif() {
+    font-family: @font-family-sans-serif;    
+}
+
+.font-family-serif() {
+    font-family: @font-family-serif;    
+}
+
+.font-family-sans-serif-only() {
+    font-family: @font-family-sansOnly;    
+}
+
+.font-family-serif-fonly() {
+    font-family: @font-family-serifOnly;    
+}
+
+.font-family-yahei() {
+    font-family: @font-family-yahei;    
+}
+
+.font-family-mono() {
+    font-family: @font-family-monospace;    
+}
+
+.h4(){
+    .font-size-14();
+    .font-weight-bold();
+    .font-family-yahei();
+}
 
 .a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color) {
     color: @link;
@@ -107,6 +160,24 @@
     }
 }
 
+.a-decoration(@link: none; @hover: underline){
+    text-decoration: @link;
+    &:visited {
+        text-decoration: @link;
+    }
+    &:hover,
+    &:focus {
+        text-decoration: @hover;
+    }
+}
+
+.line-height-22() {
+    line-height: @line-height-normal;     
+}
+
+.line-height-26() {
+    line-height: @line-height-lg;     
+}
 .make-horizontal-media(@width, @height, @gutter){
     .media_left{
         .size(@width, @height);
