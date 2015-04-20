@@ -1,9 +1,0 @@
-.muitl-box-shadow(@shadowA, @shadowB:X, ...){
-    @props: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
-    box-shadow: @props;
-}
-
-.box-shadow(@shadow) {
-    .muitl-box-shadow(@shadow);
-}
-
