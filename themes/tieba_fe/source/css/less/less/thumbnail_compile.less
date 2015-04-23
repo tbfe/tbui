@@ -1,0 +1,12 @@
+.thumbnail-size(@width, @height){  
+    width: @width;
+    height: @height;
+}
+
+.thumbnail-border-inset(@width, @height, @border-width, @border-color){
+    &:before{
+        width: @width - @border-width;
+        height: @height - @border-width;
+        border: @border-width solid @border-color;
+    }
+}

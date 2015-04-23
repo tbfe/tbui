@@ -1,0 +1,25 @@
+<%- partial('_partial/head') %>
+<body>
+  <div id="wrap">
+    <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+    <div id="article" class="outer">
+      <div class="article-meta">
+        <% if (theme.title){ %>
+          <header class="article-header">
+            <h1 class="article-header" itemprop="name">
+              <%= theme.title %>
+            </h1>
+          </header>
+        <% } %>
+      </div>
+      <div class="article-main">
+        <div class="main"><%- body %></div>
+        <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+      </div>
+    </div>
+    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+    <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+    <%- partial('_partial/after-footer') %>
+  </div>
+</body>
+</html>

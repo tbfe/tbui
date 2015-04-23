@@ -1,0 +1,94 @@
+.clearfix() {
+    zoom:1;
+    &:before,
+    &:after {
+       content: " "; 
+       display: table; 
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.text-overflow(){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-overflow(@line-number){
+    display: -webkit-box;
+    -webkit-line-clamp: @line-number;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+};
+
+.user-select(@select) {
+    user-select: @select;
+}
+
+.center-block(@top...) {
+    @len: length(@arguments);
+    .center-inner-mixin(...) when (@len = 1) {
+        @bottom: @top;
+    }
+    .center-inner-mixin(...) when (@len = 2) {
+        @bottom: extract(@arguments, 2);
+    }
+    .center-inner-mixin(@arguments);
+    display: block;
+    margin: @top auto @bottom;
+}
+
+.center-text() {
+    display: inline-block;
+    text-align: center;
+}
+
+.hide-text() {
+    font: ~"0/0" a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.size(@width; @height) {
+    width: @width;
+    height: @height;
+}
+
+.square(@size) {
+    .size(@size; @size);
+}
+
+.tab-focus() {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.box-sizing(@boxmodel) {
+    box-sizing: @boxmodel;
+}
+
+.placeholder(@color: @input-color-placeholder) {
+    &::-moz-placeholder {
+        color: @color;
+        opacity: 1; 
+    }
+    &:-ms-input-placeholder {
+        color: @color;
+    }  
+    &::-webkit-input-placeholder { 
+        color: @color; 
+    }
+}
+
+.pull-left(){
+    float: left !important;
+}
+
+.pull-right(){
+    float: right !important;
+}

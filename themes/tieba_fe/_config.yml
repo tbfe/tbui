@@ -1,0 +1,19 @@
+# Header
+menu:
+  Home: /
+
+# Content
+fancybox: false 
+
+# Sidebar
+sidebar: right
+widgets:
+- recent_posts
+
+# Miscellaneous
+google_analytics: false
+rss:
+
+#
+less:
+  paths:

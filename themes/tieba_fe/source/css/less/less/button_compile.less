@@ -1,0 +1,210 @@
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+.btn-base(){
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid transparent;
+}
+
+.btn-cursor(){
+    cursor: pointer;
+    text-decoration: none;
+    &:link,
+    &:visited,
+    &:hover,
+    &:active{
+        text-decoration: none;
+    }
+}
+
+@default: {
+    .btn_default{
+        color: @default-text;
+        background: @default-bg;
+        border-bottom-color: @default-border;
+        &:hover,
+        &:focus{
+            @start: extract(@default-bg-hover, 1);
+            @end: extract(@default-bg-hover, 2);
+            #gradient .vertical(@start, @end, 0, 100%);
+            border-bottom-color: @default-border-hover;
+            color: @default-text;
+        }
+        &:visited{
+            color: @default-text;
+        }
+        &:active{
+            background: @default-bg-active;
+            border-top-color: @default-border-active;
+            .box-shadow(inset 0 1px 1px @default-shadow);
+            color: @default-text;
+        }
+    }
+};
+
+@disable: {
+    .btn_disable{
+        color: @disable-text;
+        background: @disable-bg;
+        border-color: @disable-border;
+        &:hover,
+        &:focus{
+            background: @disable-bg;
+            color: @disable-text;
+        }
+        &:visited{
+            color: @disable-text;
+        }
+        &:active {
+            background: @disable-bg;
+            color: @disable-text;
+        }
+    }
+};
+
+@sub: {
+    .btn_sub {
+        @start: extract(@sub-bg, 1);
+        @end: extract(@sub-bg, 2);
+        #gradient .vertical(@start, @end, 0, 100%);
+        color: @sub-text;
+        border-color: @sub-border;
+        &:hover,
+        &:focus {
+            @start-hover: extract(@sub-bg-hover, 1);
+            @end-hover: extract(@sub-bg-hover, 2);
+            #gradient .vertical(@start-hover, @end-hover, 0, 100%);
+            border-color: @sub-border-hover;
+            color: @sub-text;
+        }
+        &:visited{
+            color: @sub-text;
+        }
+        &:active {
+            background: @sub-bg-active;
+            border-top-color: @sub-border-active;
+            .box-shadow(inset 0 1px 1px @sub-shadow);
+            color: @sub-text;
+        }
+    }
+};
+
+@attention: {
+    .btn_attention {
+        color: @attention-text;
+        background: @attention-bg;
+        border-bottom-color: @attention-border;
+        &:hover,
+        &:focus{
+            @start: extract(@attention-bg-hover, 1);
+            @end: extract(@attention-bg-hover, 2);
+            #gradient .vertical(@start, @end, 0, 100%);
+            border-bottom-color: @attention-border-hover;
+            color: @attention-text;
+        }
+        &:visited{
+            color: @attention-text;
+        }
+        &:active {
+            background: @attention-bg-active;
+            border-top-color: @attention-border-active; 
+            .box-shadow(inset 0 1px 1px @attention-shadow);
+            color: @attention-text;
+        }
+    }
+};
+
+@small: {
+    .btn_small{
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+};
+
+@middle: {
+    .btn_middle {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+};
+
+@larger: {
+    .btn_larger {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+};
+
+.make-btn-style() {
+    .btn,
+    .btn_default,
+    .btn_sub,
+    .btn_attention{
+        .btn-cursor();
+    }
+
+    .btn,
+    .btn_default,
+    .btn_sub,
+    .btn_disable,
+    .btn_attention{
+        .btn-base();
+    }
+
+    @default();
+    @sub();
+    @disable();
+    @attention();
+}
+
+.make-btn-size(){
+    .btn_small,
+    .btn_middle,
+    .btn_larger{
+        line-height: normal !important; //ff lineheight not work, input a button use padding
+    }
+    @small();
+    @middle();
+    @larger();
+}
+
+.btn-size(@padding-vertical, @padding-horizontal, @line-height, @font-size, @border-radius) {
+     padding: @padding-vertical @padding-horizontal;
+     font-size: @font-size;
+     line-height: @line-height;
+     border-radius: @border-radius;
+}
+
+.btn-variant(@color, @bg-color, @border-color, @hover-color, @hover-bg-color, @hover-border-color){
+    color: @color;
+    background-color: @bg-color;
+    border-color: @border-color;
+    &:hover{
+        color: @hover-color;
+        background-color: @hover-bg-color;
+        border-color: @hover-border-color;
+    }
+}
+
+.btn-styles(@color: #fff, @btn-color: #555) {
+     #gradient > .vertical(@btn-color, darken(@btn-color, 12%), 0, 100%);
+     .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootst>
+     background-repeat: repeat-x;
+     border-color: darken(@btn-color, 14%);
+     color:@color;
+     &:hover,
+     &:focus{
+        color:@color;
+        background-color: darken(@btn-color, 12%);
+        background-position: 0 -15px;
+     }
+     &:active,
+     &.active {
+        color:@color;
+        background-color: darken(@btn-color, 12%);
+        border-color: darken(@btn-color, 14%);
+     }
+}

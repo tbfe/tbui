@@ -1,0 +1,62 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+// Reset the box-sizing
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+*{
+   .box-sizing(content-box);
+}
+*:before,
+*:after {
+   .box-sizing(content-box);
+}
+
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    .font-size-12();
+    .font-family-sans-serif();
+    color: @text-color;
+    line-height: @line-height-normal;
+}
+
+/*公用属性*/
+a {
+    .a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color);
+    .a-decoration(@hover: underline);
+    &:focus {
+        .tab-focus();
+    }
+}
+
+ins{
+    .a-decoration(@hover: none);
+}
+
+h4 {
+    .h4();
+}
+
+.orange_text {
+    color: @orange-color !important;
+}
+
+.red_text {
+    color: @red-color !important;
+}
+
+.vip_red{
+    &:extend(.red_text);
+    &:hover{
+        &:extend(.red_text);
+    }
+    &:visited{
+        &:extend(.red_text);
+    }
+}

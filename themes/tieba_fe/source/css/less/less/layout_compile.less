@@ -1,0 +1,27 @@
+.get-column-three(@namespace, @left, @right, @gutter){
+    @{namespace}{
+        .col3_left {
+            width: @left;      
+            margin-left: -100%;
+        }
+        .col3_right {
+            width: @right;
+            margin-left: -@right;
+        }
+        .col3_main{
+            margin: 0 @left + @gutter;
+        }
+    }
+}
+
+
+.get-column-two(@namespace, @left){
+    @{namespace}{
+        .col2_left{
+            width: @left;     
+        }
+        .col2_right{
+            margin-left: @left;
+        }
+    }
+}
