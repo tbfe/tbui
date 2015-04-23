@@ -13,7 +13,7 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
-root: /test
+root: /tb_fe_component
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -72,4 +72,4 @@ theme: tieba_fe
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/yuanzhen/less.git
+  repo: git@github.com:yuanzhen/tb_fe_component.git
