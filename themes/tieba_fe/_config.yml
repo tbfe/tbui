@@ -6,7 +6,7 @@ menu:
 fancybox: false 
 
 # Sidebar
-sidebar: right
+sidebar: false 
 widgets:
 - recent_posts
 

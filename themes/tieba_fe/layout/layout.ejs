@@ -14,7 +14,9 @@
       </div>
       <div class="article-main">
         <div class="main"><%- body %></div>
-        <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+        <% if(theme.sidebar){%>
+            <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+        <%}%>
       </div>
     </div>
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
