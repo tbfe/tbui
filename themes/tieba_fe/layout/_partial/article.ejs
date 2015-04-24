@@ -16,7 +16,9 @@
           <% } %>
         <% } else { %>
           <%- post.content %>
-          <%- toc(page.content) %>
+          <div class="page-toc">
+              <%- toc(page.content)%> 
+          </div>
         <% } %>
     </div>
   </div>
