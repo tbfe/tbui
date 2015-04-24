@@ -4,7 +4,6 @@
     -o-transition-duration: @duration;
     transition-duration: @duration;
 }
-
 .transition(@duration:0.2s, @ease:ease-out) {
     -webkit-transition: all @duration @ease;
     -moz-transition: all @duration @ease;
@@ -32,9 +31,8 @@
    .transform(translate(@x, @y));
 }
 .rounded-corner (...) {
-    border-radius: @arguments; 
+    border-radius: @arguments;
 }
-
 .oval-corner (...) {
     border-radius: ~`"@{arguments}".replace(/[\[\]]/g, '').replace(/,/g, ' /')`; 
 }
@@ -42,15 +40,12 @@
 .rounded-corner-top (...) {
     border-top-left-radius: @arguments;
 }
-
 .rounded-corner-right (...) {
     border-top-right-radius: @arguments;
 }
-
 .rounded-corner-bottom (...) {
     border-bottom-right-radius: @arguments;
 }
-
 .rounded-corner-left (...) {
     border-bottom-left-radius: @arguments;
 }
