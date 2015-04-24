@@ -1,3 +1,555 @@
+.transition-duration(@duration: 0.2s) {
+    -moz-transition-duration: @duration;
+    -webkit-transition-duration: @duration;
+    -o-transition-duration: @duration;
+    transition-duration: @duration;
+}
+
+.transition(@duration:0.2s, @ease:ease-out) {
+    -webkit-transition: all @duration @ease;
+    -moz-transition: all @duration @ease;
+    -o-transition: all @duration @ease;
+    transition: all @duration @ease;
+}
+
+.transform(...) {
+    -webkit-transform: @arguments;
+    -moz-transform: @arguments;
+    -o-transform: @arguments;
+    -ms-transform: @arguments;
+    transform: @arguments;
+}
+
+.rotation(@deg:5deg) {
+    .transform(rotate(@deg));
+}
+
+.scale(@ratio:1.5) {
+    .transform(scale(@ratio));
+}
+
+.translate(@x:0, @y:0) {
+   .transform(translate(@x, @y));
+}
+.rounded-corner (...) {
+    border-radius: @arguments; 
+}
+
+.oval-corner (...) {
+    border-radius: ~`"@{arguments}".replace(/[\[\]]/g, '').replace(/,/g, ' /')`; 
+}
+
+.rounded-corner-top (...) {
+    border-top-left-radius: @arguments;
+}
+
+.rounded-corner-right (...) {
+    border-top-right-radius: @arguments;
+}
+
+.rounded-corner-bottom (...) {
+    border-bottom-right-radius: @arguments;
+}
+
+.rounded-corner-left (...) {
+    border-bottom-left-radius: @arguments;
+}
+.muitl-box-shadow(@shadowA, @shadowB:X, ...){
+    @props: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+    box-shadow: @props;
+}
+
+.box-shadow(@shadow) {
+    .muitl-box-shadow(@shadow);
+}
+
+/**
+* @author: yuanzhen 
+* @date: 15/01/08
+* @desc: button
+*/
+.btn-base(){
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid transparent;
+}
+
+.btn-cursor(){
+    cursor: pointer;
+    text-decoration: none;
+    &:link,
+    &:visited,
+    &:hover,
+    &:active{
+        text-decoration: none;
+    }
+}
+
+@default: {
+    .btn_default{
+        color: @default-text;
+        background: @default-bg;
+        border-bottom-color: @default-border;
+        &:hover,
+        &:focus{
+            @start: extract(@default-bg-hover, 1);
+            @end: extract(@default-bg-hover, 2);
+            #gradient .vertical(@start, @end, 0, 100%);
+            border-bottom-color: @default-border-hover;
+            color: @default-text;
+        }
+        &:visited{
+            color: @default-text;
+        }
+        &:active{
+            background: @default-bg-active;
+            border-top-color: @default-border-active;
+            .box-shadow(inset 0 1px 1px @default-shadow);
+            color: @default-text;
+        }
+    }
+};
+
+@disable: {
+    .btn_disable{
+        color: @disable-text;
+        background: @disable-bg;
+        border-color: @disable-border;
+        &:hover,
+        &:focus{
+            background: @disable-bg;
+            color: @disable-text;
+        }
+        &:visited{
+            color: @disable-text;
+        }
+        &:active {
+            background: @disable-bg;
+            color: @disable-text;
+        }
+    }
+};
+
+@sub: {
+    .btn_sub {
+        @start: extract(@sub-bg, 1);
+        @end: extract(@sub-bg, 2);
+        #gradient .vertical(@start, @end, 0, 100%);
+        color: @sub-text;
+        border-color: @sub-border;
+        &:hover,
+        &:focus {
+            @start-hover: extract(@sub-bg-hover, 1);
+            @end-hover: extract(@sub-bg-hover, 2);
+            #gradient .vertical(@start-hover, @end-hover, 0, 100%);
+            border-color: @sub-border-hover;
+            color: @sub-text;
+        }
+        &:visited{
+            color: @sub-text;
+        }
+        &:active {
+            background: @sub-bg-active;
+            border-top-color: @sub-border-active;
+            .box-shadow(inset 0 1px 1px @sub-shadow);
+            color: @sub-text;
+        }
+    }
+};
+
+@attention: {
+    .btn_attention {
+        color: @attention-text;
+        background: @attention-bg;
+        border-bottom-color: @attention-border;
+        &:hover,
+        &:focus{
+            @start: extract(@attention-bg-hover, 1);
+            @end: extract(@attention-bg-hover, 2);
+            #gradient .vertical(@start, @end, 0, 100%);
+            border-bottom-color: @attention-border-hover;
+            color: @attention-text;
+        }
+        &:visited{
+            color: @attention-text;
+        }
+        &:active {
+            background: @attention-bg-active;
+            border-top-color: @attention-border-active; 
+            .box-shadow(inset 0 1px 1px @attention-shadow);
+            color: @attention-text;
+        }
+    }
+};
+
+@small: {
+    .btn_small{
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+};
+
+@middle: {
+    .btn_middle {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+};
+
+@larger: {
+    .btn_larger {
+        padding: 8px 12px;
+        font-size: 14px;
+        .font-family-yahei();
+    }
+};
+
+.make-btn-style() {
+    .btn,
+    .btn_default,
+    .btn_sub,
+    .btn_attention{
+        .btn-cursor();
+    }
+
+    .btn,
+    .btn_default,
+    .btn_sub,
+    .btn_disable,
+    .btn_attention{
+        .btn-base();
+    }
+
+    @default();
+    @sub();
+    @disable();
+    @attention();
+}
+
+.make-btn-size(){
+    .btn_small,
+    .btn_middle,
+    .btn_larger{
+        line-height: normal !important; //ff lineheight not work, input a button use padding
+    }
+    @small();
+    @middle();
+    @larger();
+}
+
+.btn-size(@padding-vertical, @padding-horizontal, @line-height, @font-size, @border-radius) {
+     .font-family(@a) when (ispixel(@a)) and (@a <= 12) {
+        @btn-font-family: @font-family-sans-serif;
+     }
+     .font-family(@a) when (default()) {
+        @btn-font-family: @font-family-yahei;
+     }
+     .font-family(@font-size);
+     padding: @padding-vertical @padding-horizontal;
+     font-size: @font-size;
+     line-height: @line-height;
+     border-radius: @border-radius;
+     font-family: @btn-font-family;
+}
+
+.btn-variant(@color, @bg-color, @border-color, @hover-color, @hover-bg-color, @hover-border-color){
+    color: @color;
+    background-color: @bg-color;
+    border-color: @border-color;
+    &:hover{
+        color: @hover-color;
+        background-color: @hover-bg-color;
+        border-color: @hover-border-color;
+    }
+}
+
+.btn-styles(@color: #fff, @btn-color: #555) {
+     #gradient > .vertical(@btn-color, darken(@btn-color, 12%), 0, 100%);
+     .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootst>
+     background-repeat: repeat-x;
+     border-color: darken(@btn-color, 14%);
+     color:@color;
+     &:hover,
+     &:focus{
+        color:@color;
+        background-color: darken(@btn-color, 12%);
+        background-position: 0 -15px;
+     }
+     &:active,
+     &.active {
+        color:@color;
+        background-color: darken(@btn-color, 12%);
+        border-color: darken(@btn-color, 14%);
+     }
+}
+.font-size-12(){
+    font-size: 12px;
+}
+
+.font-size-14(){
+    font-size: 14px;
+}
+
+.font-size-16(){
+    font-size: 16px;
+}
+
+.font-size-20(){
+    font-size: 20px;
+}
+
+.font-weight-normal(){
+    font-weight: normal;
+}
+
+.font-weight-bold(){
+    font-weight: bold;
+}
+
+.font-family-sans-serif() {
+    font-family: @font-family-sans-serif;    
+}
+
+.font-family-serif() {
+    font-family: @font-family-serif;    
+}
+
+.font-family-sans-serif-only() {
+    font-family: @font-family-sansOnly;    
+}
+
+.font-family-serif-fonly() {
+    font-family: @font-family-serifOnly;    
+}
+
+.font-family-yahei() {
+    font-family: @font-family-yahei;    
+}
+
+.font-family-mono() {
+    font-family: @font-family-monospace;    
+}
+
+.h4(){
+    .font-size-14();
+    .font-weight-bold();
+    .font-family-yahei();
+}
+
+.a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color) {
+    color: @link;
+    &:visited {
+        color: @visited;
+    }
+    &:hover,
+    &:focus {
+        color: @hover;
+    }
+}
+
+.a-decoration(@link: none; @hover: underline){
+    text-decoration: @link;
+    &:visited {
+        text-decoration: @link;
+    }
+    &:hover,
+    &:focus {
+        text-decoration: @hover;
+    }
+}
+
+.line-height-22() {
+    line-height: @line-height-normal;     
+}
+
+.line-height-26() {
+    line-height: @line-height-lg;     
+}
+#gradient {
+    .horizontal(@start-color; @end-color; @start-percent; @end-percent) {
+        // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); 
+        background-repeat: repeat-x;
+        // IE9 and down
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); 
+    }
+    .vertical(@start-color; @end-color; @start-percent; @end-percent) {
+        // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); 
+        background-repeat: repeat-x;
+        // IE9 and down
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); 
+    }
+    .directional (@deg; @start-color; @end-color) {
+        background-image: linear-gradient(@deg, @start-color, @end-color); 
+    }
+}
+
+.reset-filter() {
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+@col-grid-width: 10px;
+@col-grid-height: 2px;
+@col-gutter-width: 10px;
+@grid-columns: 49;
+
+.make-grid-columns (@class) {
+    .col(@index) {
+        @item: ~".col-@{class}-@{index}";
+        .col((@index+1); @item);
+    }
+    .col(@index, @list) when (@index =< @grid-columns) {
+        @item: ~".col-@{class}-@{index}";
+        .col((@index+1), ~"@{list}, @{item}")
+    }
+    .col(@index, @list) when (@index > @grid-columns) {
+        @{list} {
+            float: left;
+            position: relative;
+            min-height: 1px;
+            padding-left: @col-gutter-width;
+            padding-right: @col-gutter-width;
+        }
+    }
+    .col(1);
+}
+
+.calc-grid-width (@index, @class) when (@index > 0){
+    .col-@{class}-@{index}{
+        width: (@col-grid-width + @col-gutter-width )* @index - @col-gutter-width; 
+    } 
+};
+
+.loop-grid-columns (@index, @class) when (@index >= 0){
+    .calc-grid-width (@index, @class);
+    .loop-grid-columns((@index - 1), @class)
+}
+
+.make-grid-width(@class) {
+    .loop-grid-columns(@grid-columns, @class);   
+}
+
+.make-horizontal(@col) when (isnumber(@col)) {
+    width: unit(ceil(@col) * @col-grid-width, px); 
+}
+
+.make-vertical(@col) when (isnumber(@col)) {
+    height: unit(ceil(@col) * @col-grid-width, px); 
+}
+
+.unit-px(@value) {
+    @len: length(@value);
+}
+
+.unit-other(@value){
+    @len: length(@value);
+    .calc-args(@index) {
+        @class: extract(@value, @index);
+        @item: ~"@{class}";
+        .calc-args((@index+1); @item);
+    }
+    .calc-args(@index, @list) when (@index =< @len) {
+        @class: extract(@value, @index);
+        @item: ~"@{class}";
+        .calc-args((@index+1), ~"@{list} @{item}")
+    }
+    .calc-args(@index, @list) when (@index > @len) {
+        margin: ~"@{list}";
+    }
+    .calc-args(1);
+}
+
+.box-modle(@args, @unit) {
+    .unit (@unit) when (@unit = px) {
+        .unit-px(@args, @unit);
+    }
+    .unit (@unit) when (default()) {
+        .unit-other(@args);
+    }
+    .unit(@unit);
+}
+
+.margin(@args){
+    .unit-other(@args);
+}
+
+.padding(@args, @unit){
+    .box-modle(@args, @unit); 
+}
+.get-column-three(@namespace, @left, @right, @gutter){
+    @{namespace}{
+        .col3_left {
+            width: @left;      
+            margin-left: -100%;
+        }
+        .col3_right {
+            width: @right;
+            margin-left: -@right;
+        }
+        .col3_main{
+            margin: 0 @left + @gutter;
+        }
+    }
+}
+
+
+.get-column-two(@namespace, @left){
+    @{namespace}{
+        .col2_left{
+            width: @left;     
+        }
+        .col2_right{
+            margin-left: @left;
+        }
+    }
+}
+.make-horizontal-media(@width, @height, @gutter){
+    .media_left{
+        .size(@width, @height);
+    }
+    .media_right {
+        margin-left: @width + @gutter;
+    }
+}
+
+.make-horizontal-media-border(@width, @height, @gutter, @padding:0, @border-width:0, @border-color: #ccc){
+    .media_left{
+        .size(@width, @height);
+        padding: @padding;
+        border: @border-width solid @border-color;
+    }
+    .media_right {
+        margin-left: @width + @gutter + @border-width * 2 + @padding * 2;
+    }
+}
+
+.make-vertical-media(@width, @height, @gutter){
+    .media_top {
+        .size(@width, @height);
+    }
+    .media_bottom {
+        margin-top: @gutter;
+    }
+}
+
+.make-horizontal-lists(@width, @h-gutter, @v-gutter: 0, @list-num){
+    float: left;
+    width: @width;
+    margin-right: @h-gutter;
+    margin-bottom: @v-gutter;
+    &:nth-child(@{list-num}n){
+        margin-right: 0;
+    }
+}
+
+.make-vertical-lists(@height, @gutter){
+    height: @height;
+    margin-bottom: @gutter;
+    &:last-child,
+    &.last_child{
+        margin-bottom: 0;     
+    }
+}
 .opacity (@opacity) {
     opacity: @opacity; 
     //ie8
