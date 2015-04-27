@@ -73,3 +73,4 @@ theme: tieba_fe
 deploy:
   type: git
   repo: git@github.com:yuanzhen/tb_fe_component.git
+  branch: gh-pages
