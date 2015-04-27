@@ -99,11 +99,9 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 这四种样式和尺寸可以随意搭配使用。
 
 ###demo--样式###
-<button class="btn_default btn_small" >常用蓝色(.btn_default)</button>
-<button class="btn_attention btn_small" >关注(.btn_attention)</button>
-<button class="btn_sub btn_small" >副按钮(.btn_sub)</button>
-<button class="btn_disable btn_small" >不可用按钮(.btn_disable)</button>
-
+<iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/YPMaar/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YPMaar/'>YPMaar</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+代码：
 ```
 <button class="btn_default btn_small" >常用蓝色(.btn_default)</button>
 <button class="btn_attention btn_small" >关注(.btn_attention)</button>
