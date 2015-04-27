@@ -5,7 +5,7 @@
       <% for (var i in theme.menu){ %>
         <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
       <% } %>
-      <% site.posts.sort('date').each(function(post){ %>
+      <% site.posts.sort('order').each(function(post){ %>
        <a class="main-nav-link" href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
       <% }) %>
     </nav>
