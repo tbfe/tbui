@@ -4,6 +4,4 @@ db.json
 *.log
 node_modules/
 public/
-.deploy*/
-css_standard/
-combineLess/
+deploy.sh
