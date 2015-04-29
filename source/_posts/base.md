@@ -119,7 +119,7 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 这四种样式和尺寸可以随意搭配使用。
 
 ###demo--样式###
-<iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/YPMaar/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YPMaar/'>YPMaar</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='249' scrolling='no' src='//codepen.io/yuanzhen/embed/YPMaar/?height=249&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YPMaar/'>YPMaar</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 代码：
 ```
@@ -140,7 +140,20 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 ```
 
 ##自定义按钮##
-自定义按钮提供了以下两种mixins
+
+以下是demo展示
+<iframe height='117' scrolling='no' src='//codepen.io/yuanzhen/embed/RNmjyZ/?height=117&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/RNmjyZ/'>RNmjyZ</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+使用方式： 
+```
+    .element{
+        .btn-variant(...); //or btn-styles(); 设置背景颜色，文字颜色或者border色值，参数请看下面的mixins 
+        .btn-size(...); //设置盒模型大小和字体大小, 参数请看下面的mixins
+    }
+
+```
+自定义按钮提供了以下两种样式mixins
 
 ```
 //纯色背景
