@@ -108,7 +108,7 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 
 同时，如果并排按钮，建议使用同类型的标签，禁止lineheight的设置，因为在不同类型的按钮中，高度获取不一致
 
-##可以作为按钮使用的标签和元素##
+###作为按钮的元素###
 
 为 `<a>`、`<button>`、`<input type="submit">`、`<input type="button">`或 `<input type="reset">`元素添加按钮类（button class）即可使用 基础库 提供的样式。</p>
 
@@ -123,7 +123,7 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 
 使用方式： 直接copy类名
 
-###demo--样式###
+demo--样式
 代码：
 ```
 <button class="btn_default btn_small" >常用蓝色(.btn_default)</button>
@@ -132,14 +132,14 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 <button class="btn_disable btn_small" >不可用按钮(.btn_disable)</button>
 ```
 
-###demo--尺寸###
+demo--尺寸
 ```
 <button class="btn_default btn_small" >常用尺寸(.btn_small)</button> 
 <button class="btn_default btn_middle" >中按钮(.btn_middle)</button> 
 <button class="btn_default btn_larger" >大按钮(.btn_larger)</button> 
 ```
 
-##自定义按钮##
+### 自定义按钮 ###
 
 以下是demo展示
 <iframe height='239' scrolling='no' src='//codepen.io/yuanzhen/embed/RNmjyZ/?height=239&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/RNmjyZ/'>RNmjyZ</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
@@ -200,7 +200,7 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 
 ```
 
-##带icon的按钮##
+### 带icon的按钮 ###
 
 使用<code>&lt;i&gt;</code>表示icon, 样式由用户自己定义，可以使用sprite图片，同时可以使用iconfont</p>
 

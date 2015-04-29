@@ -44,3 +44,12 @@ tags:
 
 ##media_groups##
 
+##layout##
+##两栏布局--左边宽度固定，右侧不固定##
+<iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/ByPGqm/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/ByPGqm/'>layout</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+##三栏布局--左边和右侧固定，中间不固定，双飞翼布局##
+
+<iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/QbbLXX/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/QbbLXX/'>QbbLXX</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
