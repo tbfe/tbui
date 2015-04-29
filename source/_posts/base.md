@@ -112,15 +112,18 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 
 为 `<a>`、`<button>`、`<input type="submit">`、`<input type="button">`或 `<input type="reset">`元素添加按钮类（button class）即可使用 基础库 提供的样式。</p>
 
-##预定义样式##
+###预定义样式###
 在预定义样式中，
-提供了**四种样式**类: *.btn_default*、*.btn_default*、*.btn_default*、*.btn_default*
-提供了**三种尺寸**类: *.btn_small*、*.btn_middle*、*.btn_larger*
+提供了**四种样式**类: `.btn_default`、`.btn_default`、`.btn_default`、`.btn_default`
+提供了**三种尺寸**类: `.btn_small`、`.btn_middle`、`.btn_larger`
 这四种样式和尺寸可以随意搭配使用。
 
-###demo--样式###
-<iframe height='249' scrolling='no' src='//codepen.io/yuanzhen/embed/YPMaar/?height=249&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YPMaar/'>YPMaar</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/YPMaar/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YPMaar/'>YPMaar</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
+
+使用方式： 直接copy类名
+
+###demo--样式###
 代码：
 ```
 <button class="btn_default btn_small" >常用蓝色(.btn_default)</button>
@@ -130,9 +133,6 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 ```
 
 ###demo--尺寸###
-<button class="btn_default btn_small" >常用尺寸(.btn_small)</button> 
-<button class="btn_default btn_middle" >中按钮(.btn_middle)</button> 
-<button class="btn_default btn_larger" >大按钮(.btn_larger)</button> 
 ```
 <button class="btn_default btn_small" >常用尺寸(.btn_small)</button> 
 <button class="btn_default btn_middle" >中按钮(.btn_middle)</button> 
@@ -142,11 +142,22 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 ##自定义按钮##
 
 以下是demo展示
-<iframe height='117' scrolling='no' src='//codepen.io/yuanzhen/embed/RNmjyZ/?height=117&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/RNmjyZ/'>RNmjyZ</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='239' scrolling='no' src='//codepen.io/yuanzhen/embed/RNmjyZ/?height=239&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/RNmjyZ/'>RNmjyZ</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-使用方式： 
+在要使用的element上增加btn类， btn的设置如下
+> 样式class(`.btn_default`、`.btn_default`、`.btn_default`、`.btn_default`)的属性值，如果使用这些样式，可以需要使用.btn样式了
 ```
+.btn{
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+```
+使用方式：
+
+```
+    <element class="btn element"></element>
     .element{
         .btn-variant(...); //or btn-styles(); 设置背景颜色，文字颜色或者border色值，参数请看下面的mixins 
         .btn-size(...); //设置盒模型大小和字体大小, 参数请看下面的mixins
