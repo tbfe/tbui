@@ -42,24 +42,37 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
     }
 ```
 ###清除浮动###
+
 <p>通过为<code>父元素</code>添加 .clearfix 类可以很容易地清除浮动（float）。此类还可以作为 mixin 使用。</p>
+
 *   通过添加`.clearfix`类
+
 ```
     <div class="clearfix"></div>
 ```
+
 *   通过调用`.clearfix` mixins
+
 ```
     .element{
         .clearfix(); //or .pull-right();
     }
 ```
+
 ###图片替换###
+
 使用`.hide_text`类或对应的mixin可以用来将元素的文本内容替换为一张背景图。</p>
+
 *   方法一：通过添加`.hide_text`类
+
+
 ```
     <span class="hide_text"></span>
 ```
+
 *   方法二：通过调用`.hide_text` mixins
+
+
 ```
    .element{
        .hide-text();
@@ -67,12 +80,17 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 ```
 
 ###文字省略###
+
 *   方法一：通过添加`.text_overflow`, text_overflow文字省略设置在dispaly： block或者dispaly
+
 > 注意：.text_overflow类只是支持一行省略
+
 ```
 <div class="text_overflow"></div>
 ```
+
 *   方法二：使用mixins .text-overflow(...)
+
 ```
     .element{
         .text-overflow(); 
@@ -81,7 +99,9 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
         .text-overflow(2); // 传入参数，仅支持webkit，表示第几行省略
     }
 ```
+
 ##button##
+
 跨浏览器展现
 
 据bootstrap的介绍，**强烈建议尽可能使用 `<button>`元素**来获得在各个浏览器上获得相匹配的绘制效果。
