@@ -72,10 +72,6 @@
     display: inline-block;
     border-radius: 2px;
     border: 1px solid transparent;
-}
-
-.btn-cursor(){
-    cursor: pointer;
     text-decoration: none;
     &:link,
     &:visited,
@@ -209,7 +205,10 @@
     .btn_default,
     .btn_sub,
     .btn_attention{
-        .btn-cursor();
+        cursor: pointer;
+    }
+    .btn_disable{
+        cursor: default;
     }
 
     .btn,
