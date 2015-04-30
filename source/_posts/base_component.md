@@ -3,10 +3,14 @@ date: 2015-04-21 15:07:00
 order: 2 
 tags:
 ---
-##list##
+##无序列表（list）##
 无序列表预定义样式, 其中列表之前的符号，通过::before实现
+
 *   方法一: 直接copy html代码，其中在每条li上的text_overflow样式可以自行选择
 *   方法二: 在执行方法一的基础上，设置a链接的颜色，使用mixins .a-color()
+
+<iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/OPeVwN/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/OPeVwN/'>OPeVwN</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 ```
 <ul class="unordered_list_dot">
     <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
@@ -14,10 +18,8 @@ tags:
     <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
 </ul>
 ```
-<iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/OPeVwN/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/OPeVwN/'>OPeVwN</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
 
-##分页##
+##分页（pagination）##
 ```
 <ul class="pagination clearfix">
     <li><a class="pagination-item"></a></li>
@@ -30,11 +32,11 @@ tags:
 <iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/jEpQgQ/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/jEpQgQ/'>tbumbnail</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-##table##
-##forum##
-##media##
+##表格（table）##
+##表单（forum）##
+##图文（media）##
 
-###media_horizontal###
+###左右图文（media_horizontal）###
 > 使用方式： copy如下的DOM结构，配置相应的mixins, 示例:
 > 需要注意的是，在DOM结构中的类`.media_caption`, `.media_absolute`已经设置position: absolute, 你只需要设置位置和其他属性值即可。
 ```
@@ -42,12 +44,12 @@ tags:
     .make-horizontal-media(60px, 60px, 10px);
 }
 ```
-<iframe height='155' scrolling='no' src='//codepen.io/yuanzhen/embed/zGGOwY/?height=155&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/zGGOwY/'>zGGOwY</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='160' scrolling='no' src='//codepen.io/yuanzhen/embed/zGGOwY/?height=160&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/zGGOwY/'>zGGOwY</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
 ```
-<!--DOM结构如下，其中col2_left, col2_right是必须的，wrap_namespace是自己定义的-->
-<div class="media_horizontal my_demo clearfix">
+<!--完整的DOM结构如下, 根据自己的需要，选择相应的DOM和添加js钩子-->
+<div class="media_horizontal clearfix">
     <a class="thumbnail media_left">
         <img src="http://tb.himg.baidu.com/sys/portrait/item/d21ee5b9b3e58fb0e58c96e6b58be8af95ec44">
         <span class="media_caption">图片上绝对定位的边角</span>
@@ -65,39 +67,39 @@ tags:
 ```
 
 
-###media_vertical###
+###上下图文（media_vertical）###
 > 使用方式： copy如下的DOM结构，配置相应的mixins, 示例:
 > 需要注意的是，在DOM结构中的类`.media_caption`, `.media_absolute`已经设置position: absolute, 你只需要设置位置和其他属性值即可。
 ```
 .my_demo{
-    .make-vetical-media(60px, 60px, 10px);
+    .make-vetical-media(60px, 60px, 2px);
 }
 ```
-<iframe height='155' scrolling='no' src='//codepen.io/yuanzhen/embed/zGGOwY/?height=155&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/zGGOwY/'>zGGOwY</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='220' scrolling='no' src='//codepen.io/yuanzhen/embed/EjjgwO/?height=220&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/EjjgwO/'>EjjgwO</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
 ```
-<!--DOM结构如下，其中col2_left, col2_right是必须的，wrap_namespace是自己定义的-->
-<div class="media_horizontal my_demo clearfix">
-    <a class="thumbnail media_left">
+<!--完整的DOM结构如下, 根据自己的需要，选择相应的DOM和添加js钩子-->
+<div class="media_vertical clearfix">
+    <a class="media_top">
         <img src="http://tb.himg.baidu.com/sys/portrait/item/d21ee5b9b3e58fb0e58c96e6b58be8af95ec44">
         <span class="media_caption">图片上绝对定位的边角</span>
     </a>
-    <div class="media_right">右侧说明文字</div>
+    <div class="media_bottom">右侧说明文字</div>
     <div class="media_absolute">需要绝对定位的元素，比如aside模块, 封禁的样式</div>
 </div>
 
 /**
-* @width: 左侧图片的宽度
-* @height: 左侧图片的高度
-* @gutter: 左侧图片和右侧描述之间的间距
+* @width: top图片的宽度
+* @height: top图片的高度
+* @gutter: 图片和描述之间的间距
 */
 .make-horizontal-media(@width, @height, @gutter);
 ```
 
-##media_groups##
+##图文媒体组（media_groups）##
 
-##layout##
+##布局（layout）##
 
 ###两栏布局###
 
