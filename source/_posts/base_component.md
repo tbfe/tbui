@@ -3,37 +3,6 @@ date: 2015-04-21 15:07:00
 order: 2 
 tags:
 ---
-##无序列表（list）##
-无序列表预定义样式, 其中列表之前的符号，通过::before实现
-
-*   方法一: 直接copy html代码，其中在每条li上的text_overflow样式可以自行选择
-*   方法二: 在执行方法一的基础上，设置a链接的颜色，使用mixins .a-color()
-
-<iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/OPeVwN/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/OPeVwN/'>OPeVwN</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
-```
-<ul class="unordered_list_dot">
-    <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
-    <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
-    <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
-</ul>
-```
-
-##分页（pagination）##
-```
-<ul class="pagination clearfix">
-    <li><a class="pagination-item"></a></li>
-    <li><a class="pagination-item pagination-current"></a></li>
-    <li><a class="pagination-item"></a></li>
-    <li><a class="pagination-item"></a></li>
-</ul>
-```
-##thumbnail##
-<iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/jEpQgQ/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/jEpQgQ/'>tbumbnail</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
-
-##表格（table）##
-##表单（forum）##
 ##图文（media）##
 
 ###左右图文（media_horizontal）###
@@ -148,4 +117,75 @@ tags:
 */
 //.get-column-three(~'.wrap_namespace', @left, @right, @gutter: 10px);
 .get-column-three(~'.wrap_namespace', 200px, 200px);
+```
+
+##分页（pagination）##
+
+提供带有展示页码的分页组件，其中php分页和js组件都是基于这个组件的样式
+
+###带页码的默认组件###
+
+> 使用方式： todo: 还没有更新到common上
+
+demo展示区
+```
+<ul class="pagination clearfix">
+    <li><a class="pagination-item"></a></li>
+    <li><a class="pagination-item pagination-current"></a></li>
+    <li><a class="pagination-item"></a></li>
+    <li><a class="pagination-item"></a></li>
+</ul>
+```
+
+###翻页###
+nothing
+
+####默认实例####
+nothing
+
+####两端对齐####
+nothing
+
+###禁用和激活状态###
+nothing
+
+###可配置选项###
+nothing
+
+##缩略图（thumbnail）##
+参考了Boostrap缩略图, 并结合产品，设计仅需最少的标签就能展示带链接的图片。
+
+> 使用方式：
+*   copy代码区的html代码, 并在less文件中设置图片大小和tbumbnail_caption等信息
+
+<iframe height='186' scrolling='no' src='//codepen.io/yuanzhen/embed/jEpQgQ/?height=186&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/jEpQgQ/'>tbumbnail</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+```
+<a class="thumbnail">
+    <img src="img" alt="img">
+    <div class="thumbnail_caption">123</div>
+</a>
+.thumbnail{
+    .thumbnail-size(100px, 100px); // [设置图片大小](http://baidu.com)
+    .thumbnail_caption{} //已经在comnon模块设置了absoulte定位，仅需要设置位置和其他属性即可
+}
+```
+
+##表格（table）##
+##表单（forum）##
+
+##无序列表（list）##
+无序列表预定义样式, 其中列表之前的符号，通过`::before`实现
+> **使用方式：** 
+*   方法一: copy代码区的html代码，其中在每条li上的[text_overflow](http://gitlab.baidu.com/tbfe/fis2/less/)样式可以自行选择
+*   方法二: 在执行方法一的基础上，设置a链接的颜色，使用mixins [.a-color()](http://gitlab.baidu.com/tbfe/fis2/less)
+
+<iframe height='167' scrolling='no' src='//codepen.io/yuanzhen/embed/OPeVwN/?height=167&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/OPeVwN/'>list_tyle</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+```
+<ul class="unordered_list_dot">
+    <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
+    <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
+    <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
+</ul>
 ```
