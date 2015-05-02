@@ -6,7 +6,7 @@ tags:
 ##图文（media）##
 
 ###左右图文（media_horizontal）###
-> 使用方式： copy如下的DOM结构，配置相应的mixins, 示例:
+> 使用方式： copy如下的DOM结构，配置mixins[.make-horizontal-media(...)](http://baidu.com), 示例:
 > 需要注意的是，在DOM结构中的类`.media_caption`, `.media_absolute`已经设置position: absolute, 你只需要设置位置和其他属性值即可。
 ```
 .my_demo{
@@ -37,7 +37,7 @@ tags:
 
 
 ###上下图文（media_vertical）###
-> 使用方式： copy如下的DOM结构，配置相应的mixins, 示例:
+> 使用方式： copy如下的DOM结构，配置mixins[.make-vetical-media(...)](http://baidu.com), 示例:
 > 需要注意的是，在DOM结构中的类`.media_caption`, `.media_absolute`已经设置position: absolute, 你只需要设置位置和其他属性值即可。
 ```
 .my_demo{
@@ -68,12 +68,94 @@ tags:
 
 ##图文媒体组（media_groups）##
 
+###横向媒体组_1###
+
+> 使用方式： copy如下的DOM结构，
+> * 配置mixins[.make-horizontal-lists(...)](http://baidu.com), 主要是设置media组的展示
+> * 配置mixins[.make-vetical-media(...)](http://baidu.com)，需要设置单个media的展示
+**注意：** .make-vetical-media(...)在上文已经介绍过，请参考。
+
+<iframe height='257' scrolling='no' src='//codepen.io/yuanzhen/embed/KwBrXR/?height=257&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/KwBrXR/'>media_groups_horzontal_1</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+```
+<!--DOM结构如下，每一个media_vertical作为一个媒体组的一个对象-->
+<ul class="my_demo clearfix">
+  <li class="media_vertical">
+      <a class="media_top">
+        <img src="http://tb.himg.baidu.com/sys/portrait/item/d21ee5b9b3e58fb0e58c96e6b58be8af95ec44"/>
+        <span class="media_caption">吧</span>
+      </a>
+      <div class="media_bottom">
+        <a class="text_overflow">平台化测试</a>
+        <button class="btn_default btn_small">test</button>
+        <button class="btn_sub btn_small">test</button>
+      </div>
+   </li> 
+</ul>
+
+/**
+* @param @width: 每个media的宽度
+* @param @h-gutter: 每个media之间左右间距
+* @param @h-gutter: 每个media之间的上下间距
+* @param @list-num: 媒体对象组一行要展示几个media
+*  .make-horizontal-lists(@width, @h-gutter, @v-gutter: 0, @list-num);
+/
+
+.my_demo li{
+    .make-horizontal-lists(100px, 10px, 2px, 6);
+    .make-vertical-media(100px, 100px, -4px);
+}
+
+```
+
+###横向媒体组_2###
+###纵向媒体组_2###
+
+> 使用方式： copy如下的DOM结构，
+> * 配置mixins[.make-vertical-lists(...)](http://baidu.com), 主要是设置media组的展示
+> * 配置mixins[.make-horizontal-media(...)](http://baidu.com)，需要设置单个media的展示
+**注意：** .make-horizontal-media(...)在上文已经介绍过，请参考。
+>
+
+```
+<!--DOM结构如下，每一个media_horizontal作为一个媒体组的一个对象-->
+<ul class="my_demo">
+   <li class="media_horizontal">
+       <a class="media_left">
+           <img src="" alt=""/>
+           <span class="media_caption"></span>
+       </a>
+       <div class="medai_right">
+           <p><a href="#">描述</a></p>
+           goto: <button class="btn_default btn_small">test</button>
+       </div>
+   </li>
+</ul>
+/*
+* @param @height 每一个media的高度
+* @param @gutter media高度
+* .make-vertical-lists(@heigth, @gutter);
+*/
+.my_demo .media_horizontal{
+    .make-vertical-lists(auto, 10px);
+    .make-horizontal-media(60px, 60px, 10px);
+}
+```
+
+<iframe height='217' scrolling='no' src='//codepen.io/yuanzhen/embed/azjQqe/?height=217&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/azjQqe/'>media_mutil</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+test
+###纵向媒体组_2###
+
+
 ##布局（layout）##
 
 ###两栏布局###
 
 > 左边宽度固定，右侧不固定
-> 使用方式： copy如下的DOM结构，配置相应的mixins, 示例:
+> 使用方式： copy如下的DOM结构，配置mixins[.get-column-two(...)](http://baidu.com), 示例:
 
 <iframe height='181' scrolling='no' src='//codepen.io/yuanzhen/embed/ByPGqm/?height=181&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/ByPGqm/'>layout</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
@@ -95,7 +177,7 @@ tags:
 ###三栏布局###
 
 > 左边和右侧固定，中间不固定，双飞翼布局
-> 使用方式： copy如下的DOM结构，配置相应的mixins, 示例:
+> 使用方式： copy如下的DOM结构，配置mixins[get-column-three(...)](http://baidu.com), 示例:
 
 <iframe height='182' scrolling='no' src='//codepen.io/yuanzhen/embed/QbbLXX/?height=182&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/QbbLXX/'>QbbLXX</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
