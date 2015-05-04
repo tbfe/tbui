@@ -211,7 +211,7 @@ test
 
 demo展示区
 ```
-<ul class="pagination clearfix">
+<ul class="pagination-default clearfix">
     <li><a class="pagination-item"></a></li>
     <li><a class="pagination-item pagination-current"></a></li>
     <li><a class="pagination-item"></a></li>
