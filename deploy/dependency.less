@@ -499,10 +499,10 @@
 .padding(@args, @unit){
     .box-modle(@args, @unit); 
 }
-.get-column-three(@namespace, @left, @right, @gutter){
+.get-column-three(@namespace, @left, @right, @gutter: 10px){
     @{namespace}{
         .col3_left {
-            width: @left;      
+            width: @left;
             margin-left: -100%;
         }
         .col3_right {
@@ -510,7 +510,8 @@
             margin-left: -@right;
         }
         .col3_main{
-            margin: 0 @left + @gutter;
+            margin-left: @left + @gutter;
+            margin-right: @right + @gutter;
         }
     }
 }
@@ -592,8 +593,30 @@
         filter: progid:DXImageTransform.Microsoft.gradient(enabled='false'); // Only IE9
     }
 }
+.pagination-size(@padding-vertical; @padding-horizontal; @font-size){
+    padding: @padding-vertical @padding-horizontal;
+    font-size: @font-size;
+}
 
-
+.pagination-style(@background-color; @text-color; @background-hover-color; @text-hover-color; @border-color: none){
+    .mix-border(@a) when (iscolor(@a)){
+        border: 1px solid @border-color;
+    }
+    .mix-border(@a) when not (iscolor(@a)){
+        border: 1px solid transparent;
+    }
+    background: @background-color;
+    color: @text-color;
+    .mix-border(@border-color);
+    &:visited{
+        color: @text-hover-color;
+    }
+    &:hover{
+        background: @background-hover-color; 
+        color: @text-hover-color;
+        .mix-border(@border-color);
+    }
+}
 .thumbnail-size(@width, @height){  
     width: @width;
     height: @height;
@@ -701,6 +724,22 @@
 .pull-right(){
     float: right !important;
 }
+
+.icon_sprite_mixins(@list){
+    @index: length(@list);
+    .loop(@index) when (@index > 0){
+        @text: e(extract(@list, @index));
+        @value: extract(@text, 1);
+        .icon_@{value}{
+            display: inline-block;
+            width: extract(@text, 2);
+            height: extract(@text, 3);
+            background: url("images/icon_@{value}.png?__sprite");
+        }
+       .loop((@index - 1));
+    }
+    .loop(@index);
+}
 @white-color: #fff;
 @black-color: #000;
 @gray: #666;
@@ -798,3 +837,15 @@
 @disable-text: @gray-lighter;
 @disable-bg: #dfdfdf;
 @disable-border: #dfdfdf;
+
+/*pagination component*/
+@default-item-border: none;
+@default-item-bg: @white-color;
+@default-item-text: @gray;
+@default-item-bg-hover: #e9f1f7;
+@default-item-text-hover: @gray;
+@default-current-border: none;
+@default-current-bg: #f7f7f7;
+@default-current-text: @gray-darker;
+@default-current-bg-hover: #f7f7f7;
+@default-current-text-hover: @gray-darker;
