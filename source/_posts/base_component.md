@@ -207,9 +207,13 @@ test
 
 ###带页码的默认组件###
 
-> 使用方式： todo: 还没有更新到common上
+> 使用方式：copy如下的DOM结构,
+*   `.pagination-default`为了避免和之前的pagination造成中途，在pagination之后加了一个default的后缀
+*   `.pagination-current`指当前page
+*   `.pagination-item`指左右的页签
 
-demo展示区
+<iframe height='115' scrolling='no' src='//codepen.io/yuanzhen/embed/VLLoLq/?height=115&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/VLLoLq/'>pagination</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 ```
 <ul class="pagination-default clearfix">
     <li><a class="pagination-item"></a></li>
@@ -219,20 +223,31 @@ demo展示区
 </ul>
 ```
 
-###翻页###
-nothing
-
-####默认实例####
-nothing
-
-####两端对齐####
-nothing
-
-###禁用和激活状态###
-nothing
-
 ###可配置选项###
-nothing
+*   配置分页的尺寸[.pagination-size(…)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/pagination.less)
+```
+/**
+* @padding-vertical: 每一个页签的上下间距
+* @padding-horizontal: 每一个页签的左右间距
+* @font-size: 字体大小
+*/
+.pagination-size(@padding-vertical; @padding-horizontal; @font-size){
+}
+```
+
+*   配置分页的样式 [.pagination-style(…)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/pagination.less)
+
+```
+/**
+* @background-color: 背景颜色
+* @text-color: 文字颜色
+* @background-hover-color: 背景hover颜色
+* @text-hover-color: 文字hover颜色
+* @border-color: 默认为none，可以设置颜色值 
+*/
+.gination-style(@background-color; @text-color; @background-hover-color; @text-hover-color; @border-color: none){
+}
+```
 
 ##缩略图（thumbnail）##
 参考了Boostrap缩略图, 并结合产品，设计仅需最少的标签就能展示带链接的图片。
