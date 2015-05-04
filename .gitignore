@@ -7,6 +7,5 @@ public/
 deploy.sh
 .deploy_git/
 _config.yml
-deploy/combineLess/
 deploy/dependency.less
 
