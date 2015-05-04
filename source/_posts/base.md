@@ -100,7 +100,19 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
     }
 ```
 
-###合并icon###
+###合并icon[.icon_sprite_mixins]()###
+
+```
+/*
+* @lists： 合并的iconlist
+*/
+.icon_sprite_mixins(@list);
+//使用如下
+@my_list: demo1 20px 20px,
+       demo2 20px 30px,
+       demo3 30px 30px;
+.icon_sprite_mixins(@my_list);
+```
 
 
 ##button##
