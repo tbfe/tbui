@@ -3,28 +3,31 @@ date: 2015-04-21 16:28:07
 order: 1 
 tags:
 ---
-##entry.css##
+##[entry.css](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility)##
 
 *   在body上设置了**字体大小**12px, **字体**采用非衬线字体，**字体色值**为#333，**行高**22px
 *   设置了基本颜色 @link-color ，并且当链接处于 :hover 状态时才添加下划线
 *   `<ins>`hover状态不添加下划线
 
-##Normalize.css/reset.css##
+##[Normalize.css/reset.css](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility)##
 
 统一浏览器一致性，其中 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
 reset.css是符合贴吧业务具体需求的重置样式
 
 ##utility##
+> 包含两部分， 一部分是以[`class`](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less)形式引入， 另一部分是以[`mixins`](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less)形式引入
+
 ###文本色值块###
 通过颜色来展示意图，这些类可以应用于链接，并且在鼠标经过时颜色可以还可以加深，就像默认的链接一样。
 vip_red是超级用户经常会使用的类, 已经设置!important，不会被覆盖，请放心使用, 并且三态已经做处理
 方法：通过添加类的方式来实现，注意: 为了避免被覆盖，使用！important优先级
-
 ```
    <p class="red_text">I am a demo ! </p>
    <p class="orange_text">I am a demo ! </p>
    <a class="vip_red" href="#">I am a demo ! </a>
 ```
+<iframe height='141' scrolling='no' src='//codepen.io/yuanzhen/embed/waKMQo/?height=141&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/waKMQo/'>waKMQo</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ###float###
 
@@ -100,20 +103,55 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
     }
 ```
 
-###合并icon[.icon_sprite_mixins]()###
+###合并icon，
+
+> 设置宽高属性值[.icon_sprite_muiti]()
 
 ```
 /*
 * @lists： 合并的iconlist
 */
-.icon_sprite_mixins(@list);
+.icon_sprite_multi(@list);
 //使用如下
 @my_list: demo1 20px 20px,
-       demo2 20px 30px,
-       demo3 30px 30px;
+       demo2 20px 30px;
 .icon_sprite_mixins(@my_list);
+
+//最后生成: 
+.icon_demo1 {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("hfj/icon_demo1.png?__sprite");
+}
+.icon_demo2 {
+  display: inline-block;
+  width: 20px;
+  height: 30px;
+  background: url("hfj/icon_demo2.png?__sprite");
+}
+```
+> 根据value合并，
+
+```
+/*
+* @lists： 合并的iconlist
+*/
+.icon_sprite_single(@list);
+//使用如下
+@my_list: "demo1", "demo2", "demo3";
+.icon_sprite_mixins(@my_list);
+
+//最后生成: 
+// .icon-demo1{background: url('images/icon_demo1.png?__sprite')}
+// .icon-demo2{background: url('images/icon_demo2.png?__sprite')}
+// .icon-demo3{background: url('images/icon_demo3.png?__sprite')}
 ```
 
+###opacity###
+>使用方式，具体参见链接
+[.opacity(.5)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less)
+[.background-opacity(#fff, .5)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less)
 
 ##button##
 
