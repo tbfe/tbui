@@ -9,12 +9,13 @@ tags:
 *   设置了基本颜色 @link-color ，并且当链接处于 :hover 状态时才添加下划线
 *   `<ins>`hover状态不添加下划线
 
-##[Normalize.css/reset.css](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility)##
+##[normalize.css/reset.css](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility)##
 
 统一浏览器一致性，其中 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
 reset.css是符合贴吧业务具体需求的重置样式
 
-##utility##
+##[utility]()##
+
 > 包含两部分， 一部分是以[`class`](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less)形式引入， 另一部分是以[`mixins`](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less)形式引入
 
 ###文本色值块###
@@ -22,9 +23,9 @@ reset.css是符合贴吧业务具体需求的重置样式
 vip_red是超级用户经常会使用的类, 已经设置!important，不会被覆盖，请放心使用, 并且三态已经做处理
 方法：通过添加类的方式来实现，注意: 为了避免被覆盖，使用！important优先级
 ```
-   <p class="red_text">I am a demo ! </p>
-   <p class="orange_text">I am a demo ! </p>
-   <a class="vip_red" href="#">I am a demo ! </a>
+   <p class="red-text">I am a demo ! </p>
+   <p class="orange-text">I am a demo ! </p>
+   <a class="vip-red" href="#">I am a demo ! </a>
 ```
 <iframe height='141' scrolling='no' src='//codepen.io/yuanzhen/embed/waKMQo/?height=141&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/waKMQo/'>waKMQo</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
@@ -33,10 +34,10 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 
 将元素向左或者向右浮动, 使用了!important，避免被覆盖
 
-*   通过添加`.pull_left`或者`.pull_right`类
+*   通过添加`.pull-left`或者`.pull-right`类
 ```
-<span class="pull_left">float left...</span> 
-<span class="pull_right">float right...</span> 
+<span class="pull-left">float left...</span> 
+<span class="pull-right">float right...</span> 
 ```
 *   方法二：使用mixins方式
 ```
@@ -46,7 +47,7 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 ```
 ###清除浮动###
 
-<p>通过为<code>父元素</code>添加 .clearfix 类可以很容易地清除浮动（float）。此类还可以作为 mixin 使用。</p>
+<p>通过为`父元素`添加 .clearfix 类可以很容易地清除浮动（float）。此类还可以作为 mixin 使用。</p>
 
 *   通过添加`.clearfix`类
 
@@ -64,17 +65,15 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 
 ###图片替换###
 
-使用`.hide_text`类或对应的mixin可以用来将元素的文本内容替换为一张背景图。</p>
+使用`.hide-text`类或对应的mixin可以用来将元素的文本内容替换为一张背景图。</p>
 
-*   方法一：通过添加`.hide_text`类
-
+*   方法一：通过添加`.hide-text`类
 
 ```
-    <span class="hide_text"></span>
+    <span class="hide-text"></span>
 ```
 
-*   方法二：通过调用`.hide_text` mixins
-
+*   方法二：通过调用`.hide-text` mixins
 
 ```
    .element{
@@ -84,12 +83,12 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 
 ###文字省略###
 
-*   方法一：通过添加`.text_overflow`, text_overflow文字省略设置在dispaly： block或者dispaly
+*   方法一：通过添加`.text-overflow`, text-overflow文字省略设置在dispaly： block或者dispaly: inline-block且设置宽度
 
-> 注意：.text_overflow类只是支持一行省略
+> 注意：.text-overflow类只是支持一行省略
 
 ```
-<div class="text_overflow"></div>
+<div class="text-overflow"></div>
 ```
 
 *   方法二：使用mixins .text-overflow(...)
@@ -105,42 +104,43 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 
 ###合并icon，
 
-> 设置宽高属性值[.icon_sprite_muiti]()
+> 设置宽高属性值[.icon-sprite-multi](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less)
 
 ```
 /*
 * @lists： 合并的iconlist
 */
-.icon_sprite_multi(@list);
+.icon-sprite-multi(@list);
 //使用如下
 @my_list: demo1 20px 20px,
        demo2 20px 30px;
-.icon_sprite_mixins(@my_list);
+.icon-sprite-mixins(@my_list);
 
 //最后生成: 
-.icon_demo1 {
+.icon-demo1 {
   display: inline-block;
   width: 20px;
   height: 20px;
   background: url("hfj/icon_demo1.png?__sprite");
 }
-.icon_demo2 {
+.icon-demo2 {
   display: inline-block;
   width: 20px;
   height: 30px;
   background: url("hfj/icon_demo2.png?__sprite");
 }
 ```
-> 根据value合并，
+
+> 根据value合并, [.icon-sprite-single(...)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less)，
 
 ```
 /*
 * @lists： 合并的iconlist
 */
-.icon_sprite_single(@list);
+.icon-sprite-single(@list);
 //使用如下
 @my_list: "demo1", "demo2", "demo3";
-.icon_sprite_mixins(@my_list);
+.icon-sprite-mixins(@my_list);
 
 //最后生成: 
 // .icon-demo1{background: url('images/icon_demo1.png?__sprite')}
@@ -173,8 +173,8 @@ rgba透明设置: .background-opacity(#fff, .5)
 
 ###预定义样式###
 在预定义样式中，
-提供了**四种样式**类: `.btn_default`、`.btn_default`、`.btn_default`、`.btn_default`
-提供了**三种尺寸**类: `.btn_small`、`.btn_middle`、`.btn_larger`
+提供了**四种样式**类: `.btn-default`、`.btn-attention`、`.btn-sub`、`.btn-disable`
+提供了**三种尺寸**类: `.btn-small`、`.btn-middle`、`.btn-larger`
 这四种样式和尺寸可以随意搭配使用。
 
 <iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/YPMaar/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YPMaar/'>YPMaar</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
@@ -185,17 +185,17 @@ rgba透明设置: .background-opacity(#fff, .5)
 demo--样式
 代码：
 ```
-<button class="btn_default btn_small" >常用蓝色(.btn_default)</button>
-<button class="btn_attention btn_small" >关注(.btn_attention)</button>
-<button class="btn_sub btn_small" >副按钮(.btn_sub)</button>
-<button class="btn_disable btn_small" >不可用按钮(.btn_disable)</button>
+<button class="btn-default btn-small" >常用蓝色(.btn-default)</button>
+<button class="btn-attention btn-small" >关注(.btn-attention)</button>
+<button class="btn-sub btn-small" >副按钮(.btn-sub)</button>
+<button class="btn-disable btn-small" >不可用按钮(.btn-disable)</button>
 ```
 
 demo--尺寸
 ```
-<button class="btn_default btn_small" >常用尺寸(.btn_small)</button> 
-<button class="btn_default btn_middle" >中按钮(.btn_middle)</button> 
-<button class="btn_default btn_larger" >大按钮(.btn_larger)</button> 
+<button class="btn-default btn-small" >常用尺寸(.btn-small)</button> 
+<button class="btn-default btn-middle" >中按钮(.btn-middle)</button> 
+<button class="btn-default btn-larger" >大按钮(.btn-larger)</button> 
 ```
 
 ### 自定义按钮 ###
@@ -205,7 +205,7 @@ demo--尺寸
 </iframe>
 
 在要使用的element上增加btn类， btn的设置如下
-> 样式class(`.btn_default`、`.btn_default`、`.btn_default`、`.btn_default`)的属性值，如果使用这些样式，可以需要使用.btn样式了
+> 样式class(`.btn-default`、`.btn-attention`、`.btn-sub`、`.btn-disable`)的属性值，如果使用这些样式，可以需要使用.btn样式了
 ```
 .btn{
     display: inline-block;
@@ -251,9 +251,9 @@ demo--尺寸
 > 如果使用自定义尺寸，请不要再添加.btn_small, .btn_middle等预定义尺寸
 
 ```
-<input type="button" value="test"/ class="btn my_btn">
+<input type="button" value="test"/ class="btn my-btn">
 
-.my_btn{
+.my-btn{
    .btn-styles(#fff, #555);
 }
 
@@ -261,17 +261,17 @@ demo--尺寸
 
 ### 带icon的按钮 ###
 
-使用`<i class="icon_*"></i>`表示icon, 样式由用户自己定义，可以使用sprite图片，同时可以使用iconfont
+使用`<i class="icon-*"></i>`表示icon, 样式由用户自己定义，可以使用sprite图片，同时可以使用iconfont
 
 > **注意：** 
 > 尽量是icon的尺寸和文字的尺寸保持一致，例如文字是14px，那么icon也也设置为14px; 
 > 使用vertical-align: middle 和 [margin-top: -.1em](http://snook.ca/archives/html_and_css/icons-and-type); 使icon居中对齐
 
 ```
-<button class="btn_sub btn_small"><i class="icon_attention"></i>关注</button>
-<button class="btn_attention btn_small"><i class="icon_attention"></i>关注</button>
+<button class="btn-sub btn-small"><i class="icon-attention"></i>关注</button>
+<button class="btn-attention btn-small"><i class="icon-attention"></i>关注</button>
 
-.icon_attention{
+.icon-attention{
     display: inline-block;
     width: 12px;
     height: 12px;

@@ -8,16 +8,17 @@ tags:
 ###上下图文对象###
 
 > 主要应用于吧主，友情贴吧等模块
+> 使用方式： 直接copy下面的DOM结构
 
 <iframe height='257' scrolling='no' src='//codepen.io/yuanzhen/embed/ByebaR/?height=257&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/ByebaR/'>medie_top_groups</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
 ```
-<ul class="aside_media_horizontal clearfix">
-  <li class="media_vertical">
-    <a class="media_top" href="#" target="" title="">
+<ul class="aside-media-horizontal clearfix">
+  <li class="media-vertical">
+    <a class="media-top" href="#" target="" title="">
       <img src="6060.jpg" alt="image"></a>
-    <div class="text_overflow media_bottom">
+    <div class="text-overflow media-bottom">
       <a href="#" target="_blank" class="" title="一不小心爱上你">一不小心爱上你</a>
     </div>
   </li>
@@ -27,16 +28,17 @@ tags:
 ###上下图文对象###
 
 > 目前平台化使用较多
+> 使用方式： 直接copy下面的DOM结构
 
 <iframe height='316' scrolling='no' src='//codepen.io/yuanzhen/embed/emabQv/?height=316&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/emabQv/'>thumbnail_top</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
 ```
-<a class="aside_thumbnail_120">
+<a class="aside-thumbnail-120">
     <img src="http://p6.qhimg.com/dr/360_210_/t019df57088b7ca51ab.jpg" alt="image">
 </a>
-<ul class="unordered_list_dot">
-    <li class="text_overflow"><a href="#">自定义文字自定义文字自定义文字自定义文字</a></li>
+<ul class="unordered-list-dot">
+    <li class="text-overflow"><a href="#">自定义文字自定义文字自定义文字自定义文字</a></li>
 </ul>
 
 ```
@@ -44,19 +46,20 @@ tags:
 ###左右图文对象###
 
 > 略
+> 使用方式： 直接copy下面的DOM结构
 
 <iframe height='284' scrolling='no' src='//codepen.io/yuanzhen/embed/vEqEZj/?height=284&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/vEqEZj/'>aside_media_left_groups</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
 ```
-<ul class="aside_media_vertical_60 clearfix">
-    <li class="media_horizontal clearfix">
-        <a class="media_left">
+<ul class="aside-media-vertical-60 clearfix">
+    <li class="media-horizontal clearfix">
+        <a class="media-left">
           <img src="http://imgsrc.baidu.com/forum/pic/item/aa64034f78f0f7362a4f09e20855b319eac4139b.jpg" alt="image" />
-          <span class="media_caption"></span>
+          <span class="media-caption"></span>
         </a>
-        <div class="media_right">
-          <a class="text_overflow title">自定义文字自定义文字自定义文字</a>
+        <div class="media-right">
+          <a class="text-overflow title">自定义文字自定义文字自定义文字</a>
           <p>自定义文字自定义文字自定义文字</p>
         </div>
     </li> 
@@ -69,10 +72,10 @@ tags:
 </iframe>
 
 ```
-<ul class="unordered_list_dot">
-    <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
-    <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
-    <li class="text_overflow"><a href="#">自定义文字自定义文字</a></li>
+<ul class="unordered-list-dot">
+    <li class="text-overflow"><a href="#">自定义文字自定义文字</a></li>
+    <li class="text-overflow"><a href="#">自定义文字自定义文字</a></li>
+    <li class="text-overflow"><a href="#">自定义文字自定义文字</a></li>
 </ul>
 ```
 
