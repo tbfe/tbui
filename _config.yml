@@ -13,8 +13,8 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
-#root: /tb_fe_component
-root: /test
+root: /tb_fe_component
+#root: /test
 permalink: :title/
 permalink_defaults:
 
