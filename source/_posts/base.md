@@ -14,6 +14,20 @@ tags:
 统一浏览器一致性，其中 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
 reset.css是符合贴吧业务具体需求的重置样式
 
+##[font](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less)##
+* font-size: .font-size-12(), .font-size-14(), .font-size-16(), .font-size-20();
+* font-family
+
+> .font-family-sans-serif(); //非衬线字体
+> .font-family-serif(); //衬线字体
+> .font-family-yahei(); //微软雅黑
+> .font-family-mono(); //monospace
+
+* ling-height: .line-height-22(), .line-height-26();
+* font-weight: .font-weight-normal(); .font-weight-bold();
+* 链接颜色设置： .a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color);
+* 链接下划线设置： .a-decoration(@link: none; @hover: underline);
+
 ##[utility]()##
 
 > 包含两部分， 一部分是以[`class`](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less)形式引入， 另一部分是以[`mixins`](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less)形式引入
