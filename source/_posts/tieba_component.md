@@ -47,6 +47,19 @@ tags:
 
 > 略
 > 使用方式： 直接copy下面的DOM结构
+> 在规范中，支持两种图片尺寸的图文对象（60*60）或者（80*60）,只需要更换aside-media-vertical-60为aside-media-vertical-80即可，
+> **如果想支持更多尺寸的图片**，请如下设置
+```
+<ul class="yours-demo clearfix">
+</ul>
+.yours-demo{
+    &:extend(.aside-media-vertical-60 all);
+    li{
+        .make-horizontal-media(80px, 60px, 10px);
+    }
+}
+
+```
 
 <iframe height='284' scrolling='no' src='//codepen.io/yuanzhen/embed/vEqEZj/?height=284&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/vEqEZj/'>aside_media_left_groups</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
