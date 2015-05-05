@@ -159,6 +159,18 @@ rgba透明设置: .background-opacity(#fff, .5)
 从上到下纵向linear渐变： #gradient .vertical(@star-color, @end-color, @start-percent, @end-persent);
 径向渐变： #gradient .directional(@deg, @start-color, @end-color);
 
+###背景大小(background-size)###
+```
+.background-size(@image-url, @rest...);
+//使用方式
+.background-size('test.png', 50% 50%);
+//生成
+background-image: url('test.png');
+background-size: 50% 50%;
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizingMethod='scale');
+```
+
+
 ##button##
 
 跨浏览器展现
