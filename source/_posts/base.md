@@ -149,9 +149,15 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 ```
 
 ###opacity###
->使用方式，具体参见链接
-[.opacity(.5)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less)
-[.background-opacity(#fff, .5)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less)
+>使用方式，具体参见[链接](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less)
+opacity设置: .opacity(.5)
+rgba透明设置: .background-opacity(#fff, .5)
+
+###渐变###
+>使用方式，具体参见[链接](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/gradient.less)
+从左到右横向linear渐变： #gradient .horizontal(@star-color, @end-color, @start-percent, @end-persent);
+从上到下纵向linear渐变： #gradient .vertical(@star-color, @end-color, @start-percent, @end-persent);
+径向渐变： #gradient .directional(@deg, @start-color, @end-color);
 
 ##button##
 
@@ -255,25 +261,22 @@ demo--尺寸
 
 ### 带icon的按钮 ###
 
-使用<code>&lt;i&gt;</code>表示icon, 样式由用户自己定义，可以使用sprite图片，同时可以使用iconfont</p>
+使用`<i class="icon_*"></i>`表示icon, 样式由用户自己定义，可以使用sprite图片，同时可以使用iconfont
 
-*   如果使用sprite图片, 使用了icon::before绝对定位的方式，原因是: 为了浏览器兼容性，使用padding值实现了btn的垂直尺寸，如果icon图片尺寸超出12px，会出现btn被撑高</p>
-*   如果使用sprite图片, icon::before, Ie8及之下不支持，如果需要兼容到ie8，请在外层容器btn_with_icon设置relative属性</p>
-
-暂时还确实iconfont，之后会补充</p>
+> **注意：** 
+> 尽量是icon的尺寸和文字的尺寸保持一致，例如文字是14px，那么icon也也设置为14px; 
+> 使用vertical-align: middle 和 [margin-top: -.1em](http://snook.ca/archives/html_and_css/icons-and-type); 使icon居中对齐
 
 ```
-<button class="btn_sub btn_small btn_with_icon"><i class="icon_attention"></i>关注</button>
-<button class="btn_attention btn_small btn_with_icon"><i class="icon_attention"></i>关注</button>
+<button class="btn_sub btn_small"><i class="icon_attention"></i>关注</button>
+<button class="btn_attention btn_small"><i class="icon_attention"></i>关注</button>
 
-.btn_with_icon{
-    padding-left: 24px;
-    .icon_attention{
-        position: relative;
-        &::before{
-            position: absolute;
-        }
-    }
-} 
+.icon_attention{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+    margin-top: -.1em;
+}
 
 ```
