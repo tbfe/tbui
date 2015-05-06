@@ -3,40 +3,94 @@ date: 2015-04-21 16:28:07
 order: 1 
 tags:
 ---
-##[entry.css](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility)##
+##重置设置##
+
+###[normalize.css/reset.css](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility)###
+
+统一浏览器一致性，其中 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
+reset.css是符合贴吧业务具体需求的重置样式
+
+###[entry](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility)###
 
 *   在body上设置了**字体大小**12px, **字体**采用非衬线字体，**字体色值**为#333，**行高**22px
 *   设置了基本颜色 @link-color ，并且当链接处于 :hover 状态时才添加下划线
 *   `<ins>`hover状态不添加下划线
 
-##[normalize.css/reset.css](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility)##
+##font##
 
-统一浏览器一致性，其中 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
-reset.css是符合贴吧业务具体需求的重置样式
+### font-size ### 
 
-##[font](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less)##
-* font-size: .font-size-12(), .font-size-14(), .font-size-16(), .font-size-20();
-* font-family
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+.font-size-12(); // => font-size: 12px;
+.font-size-14(); // => font-size: 14px;
+.font-size-16(); // => font-size: 16px;
+.font-size-20(); // => font-size: 20px;
+```
 
-> .font-family-sans-serif(); //非衬线字体
-> .font-family-serif(); //衬线字体
-> .font-family-yahei(); //微软雅黑
-> .font-family-mono(); //monospace
+### font-family ###
 
-* ling-height: .line-height-22(), .line-height-26();
-* font-weight: .font-weight-normal(); .font-weight-bold();
-* 链接颜色设置： .a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color);
+*   非衬线字体
+
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+.font-family-sans-serif(); // => font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+```
+
+*   非衬线字体
+
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+.font-family-serif(); // => font-family: Georgia, "Times New Roman", Times, serif;
+```
+
+*   等宽字体
+
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+.font-family-mono(); // => font-family: Menlo, Monaco, Consolas, "Courier New", monospace;  
+```
+
+*   微软雅黑
+
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+.font-family-yahei(); // => font-family: "microsoft yahei" simhei sans-serif;
+```
+
+### line-height ###
+
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+.line-height-22(); // => line-height: 22px;
+.line-height-26(); // => line-height: 26px;
+```
+
+### font-weight ###
+
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+.font-weight-normal(); // => font-weight: normal; 
+.font-weight-bold(); // => font-weight: bold;
+```
+
+### 链接色值设置 ###
+
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+.a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color);
+```
+
 * 链接下划线设置： .a-decoration(@link: none; @hover: underline);
 
-##[utility]()##
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+.a-decoration(@link: none; @hover: underline);
+```
 
-> 包含两部分， 一部分是以[`class`](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less)形式引入， 另一部分是以[`mixins`](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less)形式引入
+##utility##
+
+> 可以使用以下两种方式调用: `.class-name` 和 `.mixins(...)`
 
 ###文本色值块###
-通过颜色来展示意图，这些类可以应用于链接，并且在鼠标经过时颜色可以还可以加深，就像默认的链接一样。
-vip_red是超级用户经常会使用的类, 已经设置!important，不会被覆盖，请放心使用, 并且三态已经做处理
-方法：通过添加类的方式来实现，注意: 为了避免被覆盖，使用！important优先级
-```
+
+方法：添加`.class-name`类名的方式
+
+> **注意： **为了避免被覆盖，使用！important优先级
+> vip_red是超级用户经常会使用的类, 已经设置!important，不会被覆盖，请放心使用, 并且三态已经做处理
+
+```html 示例 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
    <p class="red-text">I am a demo ! </p>
    <p class="orange-text">I am a demo ! </p>
    <a class="vip-red" href="#">I am a demo ! </a>
@@ -46,48 +100,49 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 
 ###float###
 
-将元素向左或者向右浮动, 使用了!important，避免被覆盖
+将元素向左或者向右浮动, **注意：**使用了!important，避免被覆盖
 
-*   通过添加`.pull-left`或者`.pull-right`类
-```
+*   添加`.pull-left`或者`.pull-right`类
+
+```html 示例 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
 <span class="pull-left">float left...</span> 
 <span class="pull-right">float right...</span> 
 ```
-*   方法二：使用mixins方式
+
+*   使用`.pull-left()`或者`.pull-right()`方式
+
 ```
-    .element{
-        .pull-left(); //or .pull-right();
-    }
+.pull-left(); // => float: left
+.pull-right(); // => float: right 
 ```
+
 ###清除浮动###
 
 <p>通过为`父元素`添加 .clearfix 类可以很容易地清除浮动（float）。此类还可以作为 mixin 使用。</p>
 
-*   通过添加`.clearfix`类
+*   添加`.clearfix`类
 
-```
+```html 示例 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
     <div class="clearfix"></div>
 ```
 
 *   通过调用`.clearfix` mixins
 
-```
-    .element{
-        .clearfix(); //or .pull-right();
-    }
+```less
+.clearfix(); 
 ```
 
 ###图片替换###
 
 使用`.hide-text`类或对应的mixin可以用来将元素的文本内容替换为一张背景图。</p>
 
-*   方法一：通过添加`.hide-text`类
+*   添加`.hide-text`类
 
 ```
     <span class="hide-text"></span>
 ```
 
-*   方法二：通过调用`.hide-text` mixins
+*   调用`.hide-text` mixins
 
 ```
    .element{
@@ -101,7 +156,7 @@ vip_red是超级用户经常会使用的类, 已经设置!important，不会被�
 
 > 注意：.text-overflow类只是支持一行省略
 
-```
+```html 使用类名 http://www.baidu.com link
 <div class="text-overflow"></div>
 ```
 
