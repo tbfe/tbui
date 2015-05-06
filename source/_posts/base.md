@@ -270,6 +270,8 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 */
 .triangle(@direction, @width, @height, @color);
 ```
+<iframe height='147' scrolling='no' src='//codepen.io/yuanzhen/embed/rVOdyO/?height=147&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/rVOdyO/'>rVOdyO</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ##按钮##
 
