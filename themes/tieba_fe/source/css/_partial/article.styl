@@ -1,14 +1,15 @@
 .page-toc
   position: fixed;
-  top: 120px;
+  top: 80px;
   right: 40px;
   margin: 20px 0 0 20px;
   background: #F4F4F4;
   padding: 10px;
   border-radius: 5px;
   max-width: 240px;
+  max-height: 300px;
   display: block;
-  overflow: hidden;
+  overflow-y: auto;
   .toc-number 
     color: rgba(51, 51, 51, 0.34);
   @media mq-tablet
@@ -74,6 +75,9 @@ ol.toc
     font-weight: bold
   h1, h2, h3, h4, h5, h6
     line-height: line-height-title * 3
+    margin: line-height-title 0
+  ul
+    line-height: line-height-title * 2
     margin: line-height-title 0
   a
     color: color-link

@@ -73,7 +73,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 .a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color);
 ```
 
-* 链接下划线设置： .a-decoration(@link: none; @hover: underline);
+### 链接下划线设置 ###
 
 ``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
 .a-decoration(@link: none; @hover: underline);
@@ -81,14 +81,14 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ##utility##
 
-> 可以使用以下两种方式调用: `.class-name` 和 `.mixins(...)`
+可以使用以下两种方式调用: `.class-name` 和 `.mixins(...)`
 
 ###文本色值块###
 
 方法：添加`.class-name`类名的方式
 
 > **注意： **为了避免被覆盖，使用！important优先级
-> vip_red是超级用户经常会使用的类, 已经设置!important，不会被覆盖，请放心使用, 并且三态已经做处理
+> vip-red是超级用户经常会使用的类, 已经设置!important，不会被覆盖，请放心使用, 并且三态已经做处理
 
 ```html 示例 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
    <p class="red-text">I am a demo ! </p>
@@ -98,20 +98,20 @@ reset.css是符合贴吧业务具体需求的重置样式
 <iframe height='141' scrolling='no' src='//codepen.io/yuanzhen/embed/waKMQo/?height=141&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/waKMQo/'>waKMQo</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-###float###
+###浮动###
 
 将元素向左或者向右浮动, **注意：**使用了!important，避免被覆盖
 
-*   添加`.pull-left`或者`.pull-right`类
+*   添加`.pull-left`或者`.pull-right`类 
 
 ```html 示例 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
 <span class="pull-left">float left...</span> 
 <span class="pull-right">float right...</span> 
 ```
 
-*   使用`.pull-left()`或者`.pull-right()`方式
+*   使用`.pull-left()`或者`.pull-right()`方式 
 
-```
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
 .pull-left(); // => float: left
 .pull-right(); // => float: right 
 ```
@@ -126,25 +126,25 @@ reset.css是符合贴吧业务具体需求的重置样式
     <div class="clearfix"></div>
 ```
 
-*   通过调用`.clearfix` mixins
+*   通过调用`.clearfix()` mixins
 
-```less
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
 .clearfix(); 
 ```
 
 ###图片替换###
 
-使用`.hide-text`类或对应的mixin可以用来将元素的文本内容替换为一张背景图。</p>
+可以用来将元素的文本内容替换为一张背景图
 
 *   添加`.hide-text`类
 
-```
+```html 示例 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
     <span class="hide-text"></span>
 ```
 
-*   调用`.hide-text` mixins
+*   调用`.hide-text()` mixins
 
-```
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
    .element{
        .hide-text();
    }
@@ -152,17 +152,17 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###文字省略###
 
-*   方法一：通过添加`.text-overflow`, text-overflow文字省略设置在dispaly： block或者dispaly: inline-block且设置宽度
+设置在`dispaly: block`或者`dispaly: inline-block`且设置宽度
 
-> 注意：.text-overflow类只是支持一行省略
+*   添加`.text-overflow`, 用于**单行**文字省略。 
 
-```html 使用类名 http://www.baidu.com link
+```html 使用类名 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
 <div class="text-overflow"></div>
 ```
 
-*   方法二：使用mixins .text-overflow(...)
+*   调用mixins `.text-overflow(...)`
 
-```
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
     .element{
         .text-overflow(); 
     }
@@ -171,21 +171,22 @@ reset.css是符合贴吧业务具体需求的重置样式
     }
 ```
 
-###合并icon，
+###合并icon
 
-> 设置宽高属性值[.icon-sprite-multi](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less)
+*   合并icon尺寸不一致，需要提供宽高信息
+
+<!---注意：---> @my-list: demo1 20px 30px; 会生成有问题
+
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
+//使用如下
+@my-list: demo1 20px 20px,
+          demo2 20px 30px; //三个参数分别是value, width, height
+.icon-sprite-multi(@my-list);
 
 ```
-/*
-* @lists： 合并的iconlist
-*/
-.icon-sprite-multi(@list);
-//使用如下
-@my_list: demo1 20px 20px,
-       demo2 20px 30px;
-.icon-sprite-mixins(@my_list);
+生成css文件
 
-//最后生成: 
+```
 .icon-demo1 {
   display: inline-block;
   width: 20px;
@@ -200,49 +201,79 @@ reset.css是符合贴吧业务具体需求的重置样式
 }
 ```
 
-> 根据value合并, [.icon-sprite-single(...)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less)，
+*   合并icon仅提供图片信息
+
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
+//使用如下
+@my-list: "demo1", "demo2", "demo3";
+.icon-sprite-single(@my-list);
 
 ```
-/*
-* @lists： 合并的iconlist
-*/
-.icon-sprite-single(@list);
-//使用如下
-@my_list: "demo1", "demo2", "demo3";
-.icon-sprite-mixins(@my_list);
-
-//最后生成: 
+生成css文件 
+```
 // .icon-demo1{background: url('images/icon_demo1.png?__sprite')}
 // .icon-demo2{background: url('images/icon_demo2.png?__sprite')}
 // .icon-demo3{background: url('images/icon_demo3.png?__sprite')}
 ```
 
 ###opacity###
->使用方式，具体参见[链接](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less)
-opacity设置: .opacity(.5)
-rgba透明设置: .background-opacity(#fff, .5)
+
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less source
+.opacity(.5)  // => opacity: .5
+.background-opacity(#fff, .5) => rgba(255, 255, 255, .5)
+```
 
 ###渐变###
->使用方式，具体参见[链接](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/gradient.less)
-从左到右横向linear渐变： #gradient .horizontal(@star-color, @end-color, @start-percent, @end-persent);
-从上到下纵向linear渐变： #gradient .vertical(@star-color, @end-color, @start-percent, @end-persent);
-径向渐变： #gradient .directional(@deg, @start-color, @end-color);
 
-###背景大小(background-size)###
+*   从左到右横向linear渐变
+
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/gradient.less source
+#gradient .horizontal(@star-color, @end-color, @start-percent, @end-persent);
 ```
+
+*   从上到下纵向linear渐变
+
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/gradient.less source
+#gradient .vertical(@star-color, @end-color, @start-percent, @end-persent);
+```
+
+*   径向渐变
+
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/gradient.less source
+#gradient .directional(@deg, @start-color, @end-color);
+```
+
+###背景大小###
+
 .background-size(@image-url, @rest...);
-//使用方式
-.background-size('test.png', 50% 50%);
-//生成
+
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
+.background-size('test.png', 50% 50%); 
+```
+生成css文件
+```
 background-image: url('test.png');
 background-size: 50% 50%;
 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizingMethod='scale');
 ```
 
+##三角形##
 
-##button##
+常用于一些小边角
 
-跨浏览器展现
+```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/triangle.less source
+/*
+* @param @direction 方向，提供 up, down, left, right四个方向
+* @param @width  横向长度 
+* @param @height  纵向长度 
+* @param @color 色值 
+*/
+.triangle(@direction, @width, @height, @color);
+```
+
+##按钮##
+
+###跨浏览器展现###
 
 据bootstrap的介绍，**强烈建议尽可能使用 `<button>`元素**来获得在各个浏览器上获得相匹配的绘制效果。
 
@@ -250,7 +281,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 
 ###作为按钮的元素###
 
-为 `<a>`、`<button>`、`<input type="submit">`、`<input type="button">`或 `<input type="reset">`元素添加按钮类（button class）即可使用 基础库 提供的样式。</p>
+为 `<a>`、`<button>`、`<input type="submit">`、`<input type="button">`或 `<input type="reset">`元素添加按钮类（button class）即可使用 基础库 提供的样式。
 
 ###预定义样式###
 在预定义样式中，
@@ -261,10 +292,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 <iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/YPMaar/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YPMaar/'>YPMaar</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-使用方式： 直接copy类名
-
-demo--样式
-代码：
+样式默认设置
 ```
 <button class="btn-default btn-small" >常用蓝色(.btn-default)</button>
 <button class="btn-attention btn-small" >关注(.btn-attention)</button>
@@ -272,7 +300,7 @@ demo--样式
 <button class="btn-disable btn-small" >不可用按钮(.btn-disable)</button>
 ```
 
-demo--尺寸
+尺寸默认设置
 ```
 <button class="btn-default btn-small" >常用尺寸(.btn-small)</button> 
 <button class="btn-default btn-middle" >中按钮(.btn-middle)</button> 
@@ -281,29 +309,6 @@ demo--尺寸
 
 ### 自定义按钮 ###
 
-以下是demo展示
-<iframe height='239' scrolling='no' src='//codepen.io/yuanzhen/embed/RNmjyZ/?height=239&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/RNmjyZ/'>RNmjyZ</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
-
-在要使用的element上增加btn类， btn的设置如下
-> 样式class(`.btn-default`、`.btn-attention`、`.btn-sub`、`.btn-disable`)的属性值，如果使用这些样式，可以需要使用.btn样式了
-```
-.btn{
-    display: inline-block;
-    cursor: pointer;
-    text-decoration: none;
-}
-```
-使用方式：
-
-```
-    <element class="btn element"></element>
-    .element{
-        .btn-variant(...); //or btn-styles(); 设置背景颜色，文字颜色或者border色值，参数请看下面的mixins 
-        .btn-size(...); //设置盒模型大小和字体大小, 参数请看下面的mixins
-    }
-
-```
 自定义按钮提供了以下两种样式mixins
 
 ```
@@ -325,27 +330,33 @@ demo--尺寸
 
 ```
 
+<iframe height='239' scrolling='no' src='//codepen.io/yuanzhen/embed/RNmjyZ/?height=239&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/RNmjyZ/'>RNmjyZ</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+
 自定义按钮是以btn为基础，
+
 *   如果和预定义样式中的4类样式不一致，建议使用.btn-variant(...)或者.btn-styles(...)进行设置;
 > 如果使用自定义样式，请不要再添加.btn_default, .btn_sub等预定义样式
+
 *   如果和预定义样式中的3类尺寸不一致，建议使用.btn-size(...)进行设置;
 > 如果使用自定义尺寸，请不要再添加.btn_small, .btn_middle等预定义尺寸
 
 ```
-<input type="button" value="test"/ class="btn my-btn">
-
-.my-btn{
-   .btn-styles(#fff, #555);
-}
+    <element class="btn element"></element>
+    .element{
+        .btn-variant(...); //or btn-styles(); 设置背景颜色，文字颜色或者border色值，参数请看下面的mixins 
+        .btn-size(...); //设置盒模型大小和字体大小, 参数请看下面的mixins
+    }
 
 ```
 
 ### 带icon的按钮 ###
 
-使用`<i class="icon-*"></i>`表示icon, 样式由用户自己定义，可以使用sprite图片，同时可以使用iconfont
+使用`<i class="icon-*"></i>`表示icon, 样式由用户自己定义，可以使用sprite图片，同时可以使用iconfont(暂时没有)
 
 > **注意：** 
-> 尽量是icon的尺寸和文字的尺寸保持一致，例如文字是14px，那么icon也也设置为14px; 
+> 尽量使icon的尺寸和文字的尺寸保持一致，例如文字是14px，那么icon也设置为14px; 
 > 使用vertical-align: middle 和 [margin-top: -.1em](http://snook.ca/archives/html_and_css/icons-and-type); 使icon居中对齐
 
 ```
