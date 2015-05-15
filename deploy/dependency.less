@@ -382,6 +382,140 @@
 .line-height-26() {
     line-height: @line-height-lg;     
 }
+/**
+ * @desc 表单样式
+ * @author dengxi
+ * @date  2015-05-06
+ */
+
+// mixin
+// tab键触发的focus样式
+.tab-focus() {
+  // Default
+  outline: thin dotted;
+  // WebKit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+/*------- form style reset start ---------*/
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  line-height: normal;
+}
+
+input[type="file"] {
+  display: block;
+}
+
+input[type="range"] {
+  display: block;
+}
+
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  .tab-focus();
+}
+/*------- form style reset end ---------*/
+
+/*------- form style with class start ---------*/
+// style for form element wrap
+.form-group {
+    line-height: 30px;
+    margin: 10px;
+    color: #333;
+    .form-label {
+        margin-right: 10px;
+    }    
+}
+
+// style for form element with border(text, number, texarea, select, email, url, date....) 
+.form-control {
+    display: block;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 8px;
+    border: 1px solid @input-border-color;
+    &:focus {
+        border-color: @input-focus-border-color;
+    }
+    &[disabled] {
+        cursor: not-allowed;
+    }
+    &[type=number] {
+        padding-right: 0;
+    }
+    select& {
+        padding: 0 \9; // for reason that ie will clip padding for <option>
+    }
+}
+
+// checkbox and radio common style
+.checkbox,
+.radio,
+.checkbox-inline,
+.radio-inline {
+    input {
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+}
+
+// block checkbox and radio style
+.checkbox,
+.radio {
+    display: block;
+}
+
+// inline checkbox and radio style
+.checkbox-inline,
+.radio-inline {
+    margin-right: 20px;
+}
+
+// block form style
+.form {
+    .form-group {
+        height: auto;
+    }
+    .form-label {
+        display: block;
+    }
+}
+
+// inline form style
+.form-inline {
+    .form-label {
+        float: left;
+        text-align: right;
+    }
+}
+/*------- form style with class end ---------*/
 #gradient {
     .horizontal(@start-color; @end-color; @start-percent; @end-percent) {
         // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
@@ -662,6 +796,181 @@
         .mix-border(@border-color);
     }
 }
+/**
+ * @desc 表单样式
+ * @author zhangshibiao
+ * @date  2015-05-11
+ */
+// table中需要的一些变量
+@gray-base: #000;
+@gray-light: lighten(@gray-base, 46.7%); // #777
+
+/* Padding for `<th>`s and `<td>`s. */
+@table-cell-padding: 8px;
+
+/* Padding for cells in `.table-condensed`. 紧凑型的padding*/
+@table-condensed-cell-padding: 5px;
+
+/* 表格默认背景*/
+@table-bg: transparent;
+
+/* Background color used for `.table-striped` 条纹背景色. */
+@table-bg-accent: #f9f9f9;
+
+/* Background color used for `.table-hover`.*/
+@table-bg-hover: #f5f5f5;
+@table-bg-active: @table-bg-hover;
+
+/* Border color for table and cell borders.*/
+@table-border-color: #ddd;
+
+//caption text color
+@text-muted: @gray-light; 
+
+// table margin-bottom
+@line-height-computed:20px; 
+@line-height-base: 1.428571429; // 20/14 
+@body-bg: #fff;
+
+//  Table mixin 
+
+.table-row-variant(@state; @background) {
+  .table > thead > tr,
+  .table > tbody > tr,
+  .table > tfoot > tr {
+    > td.@{state},
+    > th.@{state},
+    &.@{state} > td,
+    &.@{state} > th {
+      background-color: @background;
+    }
+  }
+
+  /* Hover states for `.table-hover` Note: this is not available for cells or rows within `thead` or `tfoot`.*/
+  .table-hover > tbody > tr {
+    > td.@{state}:hover,
+    > th.@{state}:hover,
+    &.@{state}:hover > td,
+    &:hover > .@{state},
+    &.@{state}:hover > th {
+      background-color: darken(@background, 5%);
+    }
+  }
+}
+
+/* Tables 基本样式 */
+
+table {
+  background-color: @table-bg;
+}
+caption {
+  padding-top: @table-cell-padding;
+  padding-bottom: @table-cell-padding;
+  color: @text-muted;
+  text-align: center;
+}
+th {
+  text-align: center;
+}
+
+// Baseline styles
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: @line-height-computed;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: @table-cell-padding;
+        text-align: center;
+        line-height: @line-height-base;
+        vertical-align: top;
+        border-top: 1px solid @table-border-color;
+      }
+    }
+  }
+  > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 1px solid @table-border-color;
+  }
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  > tbody + tbody {
+    border-top: 2px solid @table-border-color;
+  }
+
+  // Nesting
+  .table {
+    background-color: @body-bg;
+  }
+}
+
+
+/* padding 减半 更紧凑 */
+.table-condensed {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: @table-condensed-cell-padding;
+      }
+    }
+  }
+}
+
+
+/* 加border */
+.table-bordered {
+  border: 1px solid @table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid @table-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 1px;
+    }
+  }
+}
+
+/* 条纹类，隔行变色 */
+.table-striped {
+  > tbody > tr:nth-of-type(odd) {
+    background-color: @table-bg-accent;
+  }
+}
+
+/* table hover*/
+.table-hover {
+  > tbody > tr:hover {
+    background-color: @table-bg-hover;
+  }
+}
+
+
+/*  生成table 不同状态的下背景色，这里只保留了active */
+.table-row-variant(active; @table-bg-active);
 .thumbnail-size(@width, @height){
     width: @width;
     height: @height;
@@ -951,3 +1260,7 @@
 @default-current-text: @gray-darker;
 @default-current-bg-hover: #f7f7f7;
 @default-current-text-hover: @gray-darker;
+
+/* form component */
+@input-border-color: #e6e6e6;
+@input-focus-border-color: #5c9dff;
