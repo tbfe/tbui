@@ -17,47 +17,9 @@ reset.css是符合贴吧业务具体需求的重置样式
 *   `<ins>`hover状态不添加下划线
 
 ###基础色值###
-<span style="display: inline-block; width: 80px; height: 80px;">
-    <span style="display: inline-block; width: 80px; height: 80px; background-color: #333"></span> 
-    <span style="display:block; text-align: center">@gray-darker</span>
-</span>
-<span style="display: inline-block; width: 80px; height: 80px;">
-    <span style="display: inline-block; width: 80px; height: 80px; background-color: #ccc"></span> 
-    <span style="display:block; text-align: center">@gray</span>
-</span>
-<span style="display: inline-block; width: 80px; height: 80px;">
-    <span style="display: inline-block; width: 80px; height: 80px; background-color: #999"></span> 
-    <span style="display:block; text-align: center">@gray-lighter</span>
-</span>
-<span style="display: inline-block; width: 80px; height: 80px;">
-    <span style="display: inline-block; width: 80px; height: 80px; background-color: #000"></span> 
-    <span style="display:block; text-align: center">@black-color</span>
-</span>
-<span style="display: inline-block; width: 80px; height: 80px;">
-    <span style="display: inline-block; width: 80px; height: 80px; background-color: #fff"></span> 
-    <span style="display:block; text-align: center">@white-color</span>
-</span>
-<span style="display: inline-block; width: 80px; height: 80px;">
-    <span style="display: inline-block; width: 80px; height: 80px; background-color: #f74d4a"></span> 
-    <span style="display:block; text-align: center">@red-color</span>
-</span>
-<span style="display: inline-block; width: 80px; height: 80px;">
-    <span style="display: inline-block; width: 80px; height: 80px; background-color: #f8984a"></span> 
-    <span style="display:block; text-align: center">@orange-color</span>
-</span>
-<span style="display: inline-block; width: 80px; height: 80px;">
-    <span style="display: inline-block; width: 80px; height: 80px; background-color: #2d64b3"></span> 
-    <span style="display:block; text-align: center">@blue-color</span>
-</span>
 
 ###基础icon###
-
-<span style="display: inline-block; width: 80px; height: 80px;">
-    <span style="display: inline-block; width: 80px; height: 80px; background-color: #2d64b3">
-        <img src="http://gitlab.baidu.com/tbfe/tbui/blob/master/images/tbean.png" />
-    </span> 
-    <span style="display:block; text-align: center">icon-tbean</span>
-</span>
+<img src="http://fedev.baidu.com/~yuanzhen/UE/icon.png" />
 
 ##font##
 
