@@ -16,6 +16,13 @@ reset.css是符合贴吧业务具体需求的重置样式
 *   设置了基本颜色 @link-color ，并且当链接处于 :hover 状态时才添加下划线
 *   `<ins>`hover状态不添加下划线
 
+###基础色值###
+<span style="display: inline-block; width: 80px; height: 80px;">
+    <span style="display: inline-block; width: 80px; height: 80px; background-color: #ccc"></span> 
+    @gray: #ccc;
+</span>
+###基础icon###
+
 ##font##
 
 ### font-size ### 
