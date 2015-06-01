@@ -17,11 +17,9 @@ reset.css是符合贴吧业务具体需求的重置样式
 *   `<ins>`hover状态不添加下划线
 
 ###基础色值###
-<span style="display: inline-block; width: 80px; height: 80px;">
-    <span style="display: inline-block; width: 80px; height: 80px; background-color: #ccc"></span> 
-    @gray: #ccc;
-</span>
+
 ###基础icon###
+<img src="http://fedev.baidu.com/~yuanzhen/UE/icon.png" />
 
 ##font##
 
