@@ -212,8 +212,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 ###合并icon
 
 *   合并icon尺寸不一致，需要提供宽高信息
-
-<!---注意：---> @my-list: demo1 20px 30px; 会生成有问题
+@my-list: demo1 20px 30px; 会生成有问题
 
 ```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
 //使用如下
@@ -423,3 +422,121 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 }
 
 ```
+## 表单
+### 内联表单
+> 内联表单样式，即label和表单元素在同一行，适用于贴吧大多数表单样式
+
+```
+<form class="form">
+    <fieldset>
+        <legend>外联表单：</legend>
+        <div class="form-group">
+            <label class="form-label">输入框：</label><input class="form-control" type="text" ng-model="act_title" />
+        </div>
+        <div class="form-group">
+            <label class="form-label">下拉菜单：</label>
+            <select class="form-control" ng-model="act_type">
+                <option>选项一</option>
+                <option>选项二</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label">单行复选框：</label>
+            <label class="checkbox"><input type="checkbox" />1</label>
+        </div>
+        <div class="form-group">
+            <label class="form-label">单行单选框：</label>        
+            <label class="radio"><input type="radio" checked />1</label>
+        </div>
+        <div class="form-group">
+            <label class="form-label">单行多列复选框：</label>
+            <label class="checkbox-inline"><input type="checkbox">1</label>
+            <label class="checkbox-inline"><input type="checkbox">2</label>
+            <label class="checkbox-inline"><input type="checkbox">3</label>
+        </div>
+        <div class="form-group">
+            <label class="form-label">单行多列单选框：</label>
+            <label class="radio-inline"><input type="radio">1</label>
+            <label class="radio-inline"><input type="radio">2</label>
+        </div>
+        <div class="action-group">
+            <button type="submit" class="btn-default btn-small">提交</button>
+            <button type="reset" class="btn-sub btn-small">重置</button>
+        </div>
+    </fieldset>
+</form>
+
+```
+
+<iframe height='500' scrolling='no' src='http://codepen.io/dengxi/pen/JdEwWg?height=500&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/dengxi/pen/JdEwWg'>JdEwWg</a> by dengxi (<a href='http://codepen.io/yuanzhen'>@dengxi</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+### 外联表单
+> 外联表单样式，即label和表单元素不在同一行，使用于问卷及答题类表单样式
+
+```
+<form class="form-inline">
+    <fieldset>
+        <legend>内联表单：</legend>
+        <div class="form-group">
+            <label class="form-label">输入框：</label><input class="form-control" type="text" ng-model="act_title" />
+        </div>
+        <div class="form-group">
+            <label class="form-label">下拉菜单：</label>
+            <select class="form-control" ng-model="act_type">
+                <option>选项一</option>
+                <option>选项二</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label">单行复选框：</label>
+            <label class="checkbox"><input type="checkbox" />1</label>
+        </div>
+        <div class="form-group">
+            <label class="form-label">单行单选框：</label>        
+            <label class="radio"><input type="radio" checked />1</label>
+        </div>
+        <div class="form-group">
+            <label class="form-label">单行多列复选框：</label>
+            <label class="checkbox-inline"><input type="checkbox" checked />1</label>
+            <label class="checkbox-inline"><input type="checkbox" />2</label>
+            <label class="checkbox-inline"><input type="checkbox" />3</label>
+        </div>
+        <div class="form-group">
+            <label class="form-label">单行多列单选框：</label>
+            <label class="radio-inline"><input type="radio" checked />1</label>
+            <label class="radio-inline"><input type="radio" />2</label>
+        </div>
+        <div class="action-group">
+            <button type="submit" class="btn-default btn-small">提交</button>
+            <button type="reset" class="btn-sub btn-small">重置</button>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>活动平台表单实例：</legend>
+        <div class="form-group">
+            <label class="checkbox"><input type="checkbox" />活动初始每个用户可免费获得<input class="form-control" type="number" placeholder="1-99"/>次抽奖资格</label>
+        </div>
+        <div class="form-group">
+            <label class="checkbox"><input type="checkbox" />转贴本活动到其他贴吧，每次可获得<input class="form-control" type="number" placeholder="1-99"/>次抽奖资格</label>
+        </div>
+        <div class="form-group">
+            <label class="checkbox"><input type="checkbox" />在本吧签到，可获得<input class="form-control" type="number" placeholder="1-99"/>次抽奖资格</label>
+        </div>
+        <div class="form-group">
+            <label class="checkbox"><input type="checkbox" />回复本贴，可获得<input class="form-control" type="number" placeholder="1-99"/>次抽奖资格</label>
+        </div>
+        <div class="form-group">
+            <label class="checkbox"><input type="checkbox" />每日获得<input class="form-control" type="number" placeholder="1-99"/>次抽奖资格上限</label>
+        </div>
+        <div class="form-group">
+            <label class="checkbox"><input type="checkbox" />不允许同一用户重复中奖</label>
+        </div>
+        <span class="remind-tip">注：所有活动类型均要求用户先加关注才能参加，无需进行额外设置</span>
+    </fieldset>
+</form>
+
+```
+
+<iframe height='500' scrolling='no' src='http://codepen.io/dengxi/pen/aOpPyg?height=500&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/dengxi/pen/aOpPyg'>aOpPyg</a> by dengxi (<a href='http://codepen.io/yuanzhen'>@dengxi</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
