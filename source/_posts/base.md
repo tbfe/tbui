@@ -29,6 +29,19 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###基础icon###
 <img src="http://fedev.baidu.com/~yuanzhen/UE/icon.png" />
+在dom上增加class， 即 icon－  ＋  icon图片下命名
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+<i class="icon-vip1-16"></i>
+<i class="icon-vip1-18"></i>
+<i class="icon-vip2-16"></i>
+<i class="icon-vip2-18"></i>
+<i class="icon-vip1-gray-16"></i>
+<i class="icon-vip1-gray-18"></i>
+<i class="icon-vip2-gray-16"></i>
+<i class="icon-vip2-gray-18"></i>
+<i class="icon-tbean"></i>
+```
+
 
 ##font##
 
