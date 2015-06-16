@@ -62,7 +62,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 .font-family-sans-serif(); // => font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
 ```
 
-*   非衬线字体
+*   衬线字体
 
 ``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
 .font-family-serif(); // => font-family: Georgia, "Times New Roman", Times, serif;
