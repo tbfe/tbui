@@ -18,8 +18,30 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###基础色值###
 
+<span style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;background-color: #333;">@gray-darker</span><span
+ style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #666;">@gray</span><span
+ style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #999;">@gray-lighter</span><span
+ style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #000;">@black-color</span><span
+ style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #f74d4a;">@red-color</span><span
+ style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #f8984a;">@orange-color</span><span
+ style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #2d64b3;">@blue-color</span><span
+ style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #000;background-color: #fff;">@white-color</span>
+
 ###基础icon###
 <img src="http://fedev.baidu.com/~yuanzhen/UE/icon.png" />
+在dom上增加class， 即 icon－  ＋  icon图片下命名
+``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+<i class="icon-vip1-16"></i>
+<i class="icon-vip1-18"></i>
+<i class="icon-vip2-16"></i>
+<i class="icon-vip2-18"></i>
+<i class="icon-vip1-gray-16"></i>
+<i class="icon-vip1-gray-18"></i>
+<i class="icon-vip2-gray-16"></i>
+<i class="icon-vip2-gray-18"></i>
+<i class="icon-tbean"></i>
+```
+
 
 ##font##
 
@@ -40,7 +62,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 .font-family-sans-serif(); // => font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
 ```
 
-*   非衬线字体
+*   衬线字体
 
 ``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
 .font-family-serif(); // => font-family: Georgia, "Times New Roman", Times, serif;
@@ -137,19 +159,30 @@ reset.css是符合贴吧业务具体需求的重置样式
 .clearfix(); 
 ```
 
+###图片圆角###
+
+给元素增加圆角, 提供4px 和 50% 两种默认值
+
+* 添加`.image-radius` 或者  `.image-round` 类
+
+```html 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less source
+    <img src="" class="image-radius" />   /*4px的圆角*/
+    <img src="" class="image-round" />   /*50%的圆角*/
+```
+
 ###图片替换###
 
 可以用来将元素的文本内容替换为一张背景图
 
 *   添加`.hide-text`类
 
-```html 示例 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
+```html 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less source
     <span class="hide-text"></span>
 ```
 
 *   调用`.hide-text()` mixins
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less source
    .element{
        .hide-text();
    }
@@ -161,7 +194,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 *   添加`.text-overflow`, 用于**单行**文字省略。 
 
-```html 使用类名 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
+```html 使用类名 http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less source
 <div class="text-overflow"></div>
 ```
 
@@ -291,7 +324,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 
 ###预定义样式###
 在预定义样式中，
-提供了**四种样式**类: `.btn-default`、`.btn-attention`、`.btn-sub`、`.btn-disable`
+提供了**四种样式**类: `.btn-default`、`.btn-attention`、`.btn-sub`、`.btn-link`
 提供了**三种尺寸**类: `.btn-small`、`.btn-middle`、`.btn-larger`
 这四种样式和尺寸可以随意搭配使用。
 
@@ -303,7 +336,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 <button class="btn-default btn-small" >常用蓝色(.btn-default)</button>
 <button class="btn-attention btn-small" >关注(.btn-attention)</button>
 <button class="btn-sub btn-small" >副按钮(.btn-sub)</button>
-<button class="btn-disable btn-small" >不可用按钮(.btn-disable)</button>
+<a class="btn-link btn-small" >文字按钮(.btn-link)</a>
 ```
 
 尺寸默认设置
@@ -311,6 +344,14 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 <button class="btn-default btn-small" >常用尺寸(.btn-small)</button> 
 <button class="btn-default btn-middle" >中按钮(.btn-middle)</button> 
 <button class="btn-default btn-larger" >大按钮(.btn-larger)</button> 
+```
+
+###禁用状态###
+
+目前所有按钮的的禁用状态都是btn-disabled, 在元素上增加`.btn-disabled`类
+
+```
+<button class="btn-disabled btn-small" >副按钮(.btn-sub)</button>
 ```
 
 ### 自定义按钮 ###

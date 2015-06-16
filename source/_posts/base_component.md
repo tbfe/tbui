@@ -234,8 +234,9 @@ tags:
 
 > 使用方式：copy如下的DOM结构,
 *   `.pagination-default`为了避免和之前的pagination造成中途，在pagination之后加了一个default的后缀
-*   `.pagination-current`指当前page
-*   `.pagination-item`指左右的页签
+*   `.pagination-item`指普通的页签
+*   `.pagination-current`指当前的页签
+*   `.pagination-disabled`指禁用的页签
 
 ```
 <ul class="pagination-default clearfix">
