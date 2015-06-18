@@ -63,6 +63,137 @@
     .muitl-box-shadow(@shadow);
 }
 
+.bubble-position (@direction, @width, @height) when (@direction = up) {
+    top: -@height;
+    left: 0;
+}
+
+.bubble-position (@direction, @width, @height) when (@direction = 45) {
+    bottom: -@height;
+    left: 0;
+}
+
+.bubble-position (@direction, @width, @height) when (@direction = right) {
+    right: -@width;
+    top: 0;
+}
+
+.bubble-position (@direction, @width, @height) when (@direction = 135) {
+    left: -@width;
+    top: 0;
+}
+
+.bubble-position (@direction, @width, @height) when (@direction = down) {
+    bottom: -@height;
+    left: 0;
+}
+
+.bubble-position (@direction, @width, @height) when (@direction = -135) {
+    right: -@width;
+    top: 0;
+}
+
+.bubble-position (@direction, @width, @height) when (@direction = left) {
+    left: -@width;
+    top: 0;
+}
+
+.bubble-position (@direction, @width, @height) when (@direction = -45) {
+    bottom: -@height;
+    left: 0;
+}
+
+.bubble-outline-position (@direction, @width, @height, @border) when (@direction = up) {
+    top: -(@height - @border / sin(45));
+    left: 0;
+}
+
+.bubble-outline-position (@direction, @width, @height, @border ) when (@direction = 45) {
+    bottom: -(@height - @border - @border / sin(45));
+    left: 0;
+}
+
+.bubble-outline-position (@direction, @width, @height, @border) when (@direction = right) {
+    right: -(@width - @border / sin(45));
+    top: 0;
+}
+
+.bubble-outline-position (@direction, @width, @height, @border) when (@direction = 135) {
+    left: -(@width - @border - @border / sin(45));
+    top: 0;
+}
+
+.bubble-outline-position (@direction, @width, @height, @border) when (@direction = down) {
+    bottom: -(@height - @border / sin(45));
+    left: 0;
+}
+
+.bubble-outline-position (@direction, @width, @height, @border) when (@direction = -135) {
+    right: -(@width - @border - @border / sin(45));
+    top: 0;
+}
+
+.bubble-outline-position (@direction, @width, @height, @border) when (@direction = left) {
+    left: -(@width - @border / sin(45));
+    top: 0;
+}
+
+.bubble-outline-position (@direction, @width, @height, @border) when (@direction = -45) {
+    bottom: -(@width - @border - @border / sin(45));
+    left: @border;
+}
+
+
+.bubble-main(@color){
+    position: relative;
+    background: @color;
+}
+
+.bubble-tip(@direction, @width, @height, @color){
+    &:before {
+        content: '';
+        position: absolute;
+        .bubble-position(@direction, @width, @height);
+        .triangle(@direction, @width, @height, @color);
+    }
+}
+
+.bubble(@direction, @width, @height, @color) {
+    .bubble-main(@color);
+    .bubble-tip (@direction, @width, @height, @color);
+}
+
+
+.bubble-outline-main (@bg, @border-color, @border-width) {
+    .bubble-main(@bg);
+    border: @border-width solid @border-color;
+}
+
+.bubble-outline-tip(@direction, @width, @height, @bg-color, @border-width, @border-color){
+    &:before {
+        content: '';
+        position: absolute;
+        .bubble-position(@direction, @width, @height);
+        .triangle(@direction, @width, @height, @border-color);
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        .bubble-outline-position(@direction, @width, @height, @border-width);
+        .compute(@direction, @width, @height) when (@direction = 45), (@direction = -45), (@direction = 135), (@direction = -135) {
+            .triangle(@direction, @width - @border-width, @height - @border-width, @bg-color);
+        }
+        .compute(@direction, @width, @height) when (@direction = up), (@direction = down), (@direction = left), (@direction = right) {
+            .triangle(@direction, @width, @height, @bg-color);
+        }
+        .compute(@direction, @width, @height);
+    }
+}
+
+.bubble-outline (@direction, @width, @height, @bg-color, @border-width, @border-color){
+    .bubble-outline-main(yellow, #000, 4px);
+    .bubble-outline-tip(@direction, @width, @height, @bg-color, @border-width, @border-color);
+}
 /**
 * @author: yuanzhen 
 * @date: 15/01/08
@@ -744,30 +875,55 @@
 
 .triangle(@direction, @width, @height, @color) when (@direction = up) {
     &:extend(.triangle-base);
-    border-left: (@width / 2) solid transparent;
-    border-right: (@width / 2) solid transparent;
+    border-left: @width solid transparent;
+    border-right: @width solid transparent;
     border-bottom: @height solid @color;
 }
 
+
 .triangle(@direction, @width, @height, @color) when (@direction = down) {
     &:extend(.triangle-base);
-    border-left: (@width / 2) solid transparent;
-    border-right: (@width / 2) solid transparent;
+    border-left: @width solid transparent;
+    border-right: @width solid transparent;
     border-top: @height solid @color;
 }
 
 .triangle(@direction, @width, @height, @color) when (@direction = left) {
     &:extend(.triangle-base);
-    border-top: (@height / 2) solid transparent;
-    border-bottom: (@height / 2) solid transparent;
+    border-top: @height solid transparent;
+    border-bottom: @height solid transparent;
     border-right: @width solid @color;
 }
 
 .triangle(@direction, @width, @height, @color) when (@direction = right) {
     .triangle-base();
-    border-top: (@height / 2) solid transparent;
-    border-bottom: (@height / 2) solid transparent;
+    border-top: @height solid transparent;
+    border-bottom: @height solid transparent;
     border-left: @width solid @color;
+}
+
+.triangle(@direction, @width, @height, @color) when (@direction = 45) {
+    &:extend(.triangle-base);
+    border-bottom: @height solid transparent;
+    border-right: @width solid @color
+}
+
+.triangle(@direction, @width, @height, @color) when (@direction = -45) {
+    &:extend(.triangle-base);
+    border-bottom: @height solid transparent;
+    border-left: @width solid @color;
+}
+
+.triangle(@direction, @width, @height, @color) when (@direction = 135) {
+    &:extend(.triangle-base);
+    border-left: @width solid transparent;
+    border-bottom: @height solid @color;
+}
+
+.triangle(@direction, @width, @height, @color) when (@direction = -135) {
+    &:extend(.triangle-base);
+    border-right: @width solid transparent;
+    border-bottom: @height solid @color;
 }
 .clearfix() {
     zoom:1;
