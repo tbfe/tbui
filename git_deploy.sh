@@ -5,14 +5,15 @@ hexo clean
 cd deploy
 
 if [ ! -d "combineLess" ]; then
-      mkdir combineLess 
+    mkdir combineLess 
+else
+    git clone http://gitlab.baidu.com/tbfe/tbui.git combineLess
 fi
 
 if [ ! -d "setting" ]; then
-      mkdir setting 
+    mkdir setting 
 fi
 
-git clone http://gitlab.baidu.com/tbfe/tbui.git combineLess
 node combine.js
 hexo g 
 cp -r setting ../public/base 
