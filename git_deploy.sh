@@ -7,7 +7,7 @@ mkdir combineLess
 git clone http://gitlab.baidu.com/tbfe/tbui.git combineLess
 node combine.js
 hexo g 
-mv setting ../public/base 
+cp -r setting ../public/base 
 hexo d
 git add dependency.less
 git commit -a -m 'add dependency'
