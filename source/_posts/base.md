@@ -18,6 +18,12 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###基础色值###
 
+<iframe height='auto' scrolling='no' src='variable.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+</iframe>
+
+###浮动###
+
+
 <span style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;background-color: #333;">@gray-darker</span><span
  style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #666;">@gray</span><span
  style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #999;">@gray-lighter</span><span
