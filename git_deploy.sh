@@ -12,7 +12,6 @@ else
 fi
 
 if [ ! -d "setting" ]; then
-    echo '---------'
     mkdir setting 
 fi
 
