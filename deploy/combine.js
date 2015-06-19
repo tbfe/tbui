@@ -25,7 +25,7 @@ var init = function () {
 
 var getAllColor = function () {
     var variblePath = path.resolve(fromPath, 'varible.less');               
-    var varibleOutputPath = path.resolve(__dirname, 'varible.js');
+    var varibleOutputPath = path.resolve(__dirname, 'setting/variable.js');
     console.log(varibleOutputPath);
     var varibleData = fs.readFileSync(variblePath, 'utf-8');                    
     var reg = /(\@[a-z\-]+?)\s*?\:\s*?(#(?:[a-fA-F0-9]{6}|[a-fA-F0-9]{3}))\;/gm;
