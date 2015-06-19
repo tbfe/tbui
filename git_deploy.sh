@@ -5,10 +5,9 @@ hexo clean
 cd deploy
 
 if [ ! -d "combineLess" ]; then
-    echo 'ffff--------'
     mkdir combineLess 
 else
-    echo 'iiii--------'
+    rm -rf combineLess
     git clone http://gitlab.baidu.com/tbfe/tbui.git combineLess
 fi
 
