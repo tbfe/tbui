@@ -18,20 +18,8 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###基础色值###
 
-<iframe height='auto' scrolling='no' src='setting/variable.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+<iframe height='400px' scrolling='yes' src='setting/variable.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
-
-###浮动###
-
-
-<span style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;background-color: #333;">@gray-darker</span><span
- style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #666;">@gray</span><span
- style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #999;">@gray-lighter</span><span
- style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #000;">@black-color</span><span
- style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #f74d4a;">@red-color</span><span
- style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #f8984a;">@orange-color</span><span
- style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #fff;background-color: #2d64b3;">@blue-color</span><span
- style="display:inline-block;width:80px;height:80px;vertical-align: middle;margin: 10px;text-align:center;color: #000;background-color: #fff;">@white-color</span>
 
 ###基础icon###
 <img src="http://fedev.baidu.com/~yuanzhen/UE/icon.png" />
