@@ -1,4 +1,5 @@
 #!/bin/bash
+
 git pull
 hexo clean
 cd deploy
