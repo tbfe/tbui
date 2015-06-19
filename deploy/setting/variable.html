@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style>
+            div, ul, li{
+                margin: 0;
+                padding: 0;
+                outline: 0;
+            } 
+
+            ul, li {
+                list-style: none; 
+            }
+
+            .color-setting-ul {
+                overflow: hidden; 
+            }
+
+            .color-setting-ul li{
+                float: left;
+                width: 80px;
+                height: 120px;
+                margin-right: 10px;
+                font-size: 14px;
+            }
+
+            .color-block {
+                display:inline-block;
+                width:80px;
+                height:40px;
+                margin-bottom: 10px;
+                vertical-align: middle;
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="color-setting-cnt"></div> 
+        <script type="text/javascript" src="variable.js"></script>
+        <script type="text/javascript">
+            var cnt = document.getElementById('color-setting-cnt'); 
+            var data = window.color_varible;
+            var tpl = '<ul class="color-setting-ul">';
+            for (var key in data) {
+                tpl += '<li>';  
+                tpl += '<span class="color-block" style="background: '+data[key]+'"></span>';  
+                tpl += key;  
+                tpl += '</li>';  
+            }
+            tpl += '</ul>';
+            cnt.innerHTML = tpl;
+        </script>
+    </body>
+</html>

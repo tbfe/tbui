@@ -8,5 +8,4 @@ deploy.sh
 .deploy_git/
 _config.yml
 deploy/combineLess
-deploy/setting
 
