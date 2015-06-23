@@ -1,0 +1,1 @@
+window.iconfont_varible = {".icon-bell": "\e600",".icon-phone": "\e601",".icon-setting": "\e602",".icon-store": "\e603",".icon-t": "\e604"}

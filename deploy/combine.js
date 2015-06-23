@@ -53,7 +53,19 @@ var getAllIcon = function () {
 };
 
 var getAllIconFont = function  () {
-
+    var iconfontPath = path.resolve(__dirname, './combineLess/style/iconfont.less');               
+    var iconfontOutputPath = path.resolve(__dirname, 'setting/iconfont.js');
+    var iconfontData = fs.readFileSync(iconfontPath, 'utf-8');                    
+    var reg = /(\.icon-[a-zA-Z0-9]*?)(\s*?\:\s*?before)(\s*?\{\s*?)(.*?)(\s*?\}\s*?)/g;
+    var outputData  = '';                                                 
+    iconfontData.replace(reg, function(match, $1, $2, $3, $4, $5){                       
+        $4 = $4.slice(0, $4.length-1).split(':')[1];
+        outputData += '"'  + $1 + '"' + ':' +  $4 + ',';        
+    });                                                                         
+    outputData = outputData.slice(0, outputData.length - 1);
+    console.log(outputData);
+    fs.writeFileSync(iconfontOutputPath, "window.iconfont_varible = {" + outputData + "}");                                                                
 };
+
 
 init();
