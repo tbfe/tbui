@@ -18,12 +18,11 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###基础色值###
 
-<iframe height='100px' scrolling='yes' src='setting/variable.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+<iframe height='400px' scrolling='yes' src='setting/variable.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
 ###基础icon###
-<img src="http://fedev.baidu.com/~yuanzhen/UE/icon.png" />
-<iframe height='400px' scrolling='yes' src='setting/icon.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+<iframe height='100px' scrolling='yes' src='setting/icon.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 在dom上增加class， 即 icon－  ＋  icon图片下命名
 ``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
