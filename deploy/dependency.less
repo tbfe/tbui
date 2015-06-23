@@ -1055,27 +1055,38 @@
     filter: e(%("progid:DXImageTransform.Microsoft.AlphaImageLoader(src=%d, sizingMethod='scale')", @image-url));
 }
 
+/*base*/
 @white-color: #fff;
 @black-color: #000;
-@gray: #666;
-@gray-darker: #333;
-@gray-lighter: #999;
+@gray-color: #666;
+@gray-darker-color: #333;
+@gray-lighter-color: #999;
 @red-color: #f74d4a;
 @orange-color: #f8984a;
 @blue-color: #2d64b3;
 @visited-color: #653096;
+/*base*/
+
+
+@white: @white-color;
+@black: @black-color;
+@gray: @gray-color;
+@gray-darker: @gray-darker-color;
+@gray-lighter: @gray-lighter-color;
+@red: @red-color;
+@orange: @orange-color;
+@blue: @blue-color;
+@visited: @visited-color;
 
 @text-color: @gray-darker;
-
 @body-bg: #fff;
-
-
 
 @link-color: @blue-color;
 @link-hover-color: @blue-color;
 @link-visited-color: @visited-color;
 @link-hover-decoration: underline;
 
+/*font*/
 @font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -1084,12 +1095,11 @@
 @font-family-serifOnly: sans-serif;
 @font-family-base: @font-family-sans-serif;
 
-
 @font-size-base: 14px;
 @font-size-sm: 12px;
 @font-size-lg: 16px;
 @font-size-lger: 20px;
-@usual-font-size: replace(~"@{font-size-base}", 'px', ''), 
+@usual-font-size: replace(~"@{font-size-base}", 'px', ''),
                   replace(~"@{font-size-sm}", 'px', ''),
                   replace(~"@{font-size-lg}", 'px', ''),
                   replace(~"@{font-size-lger}", 'px', '');
@@ -1099,8 +1109,9 @@
 @font-weight-bold: bold;
 @usual-font-weight: ~"@{font-weight-normal}", ~"@{font-weight-bold}";
 
-@line-height-normal: 22px; 
-@line-height-lg: 26px; 
+/*line-height*/
+@line-height-normal: 22px;
+@line-height-lg: 26px;
 @default-line-height: @font-size-base;
 
 @container-width: 980px;
@@ -1111,7 +1122,7 @@
 
 @input-color-placeholder: #bcbcbc;
 
-@nav-bg-hover-color: #1e2339;  
+@nav-bg-hover-color: #1e2339;
 @nav-bg-color: #282d45;
 @search-bg-color: #7e818f;
 
@@ -1122,7 +1133,7 @@
 @default-bg: #398bfc;
 @default-bg-hover-top: #3887fa;
 @default-bg-hover-bottom: #3782f0;
-@default-bg-hover: @default-bg-hover-top @default-bg-hover-bottom; 
+@default-bg-hover: @default-bg-hover-top @default-bg-hover-bottom;
 @default-bg-active: #317ef3;
 @default-border: #3782f0;
 @default-border-hover: #296cee;
@@ -1200,4 +1211,4 @@
 @table-border-color: #ddd;
 
 /* table margin-bottom */
-@line-height-computed:20px; 
+@line-height-computed:20px;
