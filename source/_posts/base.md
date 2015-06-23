@@ -31,6 +31,9 @@ reset.css是符合贴吧业务具体需求的重置样式
 ```
 在dom上增加class， 即 icon－  ＋  icon图片下命名
 
+###iconfont###
+ing...
+
 ##font##
 
 ### font-size ### 
