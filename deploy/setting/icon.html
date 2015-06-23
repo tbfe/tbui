@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/> 
+        <style>
+            ul, li {
+                list-style: none; 
+            } 
+            .icon-block-cnt{
+                overflow: hidden;
+            }
+            .icon-block-cnt li{
+                float: left; 
+                width: 80px;
+                height: 120px;
+                margin-right: 10px;
+                font-size: 14px;
+                text-align: center;
+            } 
+
+        </style>
+    </head>
+    <body>
+        <div id="icon-cnt"></div> 
+        <script type="text/javascript" src="icon.js"></script>
+        <script type="text/javascript">
+            var cnt = document.getElementById('icon-cnt'); 
+            var data = window.icon_varible.split(',');
+            var tpl = '<ul class="icon-block-cnt">';
+            for (var i = 0, len = data.length; i < len; i++){
+                tpl += '<li>';
+                tpl += '<img src="http://tb2.bdstatic.com/tb/static-common/external_lib/tbui/images/'+ data[i]+'" class="">';
+                tpl += '<p>' + data[i].split('.')[0] + '</p>';
+                tpl += '</li>';
+            }
+            tpl += '</ul>';
+            cnt.innerHTML = tpl;
+        </script>
+    </body>
+</html>
+
