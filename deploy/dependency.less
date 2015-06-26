@@ -448,7 +448,7 @@
 }
 
 .bubble-outline (@direction, @width, @height, @bg-color, @border-width, @border-color){
-    .bubble-outline-main(yellow, #000, @border-width);
+    .bubble-outline-main(@bg-color, @border-color, @border-width);
     .bubble-outline-tip(@direction, @width, @height, @bg-color, @border-width, @border-color);
 }
 /**
