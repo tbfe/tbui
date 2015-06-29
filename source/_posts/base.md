@@ -302,7 +302,8 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 </iframe>
 
 ##bubble##
-各种形态的bubble，紧张的制作过程中。。。
+<iframe height='257' scrolling='no' src='//codepen.io/yuanzhen/embed/NqXPrE/?height=257&theme-id=13754&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/NqXPrE/'>bubble</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ##按钮##
 
