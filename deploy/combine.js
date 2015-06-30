@@ -27,12 +27,23 @@ var getAllColor = function () {
     var variblePath = path.resolve(fromPath, 'varible.less');               
     var varibleOutputPath = path.resolve(__dirname, 'setting/variable.js');
     var varibleData = fs.readFileSync(variblePath, 'utf-8');                    
-    var test = /(\/\*+?base\*+?\/)(\.?)(\/\*+?base\*+?\/)/;
+
+    var baseargs = /\/\*+[^\n]*baseStart[^\n]*\*+\/([^\/]*)\/\*+[^\n]*baseEnd[^\n]*\*+\//g;
     var reg = /(\@[a-z\-]+?)\s*?\:\s*?(#(?:[a-fA-F0-9]{6}|[a-fA-F0-9]{3}))\;/gm;
-    var varibleColorData  = '';                                                 
-    varibleData.replace(reg, function(match, pre, after){                       
-        varibleColorData += '"'  + pre + '"' + ':' + '"' + after + '",';        
-    });                                                                         
+
+    var varibleTmpData = '';
+    var varibleColorData  = '';
+
+    varibleData.replace(baseargs, function (match, $1) {
+        varibleTmpData +=  $1;
+    });
+
+    varibleTmpData.replace(reg, function(match, pre, after){
+        varibleColorData += '"'  + pre + '"' + ':' + '"' + after + '",';
+    });
+
+    console.log(varibleColorData);
+
     var varibleColorJSON = varibleColorData.slice(0, varibleColorData.length-1);
     fs.writeFileSync(varibleOutputPath, "window.color_varible = {" + varibleColorJSON + "}");                                                                
 };
@@ -64,7 +75,6 @@ var getAllIconFont = function  () {
         outputData += '"'  + $1 + '"' + ':' +  $4 + ',';        
     });                                                                         
     outputData = outputData.slice(0, outputData.length - 1);
-    console.log(outputData);
     fs.writeFileSync(iconfontOutputPath, "window.iconfont_varible = {" + outputData + "}");                                                                
 };
 
