@@ -29,7 +29,8 @@ var getAllColor = function () {
     var varibleData = fs.readFileSync(variblePath, 'utf-8');                    
 
     var baseargs = /\/\*+\W*baseStart\W*\*\/([^\/]*)\/\*+\W*baseEnd\W*\*\//g;
-    var reg = /(\@[a-z\-]+?)\s*?\:\s*?(#(?:[a-fA-F0-9]{6}|[a-fA-F0-9]{3}))\;/gm;
+    var reg = /(\@[a-z0-9\-]+?)\s*?\:\s*?(#(?:[a-fA-F0-9]{6}|[a-fA-F0-9]{3}))\;/gm;
+
 
     var varibleTmpData = '';
     var varibleColorData  = '';
@@ -37,6 +38,7 @@ var getAllColor = function () {
     varibleData.replace(baseargs, function (match, $1) {
         varibleTmpData +=  $1;
     });
+
 
     varibleTmpData.replace(reg, function(match, pre, after){
         varibleColorData += '"'  + pre + '"' + ':' + '"' + after + '",';
