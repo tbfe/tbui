@@ -48,7 +48,7 @@
             var keys = Object.keys(data);
             for (var key in data) {
                 tpl += '<li>';  
-                tpl += '<span class="color-block" style="background: '+data[key]+'">'+data[key]+'</span>';  
+                tpl += '<span class="color-block" style="background: '+(key = "@black" ? data[key]: "#fff")+'">'+data[key]+'</span>';  
                 tpl += key;  
                 tpl += '</li>';  
                 if (key == '@black') {
