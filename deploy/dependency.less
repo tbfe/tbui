@@ -1313,46 +1313,59 @@
 }
 
 /**baseStart**/
-@blue: #3e89fa;
-@blue-light: #7fb2ff;
-@blue-lighter: #bfd9ff;
-@blue-lightest: #f2f7ff;
+@gph-blue: #3e89fa;
+@gph-blue-light: #7fb2ff;
+@gph-blue-lighter: #bfd9ff;
+@gph-blue-lightest: #f2f7ff;
 
-@gray: #9fa2ab;
-@gray-light: #f0f1f2;
-@gray-lighter: #fafbfc;
+@gph-gray: #9fa2ab;
+@gph-gray-light: #f0f1f2;
+@gph-gray-lighter: #fafbfc;
 
-@dimgray: #808080;
-@dimgray-light: #b2b2b2;
-@dimgray-lighter: #fafafa;
+@gph-dimgray: #808080;
+@gph-dimgray-light: #b2b2b2;
+@gph-dimgray-lighter: #fafafa;
 
-@ghostwhite: #f2f2f2;
-@ghostwhite-dark: #d9d9d9;
-@ghostwhite-darker: #bfbfbf;
+@gph-ghostwhite: #f2f2f2;
+@gph-ghostwhite-dark: #d9d9d9;
+@gph-ghostwhite-darker: #bfbfbf;
 
-@orange: #fa7d3e;
-@orange-light: #ff9966;
-@orange-lighter: #fff6f2;
+@gph-orange: #fa7d3e;
+@gph-orange-light: #ff9966;
+@gph-orange-lighter: #fff6f2;
 
-@red: #e64545;
-@red-light: #fa6464;
-@red-lighter: #fff2f2;
+@gph-red: #e64545;
+@gph-red-light: #fa6464;
+@gph-red-lighter: #fff2f2;
 
-@yellow: #fad43e;
-@yellow-dark: #ffb340;
-@yellow-light: #ffc773;
-@yellow-lighter: #fffcf2;
+@gph-yellow: #fad43e;
+@gph-yellow-dark: #ffb340;
+@gph-yellow-light: #ffc773;
+@gph-yellow-lighter: #fffcf2;
 
-@extend-green: #50bf39;
-@extend-seagreen: #0abf98;
-@extend-purple: #864cbf;
-@extend-pink: #f2619b;
-@extend-skyblue: #309ef2;
+@gph-extend-green: #50bf39;
+@gph-extend-seagreen: #0abf98;
+@gph-extend-purple: #864cbf;
+@gph-extend-pink: #f2619b;
+@gph-extend-skyblue: #309ef2;
+
+@white: #fff;
+@black: #000;
+
+@text-gray: #666;
+@text-gray-dark: #333;
+@text-gray-light: #999;
+@text-gray-lighter: #ccc;
+@text-red: #e63939;
+@text-orange: #fa7d3e;
+@text-blue: #2d64b3;
+@text-visited: #653096;
 
 /**baseEnd**/
 
 
-/**before color**/
+/**before color standard**/
+
 @white-color: #fff;
 @black-color: #000;
 @gray-color: #666;
@@ -1362,10 +1375,7 @@
 @orange-color: #f8984a;
 @blue-color: #2d64b3;
 @visited-color: #653096;
-/**before color**/
 
-@white: @white-color;
-@black: @black-color;
 @gray: @gray-color;
 @gray-darker: @gray-darker-color;
 @gray-lighter: @gray-lighter-color;
@@ -1374,7 +1384,9 @@
 @blue: @blue-color;
 @visited: @visited-color;
 
-@text-color: @gray-darker;
+/**before color standard**/
+
+@text-color: @text-gray-dark;
 @body-bg: #fff;
 
 @link-color: @blue-color;
