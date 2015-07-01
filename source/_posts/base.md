@@ -414,3 +414,53 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 }
 
 ```
+
+##分页（pagination）##
+
+提供带有展示页码的分页组件，其中php分页和js组件都是基于这个组件的样式
+
+###带页码的默认组件###
+
+> 使用方式：copy如下的DOM结构,
+*   `.pagination-default`为了避免和之前的pagination造成中途，在pagination之后加了一个default的后缀
+*   `.pagination-item`指普通的页签
+*   `.pagination-current`指当前的页签
+*   `.pagination-disabled`指禁用的页签
+
+```
+<ul class="pagination-default clearfix">
+    <li><a class="pagination-item"></a></li>
+    <li><a class="pagination-item pagination-current"></a></li>
+    <li><a class="pagination-item"></a></li>
+    <li><a class="pagination-item"></a></li>
+</ul>
+```
+<iframe height='115' scrolling='no' src='//codepen.io/yuanzhen/embed/VLLoLq/?height=115&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/VLLoLq/'>pagination</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+###可配置选项###
+*   配置分页的尺寸[.pagination-size(…)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/pagination.less)
+```
+/**
+* @padding-vertical: 每一个页签的上下间距
+* @padding-horizontal: 每一个页签的左右间距
+* @font-size: 字体大小
+*/
+.pagination-size(@padding-vertical; @padding-horizontal; @font-size){
+}
+```
+
+*   配置分页的样式 [.pagination-style(…)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/pagination.less)
+
+```
+/**
+* @background-color: 背景颜色
+* @text-color: 文字颜色
+* @background-hover-color: 背景hover颜色
+* @text-hover-color: 文字hover颜色
+* @border-color: 默认为none，可以设置颜色值 
+*/
+.gination-style(@background-color; @text-color; @background-hover-color; @text-hover-color; @border-color: none){
+}
+```
+
