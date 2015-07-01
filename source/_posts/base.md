@@ -319,8 +319,8 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 
 ###预定义样式###
 在预定义样式中，
-提供了**四种样式**类: `.btn-default`、`.btn-attention`、`.btn-sub`、`.btn-link`
-提供了**三种尺寸**类: `.btn-small`、`.btn-middle`、`.btn-larger`
+提供了**四种样式**类: `.btn-default`、`.btn-attention`、`.btn-encourage`, `.btn-sub`、`.btn-link`
+提供了**三种尺寸**类: `.btn-small`、`.btn-middle`、`.btn-large`、`.btn-larger` , 
 这四种样式和尺寸可以随意搭配使用。
 
 <iframe height='368' scrolling='no' src='//codepen.io/yuanzhen/embed/YPMaar/?height=368&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YPMaar/'>YPMaar</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
