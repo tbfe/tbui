@@ -44,8 +44,6 @@ var getAllColor = function () {
         varibleColorData += '"'  + pre + '"' + ':' + '"' + after + '",';
     });
 
-    console.log(varibleColorData);
-
     var varibleColorJSON = varibleColorData.slice(0, varibleColorData.length-1);
     fs.writeFileSync(varibleOutputPath, "window.color_varible = {" + varibleColorJSON + "}");                                                                
 };
