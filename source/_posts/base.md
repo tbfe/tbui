@@ -18,7 +18,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###基础色值###
 
-<iframe height='750px' scrolling='yes' src='setting/variable.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+<iframe height='500px' scrolling='yes' src='setting/variable.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
 ###基础icon###
