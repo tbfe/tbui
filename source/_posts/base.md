@@ -33,7 +33,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###iconfont###
 
-<iframe height='180px' scrolling='yes' src='setting/iconfont.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+<iframe height='240px' scrolling='yes' src='setting/iconfont.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
 ##font##
