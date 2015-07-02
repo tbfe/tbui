@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            ul, li {
+                list-style: none;
+            }
+            .icon-block-cnt{
+                overflow: hidden;
+            }
+            .icon-block-cnt li{
+                float: left;
+                width: 80px;
+                height: 120px;
+                margin-right: 10px;
+                font-size: 14px;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="icon-cnt"></div>
+        <script type="text/javascript" src="icon.js"></script>
+        <script type="text/javascript">
+            var cnt = document.getElementById('icon-cnt');
+            var data = JSON.parse(window.iconfont_varible);
+            var tpl = '<ul class="icon-block-cnt">';
+            for (var key in data){
+                tpl += '<li>';
+                tpl += '<i class="iconfont '+key.split('.')[1]+'"></i>';
+                tpl += '<p>' + key.split('.')[1] + '</p>';
+                tpl += '</li>';
+            }
+            tpl += '</ul>';
+            cnt.innerHTML = tpl;
+        </script>
+    </body>
+</html>
