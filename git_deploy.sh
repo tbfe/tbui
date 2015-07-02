@@ -17,8 +17,8 @@ fi
 
 node combine.js
 hexo g 
-cp -r combineLess/font ../public/base
 cp -r setting ../public/base 
+cp -r combineLess/font ../public/base/setting
 hexo d
 git add dependency.less
 git commit -a -m 'add dependency'

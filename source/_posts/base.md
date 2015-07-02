@@ -32,7 +32,9 @@ reset.css是符合贴吧业务具体需求的重置样式
 在dom上增加class， 即 icon－  ＋  icon图片下命名
 
 ###iconfont###
-ing...
+
+<iframe height='180px' scrolling='yes' src='setting/iconfont.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+</iframe>
 
 ##font##
 
