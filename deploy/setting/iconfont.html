@@ -45,7 +45,7 @@
             var tpl = '<ul class="icon-block-cnt">';
             for (var key in data){
                 tpl += '<li>';
-                tpl += '<i class="iconfont '+key.split('.')[1]+'">'+data[key]+'</i>';
+                tpl += '<i class="iconfont '+key.split('.')[1]+'">'&#x+data[key]+'</i>';
                 tpl += '<p>' + key.split('.')[1] + '</p>';
                 tpl += '</li>';
             }
