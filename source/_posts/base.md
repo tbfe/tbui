@@ -26,7 +26,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 <iframe height='180px' scrolling='yes' src='setting/icon.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
-``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/fis2/less/font.less source 
 <i class="icon-vip1-16"></i>
 ```
 在dom上增加class， 即 icon－  ＋  icon图片下命名
@@ -46,7 +46,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 ### font-size ### 
 
-``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less source 
 .font-size-12(); // => font-size: 12px;
 .font-size-14(); // => font-size: 14px;
 .font-size-16(); // => font-size: 16px;
@@ -57,51 +57,51 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 *   非衬线字体
 
-``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less source 
 .font-family-sans-serif(); // => font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
 ```
 
 *   衬线字体
 
-``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less source 
 .font-family-serif(); // => font-family: Georgia, "Times New Roman", Times, serif;
 ```
 
 *   等宽字体
 
-``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less source 
 .font-family-mono(); // => font-family: Menlo, Monaco, Consolas, "Courier New", monospace;  
 ```
 
 *   微软雅黑
 
-``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less source 
 .font-family-yahei(); // => font-family: "microsoft yahei" simhei sans-serif;
 ```
 
 ### line-height ###
 
-``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less source 
 .line-height-22(); // => line-height: 22px;
 .line-height-26(); // => line-height: 26px;
 ```
 
 ### font-weight ###
 
-``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less source 
 .font-weight-normal(); // => font-weight: normal; 
 .font-weight-bold(); // => font-weight: bold;
 ```
 
 ### 链接色值设置 ###
 
-``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less source 
 .a-color(@link: @link-color; @hover: @link-color; @visited: @visited-color);
 ```
 
 ### 链接下划线设置 ###
 
-``` less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/font.less source 
+``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less source 
 .a-decoration(@link: none; @hover: underline);
 ```
 
@@ -137,7 +137,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 *   使用`.pull-left()`或者`.pull-right()`方式 
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/master/utility_compile.less source
 .pull-left(); // => float: left
 .pull-right(); // => float: right 
 ```
