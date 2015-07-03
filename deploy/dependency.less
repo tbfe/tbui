@@ -1098,27 +1098,7 @@
     font-size: @font-size;
 }
 
-.pagination-style(@background-color; @text-color; @background-hover-color; @text-hover-color; @border-color: none){
-    .mix-border(@a) when (iscolor(@a)){
-        border: 1px solid @border-color;
-    }
-    .mix-border(@a) when not (iscolor(@a)){
-        border: 1px solid transparent;
-    }
-    background: @background-color;
-    color: @text-color;
-    .mix-border(@border-color);
-    &:visited{
-        color: @text-hover-color;
-    }
-    &:hover{
-        background: @background-hover-color;
-        color: @text-hover-color;
-        .mix-border(@border-hover-color);
-    }
-}
-
-.pagination-style-default(@background-color; @text-color; @border-color; @background-hover-color; @text-hover-color; @border-hover-color){
+.pagination-style(@background-color; @text-color; @border-color; @background-hover-color; @text-hover-color; @border-hover-color){
     background: @background-color;
     color: @text-color;
     border: 1px solid @border-color;
@@ -1533,10 +1513,10 @@
 @btn-link-text: @link-color;
 
 /*pagination component*/
-@default-item-bg: @white-color;
+@default-item-bg: #fff;
 @default-item-border: #e6e6e6;
 @default-item-text: #666;
-@default-item-bg-hover: #e9f1f7;
+@default-item-bg-hover: #fff;
 @default-item-border-hover: #3e89fa;
 @default-item-text-hover: #3e89fa;
 

@@ -12,7 +12,7 @@
             .icon-block-cnt li{
                 float: left;
                 width: 80px;
-                height: 120px;
+                height: 100px;
                 margin-right: 10px;
                 font-size: 14px;
                 text-align: center;
@@ -44,9 +44,11 @@
             var data = window.iconfont_varible;
             var tpl = '<ul class="icon-block-cnt">';
             for (var key in data){
+                var name = key.split('.')[1];
+                var value = name.split('-')[1].toUpperCase();
                 tpl += '<li>';
-                tpl += '<i class="iconfont '+key.split('.')[1]+'">&#x'+data[key]+'</i>';
-                tpl += '<p>' + key.split('.')[1] + '</p>';
+                tpl += '<i class="iconfont '+name+'">&#x'+data[key]+'</i>';
+                tpl += '<p>ICONFONT_' + value + '</p>';
                 tpl += '</li>';
             }
             tpl += '</ul>';
