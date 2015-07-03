@@ -37,7 +37,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 </iframe>
 
 使用方式：
-
+在代码中，`ICONFONT_` + 对应的icon名称，例如ICONFONT_BELL， ICONFONT_PHONE 等 
 ```
 ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 ```
