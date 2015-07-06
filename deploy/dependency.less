@@ -320,84 +320,118 @@
     .muitl-box-shadow(@shadow);
 }
 
-.bubble-position (@direction, @width, @height) when (@direction = up) {
+.is-center(@triangle-position, @direction, @width, @height) when(@triangle-position = 50%) {
+    .is-horizontal(@direction, @width) when (@direction = up), (@direction = down) {
+        margin-left: -(@width);
+    }
+    .is-horizontal-bevel(@direction, @width) when (@direction = 45), (@direction = -45) {
+        margin-left: -(@width / 2);
+    }
+    .is-vertical(@direction, @height) when (@direction = right), (@direction = left) {
+        margin-top: -(@height);
+    }
+    .is-vertical-bevel(@direction, @height) when (@direction = 135), (@direction = -135) {
+        margin-top: -(@height / 2);
+    }
+    .is-horizontal(@direction, @width);
+    .is-horizontal-bevel(@direction, @width);
+    .is-vertical(@direction, @height);
+    .is-vertical-bevel(@direction, @height);
+}
+.bubble-position (@direction, @triangle-position, @width, @height) when (@direction = up) {
     top: -@height;
-    left: 0;
+    left: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-position (@direction, @width, @height) when (@direction = 45) {
+.bubble-position (@direction, @triangle-position, @width, @height) when (@direction = 45) {
     bottom: -@height;
-    left: 0;
+    left: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-position (@direction, @width, @height) when (@direction = right) {
+.bubble-position (@direction, @triangle-position, @width, @height) when (@direction = right) {
     right: -@width;
-    top: 0;
+    top: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-position (@direction, @width, @height) when (@direction = 135) {
+.bubble-position (@direction, @triangle-position, @width, @height) when (@direction = 135) {
     left: -@width;
-    top: 0;
+    top: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-position (@direction, @width, @height) when (@direction = down) {
+.bubble-position (@direction, @triangle-position, @width, @height) when (@direction = down) {
     bottom: -@height;
-    left: 0;
+    left: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-position (@direction, @width, @height) when (@direction = -135) {
+.bubble-position (@direction, @triangle-position, @width, @height) when (@direction = -135) {
     right: -@width;
-    top: 0;
+    top: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-position (@direction, @width, @height) when (@direction = left) {
+.bubble-position (@direction, @triangle-position, @width, @height) when (@direction = left) {
     left: -@width;
-    top: 0;
+    top: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-position (@direction, @width, @height) when (@direction = -45) {
+.bubble-position (@direction, @triangle-position, @width, @height) when (@direction = -45) {
     bottom: -@height;
-    left: 0;
+    left: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-outline-position (@direction, @width, @height, @border) when (@direction = up) {
+.bubble-outline-position (@direction, @triangle-position, @width, @height, @border) when (@direction = up) {
     top: -(@height - @border / sin(45));
-    left: 0;
+    left: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-outline-position (@direction, @width, @height, @border ) when (@direction = 45) {
+.bubble-outline-position (@direction, @triangle-position, @width, @height, @border) when (@direction = 45) {
     bottom: -(@height - @border - @border / sin(45));
-    left: 0;
+    left: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-outline-position (@direction, @width, @height, @border) when (@direction = right) {
+.bubble-outline-position (@direction, @triangle-position, @width, @height, @border) when (@direction = right) {
     right: -(@width - @border / sin(45));
-    top: 0;
+    top: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-outline-position (@direction, @width, @height, @border) when (@direction = 135) {
+.bubble-outline-position (@direction, @triangle-position, @width, @height, @border) when (@direction = 135) {
     left: -(@width - @border - @border / sin(45));
-    top: 0;
+    top: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-outline-position (@direction, @width, @height, @border) when (@direction = down) {
+.bubble-outline-position (@direction, @triangle-position, @width, @height, @border) when (@direction = down) {
     bottom: -(@height - @border / sin(45));
-    left: 0;
+    left: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-outline-position (@direction, @width, @height, @border) when (@direction = -135) {
+.bubble-outline-position (@direction, @triangle-position, @width, @height, @border) when (@direction = -135) {
     right: -(@width - @border - @border / sin(45));
-    top: 0;
+    top: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-outline-position (@direction, @width, @height, @border) when (@direction = left) {
+.bubble-outline-position (@direction, @triangle-position, @width, @height, @border) when (@direction = left) {
     left: -(@width - @border / sin(45));
-    top: 0;
+    top: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
-.bubble-outline-position (@direction, @width, @height, @border) when (@direction = -45) {
+.bubble-outline-position (@direction, @triangle-position, @width, @height, @border) when (@direction = -45) {
     bottom: -(@width - @border - @border / sin(45));
-    left: @border;
+    left: @triangle-position;
+    .is-center(@triangle-position, @direction, @width, @height);
 }
 
 
@@ -406,18 +440,18 @@
     background: @color;
 }
 
-.bubble-tip(@direction, @width, @height, @color){
+.bubble-tip(@direction, @triangle-position, @width, @height, @color){
     &:before {
         content: '';
         position: absolute;
-        .bubble-position(@direction, @width, @height);
+        .bubble-position(@direction, @triangle-position, @width, @height);
         .triangle(@direction, @width, @height, @color);
     }
 }
 
-.bubble(@direction, @width, @height, @color) {
+.bubble(@direction, @triangle-position, @width, @height, @color) {
     .bubble-main(@color);
-    .bubble-tip (@direction, @width, @height, @color);
+    .bubble-tip (@direction, @triangle-position, @width, @height, @color);
 }
 
 
@@ -426,17 +460,17 @@
     border: @border-width solid @border-color;
 }
 
-.bubble-outline-tip(@direction, @width, @height, @bg-color, @border-width, @border-color){
+.bubble-outline-tip(@direction, @triangle-position, @width, @height, @bg-color, @border-width, @border-color){
     &:before {
         content: '';
         position: absolute;
-        .bubble-position(@direction, @width, @height);
+        .bubble-position(@direction, @triangle-position, @width, @height);
         .triangle(@direction, @width, @height, @border-color);
     }
     &:after {
         content: '';
         position: absolute;
-        .bubble-outline-position(@direction, @width, @height, @border-width);
+        .bubble-outline-position(@direction, @triangle-position, @width, @height, @border-width);
         .compute(@direction, @width, @height) when (@direction = 45), (@direction = -45), (@direction = 135), (@direction = -135) {
             .triangle(@direction, @width - @border-width, @height - @border-width, @bg-color);
         }
@@ -444,12 +478,16 @@
             .triangle(@direction, @width, @height, @bg-color);
         }
         .compute(@direction, @width, @height);
+        .is--45(@direction, @width) when (@direction = -45) and (@triangle-position = 50%) {
+            margin-left: -(@width / 2) + 1; // fix width compute bug
+        }
+        .is--45(@direction, @width);
     }
 }
 
-.bubble-outline (@direction, @width, @height, @bg-color, @border-width, @border-color){
+.bubble-outline (@direction, @triangle-position, @width, @height, @bg-color, @border-width, @border-color){
     .bubble-outline-main(@bg-color, @border-color, @border-width);
-    .bubble-outline-tip(@direction, @width, @height, @bg-color, @border-width, @border-color);
+    .bubble-outline-tip(@direction, @triangle-position, @width, @height, @bg-color, @border-width, @border-color);
 }
 /**
 * @author: yuanzhen
