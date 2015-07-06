@@ -423,6 +423,25 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 
 ```
 
+##表单元素##
+###input输入类型###
+
+使用场景: 输入框，`type=text`,`type=number`,`type=email`
+
+包含三种状态：正常状态， disabled状态， error状态
+
+```
+<!--正常状态-->
+<input type="text" placeholder="请输入" class="form-control" />
+<!--disabled状态-->
+<input type="text" placeholder="请输入" class="form-control-disabled" disabled="disabled" />
+<!--error状态-->
+<input type="text" placeholder="请输入" class="form-control-error" />
+```
+
+<iframe height='307' scrolling='no' src='//codepen.io/yuanzhen/embed/oXqLpV/?height=307&theme-id=13754&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/oXqLpV/'>oXqLpV</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
 ##分页（pagination）##
 
 提供带有展示页码的分页组件，其中php分页和js组件都是基于这个组件的样式
