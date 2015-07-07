@@ -425,7 +425,11 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 ##表单元素##
 ###input输入类型###
 
-使用场景: 输入框，`type=text`,`type=number`,`type=email`
+使用场景: 
+
+html4.1: `type=text`,`type=password`
+
+html5 new: `type=datetime`,`type=datetime-local`,`type=date`,`type=month`,`type=time`,`type=week`,`type=number`, `type=number`,`type=email`,`type=url`,`type=search`, `type=tel`
 
 包含三种状态：正常状态， disabled状态， error状态
 
