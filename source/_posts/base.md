@@ -5,12 +5,12 @@ tags:
 ---
 ##重置设置##
 
-###[normalize.css/reset.css](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility)###
+###[normalize.css/reset.css](http://gitlab.baidu.com/tbfe/tbui/blob/master/style/normalize.less)###
 
 统一浏览器一致性，其中 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
 reset.css是符合贴吧业务具体需求的重置样式
 
-###[entry](https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility)###
+###[entry](http://gitlab.baidu.com/tbfe/tbui/blob/master/style/reset.less)###
 
 *   在body上设置了**字体大小**12px, **字体**采用非衬线字体，**字体色值**为#333，**行高**22px
 *   设置了基本颜色 @link-color ，并且当链接处于 :hover 状态时才添加下划线
@@ -37,7 +37,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 </iframe>
 
 使用方式：
-在代码中，`ICONFONT_` + 对应的icon名称，例如ICONFONT_BELL， ICONFONT_PHONE 等 
+在代码中，使用 `ICONFONT_` + 对应的icon名称，例如ICONFONT_BELL， ICONFONT_PHONE 等, 编译阶段会相应的解析为<i class="iconfont">&#xe600;<i/>
 ```
 ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 ```
@@ -89,8 +89,8 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 ### font-weight ###
 
 ``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less source 
-.font-weight-normal(); // => font-weight: normal; 
-.font-weight-bold(); // => font-weight: bold;
+.font-weight-normal(); // => font-weight: 400; 
+.font-weight-bold(); // => font-weight: 700;
 ```
 
 ### 链接色值设置 ###
@@ -116,7 +116,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 > **注意： **为了避免被覆盖，使用！important优先级
 > vip-red是超级用户经常会使用的类, 已经设置!important，不会被覆盖，请放心使用, 并且三态已经做处理
 
-```html 示例 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
+```html 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less source
    <p class="red-text">I am a demo ! </p>
    <p class="orange-text">I am a demo ! </p>
    <a class="vip-red" href="#">I am a demo ! </a>
@@ -130,14 +130,14 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 *   添加`.pull-left`或者`.pull-right`类 
 
-```html 示例 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
+```html 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less source
 <span class="pull-left">float left...</span> 
 <span class="pull-right">float right...</span> 
 ```
 
 *   使用`.pull-left()`或者`.pull-right()`方式 
 
-```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/master/utility_compile.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/utility_compile.less source
 .pull-left(); // => float: left
 .pull-right(); // => float: right 
 ```
@@ -148,13 +148,13 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 *   添加`.clearfix`类
 
-```html 示例 https://svn.baidu.com/app/search/forum/trunk/fe/common/static/style/tbUtility/utility.less source
+```html 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less source
     <div class="clearfix"></div>
 ```
 
 *   通过调用`.clearfix()` mixins
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/utility_compile.less source
 .clearfix(); 
 ```
 
@@ -199,7 +199,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 *   调用mixins `.text-overflow(...)`
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/utility_compile.less source
     .element{
         .text-overflow(); 
     }
@@ -213,7 +213,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 *   合并icon尺寸不一致，需要提供宽高信息
 @my-list: demo1 20px 30px; 会生成有问题
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/utility_compile.less source
 //使用如下
 @my-list: demo1 20px 20px,
           demo2 20px 30px; //三个参数分别是value, width, height
@@ -239,7 +239,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 *   合并icon仅提供图片信息
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/utility_compile.less source
 //使用如下
 @my-list: "demo1", "demo2", "demo3";
 .icon-sprite-single(@my-list);
@@ -254,7 +254,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 ###opacity###
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/opacity.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/opacity.less source
 .opacity(.5)  // => opacity: .5
 .background-opacity(#fff, .5) => rgba(255, 255, 255, .5)
 ```
@@ -263,19 +263,19 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 *   从左到右横向linear渐变
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/gradient.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/gradient.less source
 #gradient .horizontal(@star-color, @end-color, @start-percent, @end-persent);
 ```
 
 *   从上到下纵向linear渐变
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/gradient.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/gradient.less source
 #gradient .vertical(@star-color, @end-color, @start-percent, @end-persent);
 ```
 
 *   径向渐变
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/gradient.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/gradient.less source
 #gradient .directional(@deg, @start-color, @end-color);
 ```
 
@@ -283,7 +283,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 .background-size(@image-url, @rest...);
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/utility_compile.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/fis2/less/utility_compile.less source
 .background-size('test.png', 50% 50%); 
 ```
 生成css文件
@@ -297,7 +297,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 
 常用于一些小边角
 
-```less 示例 http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/triangle.less source
+```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/fis2/less/triangle.less source
 /*
 * @param @direction 方向，提供 up, down, left, right四个方向
 * @param @width  横向长度 
