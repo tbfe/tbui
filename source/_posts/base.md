@@ -314,6 +314,8 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 <iframe height='269' scrolling='no' src='//codepen.io/yuanzhen/embed/vORWYv/?height=269&theme-id=13754&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/vORWYv/'>vORWYv</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
+##button##
+
 ###跨浏览器展现###
 
 据bootstrap的介绍，**强烈建议尽可能使用 `<button>`元素**来获得在各个浏览器上获得相匹配的绘制效果。
