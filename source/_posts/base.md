@@ -11,10 +11,10 @@ clear: both | left | right | inherit  => // 替换方案 类clearfix
 text-overflow: ellipsis | hidden | inherit => //替换方案 类text-overflow
 -webkit-line-clamp: <number> => //替换方案: .text-overflow(...);
 background-size: <bg-size> [ , <bg-size> ]*  => //替换方案 .background-size(@image-url, @rest...)
-transition:<single-transition> [ ‘,’ <single-transition> ]*  => 替换方案：animate.less
+transition:<single-transition> [ ‘,’ <single-transition> ]*  => //替换方案：animate.less
 transform: none | <transform-list> => //替换方案animate.less 
-animate-name: <single-animation-name> [ ‘,’ <single-animation-name> ]*  => 替换方案： animate.css基本动画库
-opacity: <alphavalue> | inherit => 替换方案 .opacity(...)
+animate-name: <single-animation-name> [ ‘,’ <single-animation-name> ]*  => //替换方案： animate.css基本动画库
+opacity: <alphavalue> | inherit => //替换方案 .opacity(...)
 font:  => //替换方案mixin 
 
 ```
@@ -25,7 +25,7 @@ font:  => //替换方案mixin
 
 border-radius: 4px;  => //替换方案: image-radius
 border-radius: 50%;  => //替换方案: image-round
-background-image: gradient => 替换方案：渐变 mixin
+background-image: gradient => //替换方案：渐变 mixin
 
 ```
 
