@@ -375,16 +375,45 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 ```
 <button class="btn-default btn-small" >常用尺寸(.btn-small)</button> 
 <button class="btn-default btn-middle" >中按钮(.btn-middle)</button> 
+<button class="btn-default btn-large" >中按钮(.btn-large)</button> 
 <button class="btn-default btn-larger" >大按钮(.btn-larger)</button> 
 ```
 
-###禁用状态###
+### 带icon的按钮 ###
 
-目前所有按钮的的禁用状态都是btn-disabled, 在元素上增加`.btn-disabled`类
+可以使用sprite图片，同时可以使用iconfont(暂时没有)
+
+ue规范为：
+
+> `.btn-small`  不允许使用icon
+> `.btn-middle`  使用尺寸14*14的icon图片或者 font-size：14px的iconfont
+> `.btn-large`, `.btn-larger`  使用尺寸16*16的icon图片或者 font-size：16px的iconfont
+
+如何使用icon图片？
+在<button>标签或者`<a>`里使用<i class="icon-*"></i>, 表示相对应的图标
+
+> class名必须以icon开头
+> 如果基础库里已经有icon，则直接使用基础库里的icon， 否则，自己定义class名，**注意：**，自己定义的class名，仅需要定义`background: url()`
+
+
+如何使用iconfont?
+在<button>标签或者`<a>`里直接使用`ICONFONT_*`,  表示相对应的iconfont
 
 ```
-<button class="btn-disabled btn-small" >副按钮(.btn-sub)</button>
+<!--btn-middle icon设置和iconfont设置-->
+<button class="btn-encourage btn-middle" /><i class="icon-tbean"></i>添加图片demo</button>
+<button class="btn-encourage btn-middle" />ICONFONT_BELL添加图片demo</button>
+
+<!--btn-large icon设置和iconfont设置-->
+<button class="btn-encourage btn-large" /><i class="icon-tbean"></i>添加图片demo</button>
+<button class="btn-encourage btn-large" />ICONFONT_BELL添加图片demo</button>
+
+<!--btn-larger icon设置和iconfont设置-->
+<button class="btn-encourage btn-larger" /><i class="icon-tbean"></i>添加图片demo</button>
+<button class="btn-encourage btn-larger" />ICONFONT_BELL添加图片demo</button>
 ```
+<iframe height='257' scrolling='no' src='//codepen.io/yuanzhen/embed/RPMdyX/?height=257&theme-id=13754&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/RPMdyX/'>RPMdyX</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ### 自定义按钮 ###
 
@@ -430,27 +459,6 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 
 ```
 
-### 带icon的按钮 ###
-
-使用`<i class="icon-*"></i>`表示icon, 样式由用户自己定义，可以使用sprite图片，同时可以使用iconfont(暂时没有)
-
-> **注意：** 
-> 尽量使icon的尺寸和文字的尺寸保持一致，例如文字是14px，那么icon也设置为14px; 
-> 使用vertical-align: middle 和 [margin-top: -.1em](http://snook.ca/archives/html_and_css/icons-and-type); 使icon居中对齐
-
-```
-<button class="btn-sub btn-small"><i class="icon-attention"></i>关注</button>
-<button class="btn-attention btn-small"><i class="icon-attention"></i>关注</button>
-
-.icon-attention{
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    vertical-align: middle;
-    margin-top: -.1em;
-}
-
-```
 
 ##表单元素##
 ###input输入类型###
