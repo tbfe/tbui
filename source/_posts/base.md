@@ -390,14 +390,14 @@ ue规范为：
 > `.btn-large`, `.btn-larger`  使用尺寸16*16的icon图片或者 font-size：16px的iconfont
 
 如何使用icon图片？
-在<button>标签或者`<a>`里使用<i class="icon-*"></i>, 表示相对应的图标
+在`<button>`标签或者`<a>`里使用`<i class="icon-*"></i>`, 表示相对应的图标
 
 > class名必须以icon开头
 > 如果基础库里已经有icon，则直接使用基础库里的icon， 否则，自己定义class名，**注意：**，自己定义的class名，仅需要定义`background: url()`
 
 
 如何使用iconfont?
-在<button>标签或者`<a>`里直接使用`ICONFONT_*`,  表示相对应的iconfont
+在`<button>`标签或者`<a>`里直接使用`ICONFONT_*`,  表示相对应的iconfont
 
 ```
 <!--btn-middle icon设置和iconfont设置-->
