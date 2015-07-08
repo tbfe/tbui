@@ -360,10 +360,8 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 提供了**三种尺寸**类: `.btn-small`、`.btn-middle`、`.btn-large`、`.btn-larger` , 
 这四种样式和尺寸可以随意搭配使用。
 
-<iframe height='368' scrolling='no' src='//codepen.io/yuanzhen/embed/YPMaar/?height=368&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YPMaar/'>YPMaar</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
-
 样式默认设置
+
 ```
 <button class="btn-default btn-small" >常用蓝色(.btn-default)</button>
 <button class="btn-attention btn-small" >关注(.btn-attention)</button>
@@ -371,17 +369,24 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 <a class="btn-link btn-small" >文字按钮(.btn-link)</a>
 ```
 
+<iframe height='368' scrolling='no' src='//codepen.io/yuanzhen/embed/YPMaar/?height=368&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YPMaar/'>YPMaar</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+
 尺寸默认设置
+
 ```
 <button class="btn-default btn-small" >常用尺寸(.btn-small)</button> 
 <button class="btn-default btn-middle" >中按钮(.btn-middle)</button> 
 <button class="btn-default btn-large" >中按钮(.btn-large)</button> 
 <button class="btn-default btn-larger" >大按钮(.btn-larger)</button> 
 ```
+<iframe height='289' scrolling='no' src='//codepen.io/yuanzhen/embed/QbmPXZ/?height=289&theme-id=13754&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/QbmPXZ/'>QbmPXZ</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ### 带icon的按钮 ###
 
-可以使用sprite图片，同时可以使用iconfont(暂时没有)
+可以使用sprite图片，同时可以使用iconfont
 
 ue规范为：
 
