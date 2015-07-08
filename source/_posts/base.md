@@ -287,6 +287,8 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 
 ###渐变###
 
+linear渐变, 开始位置和结束位置已经默认设置为0和100%，如无变化，无需再设置
+
 *   从左到右横向linear渐变
 
 ```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/gradient.less source
