@@ -184,7 +184,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 .clearfix(); 
 ```
 
-###图片圆角###
+###元素圆角###
 
 给元素增加圆角, 提供4px 和 50% 两种默认值
 
