@@ -51,7 +51,7 @@ var initNav = function () {
     var $doc = $(document);
     var $ele = $('.page-toc')
     $doc.scroll(function () {
-        if ($doc.srollTop > 150) {
+        if ($doc.scrollTop() > 150) {
             $ele.css({
                 'position': 'fixed',
                 'top': '20px' 
