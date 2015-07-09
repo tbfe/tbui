@@ -57,8 +57,6 @@ reset.css是符合贴吧业务具体需求的重置样式
 ###iconfont###
 
 <div id="icon-font-cnt"></div>
-<iframe height='240px' scrolling='yes' src='setting/iconfont.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
-</iframe>
 
 使用方式：
 在代码中，使用 `ICONFONT_` + 对应的icon名称，例如ICONFONT_BELL， ICONFONT_PHONE 等, 编译阶段会相应的解析为<i class="iconfont">&#xe600;<i/>
