@@ -20,7 +20,7 @@ hexo g
 cp -r setting ../public/base 
 cp -r setting/icon.js ../public/js 
 cp -r setting/iconfont.js ../public/js 
-cp -r setting/varible.js ../public/js 
+cp -r setting/variable.js ../public/js 
 cp -r combineLess/font ../public/base/setting
 hexo d
 git add dependency.less
