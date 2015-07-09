@@ -43,13 +43,13 @@ reset.css是符合贴吧业务具体需求的重置样式
 *   `<ins>`hover状态不添加下划线
 
 ###基础色值###
-<div id="color-setting-cnt"></div>
+<div id="xcolor-setting-cnt"></div>
 <iframe height='500px' scrolling='yes' src='setting/variable.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
 ###基础icon###
 
-<div id="icon-cnt"></div>
+<div id="xicon-cnt"></div>
 <iframe height='180px' scrolling='yes' src='setting/icon.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
@@ -60,7 +60,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###iconfont###
 
-<div id="icon-font-cnt"></div>
+<div id="xicon-font-cnt"></div>
 <iframe height='240px' scrolling='yes' src='setting/iconfont.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
