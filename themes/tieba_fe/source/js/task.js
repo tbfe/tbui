@@ -48,5 +48,5 @@ var getVarible = function () {
 }
 
 getAllIcon();
-getAllIconfont();
-getVarible();
+//getAllIconfont();
+//getVarible();
