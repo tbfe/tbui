@@ -43,15 +43,11 @@ reset.css是符合贴吧业务具体需求的重置样式
 *   `<ins>`hover状态不添加下划线
 
 ###基础色值###
-<div id="xcolor-setting-cnt"></div>
-<iframe height='500px' scrolling='yes' src='setting/variable.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
-</iframe>
+<div id="color-setting-cnt"></div>
 
 ###基础icon###
 
 <div id="icon-cnt"></div>
-<iframe height='180px' scrolling='yes' src='setting/icon.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
-</iframe>
 
 ``` less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/fis2/less/font.less source 
 <i class="icon-vip1-16"></i>
@@ -60,7 +56,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###iconfont###
 
-<div id="xicon-font-cnt"></div>
+<div id="icon-font-cnt"></div>
 <iframe height='240px' scrolling='yes' src='setting/iconfont.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
