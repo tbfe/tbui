@@ -65,6 +65,7 @@ var initNav = function () {
     });
 };
 
+initNav();
 getAllIcon();
 getAllIconfont();
 getVarible();
