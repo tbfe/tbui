@@ -47,6 +47,24 @@ var getVarible = function () {
     cnt.innerHTML = tpl;
 }
 
+var initNav = function () { 
+    var $doc = $(document);
+    var $ele = $('.page-toc')
+    $doc.scroll(function () {
+        if ($doc.srollTop > 150) {
+            $ele.css({
+                'position': 'fixed',
+                'top': '20px' 
+            })
+        }else {
+            $ele.css({
+                'position': 'absoluted',
+                'top': '180px' 
+            })
+        } 
+    });
+};
+
 getAllIcon();
 getAllIconfont();
 getVarible();
