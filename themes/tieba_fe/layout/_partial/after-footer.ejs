@@ -14,19 +14,6 @@
 </script>
 <% } %>
 
-<script>
-(function(){
-   // var styleList = ["tb_common", "tb_ui"]
-   // for (var i = 0; i < styleList.length; i++ ){
-   //     var link = document.createElement('link');
-   //     link.type = "text/css";
-   //     lik.rel = "stylesheet";
-   //     link.href = "http://tb1.bdstatic.com/tb/static-common/style/" + styleList[i] + ".css?time=" + new Date().getTime();
-   //     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(link);
-   // }
-})();
-</script>
-
 <script src="<%- config.root %>js/jquery.min.js"></script>
 
 <% if (theme.fancybox){ %>
@@ -35,3 +22,4 @@
 <% } %>
 
 <%- js('js/script') %>
+<%- js('js/task') %>
