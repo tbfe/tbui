@@ -49,7 +49,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 
 ###基础icon###
 
-<div id="xicon-cnt"></div>
+<div id="icon-cnt"></div>
 <iframe height='180px' scrolling='yes' src='setting/icon.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
