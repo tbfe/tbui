@@ -307,11 +307,11 @@
   animation-name:fadein;
 }
 .rounded-corner (...) {
-    border-radius: @arguments;
+    border-radius: @arguments; 
 }
 
 .oval-corner (...) {
-    border-radius: ~`"@{arguments}".replace(/[\[\]]/g, '').replace(/,/g, ' /')`;
+    border-radius: ~`"@{arguments}".replace(/[\[\]]/g, '').replace(/,/g, ' /')`; 
 }
 
 .rounded-corner-top (...) {
@@ -517,6 +517,7 @@
     border-radius: 2px;
     border: 1px solid transparent;
     text-decoration: none;
+    &:link,
     &:visited,
     &:hover,
     &:disabled,
@@ -545,7 +546,7 @@
         &:disabled,
         &-disabled{
             background: @default-bg-disabled;
-            border-bottom-color: @default-border-disabled;
+            border-bottom: 1px solid @default-border-disabled;
             color: @default-text;
             cursor: not-allowed;
         }
@@ -595,7 +596,7 @@
             @start-disabled: extract(@sub-bg-disabled, 1);
             @end-disabled: extract(@sub-bg-disabled, 2);
             #gradient .vertical(@start-disabled, @end-disabled, 0, 100%);
-            border-color: @sub-border-disabled;
+            border: 1px solid @sub-border-disabled;
             color: @sub-text-disabled;
             cursor: not-allowed;
         }
@@ -621,7 +622,7 @@
         &:disabled,
         &-disabled{
             background: @attention-bg-disabled;
-            border-bottom-color: @attention-border-disabled;
+            border-bottom: 1px solid @attention-border-disabled;
             color: @attention-text;
             cursor: not-allowed;
         }
@@ -646,7 +647,7 @@
         &:disabled,
         &-disabled{
             background: @encourage-bg-disabled;
-            border-bottom-color: @encourage-border-disabled;
+            border-bottom:1px solid @encourage-border-disabled;
             color: @encourage-text;
             cursor: not-allowed;
         }
@@ -894,20 +895,20 @@
 #gradient {
     .horizontal(@start-color; @end-color; @start-percent: 0; @end-percent: 100%) {
         // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-        background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent);
+        background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); 
         background-repeat: repeat-x;
         // IE9 and down
-        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color)));
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); 
     }
     .vertical(@start-color; @end-color; @start-percent: 0; @end-percent:100%) {
         // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-        background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent);
+        background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); 
         background-repeat: repeat-x;
         // IE9 and down
-        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color)));
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); 
     }
     .directional (@deg; @start-color; @end-color) {
-        background-image: linear-gradient(@deg, @start-color, @end-color);
+        background-image: linear-gradient(@deg, @start-color, @end-color); 
     }
 }
 
@@ -942,8 +943,8 @@
 
 .calc-grid-width (@index, @class) when (@index > 0){
     .col-@{class}-@{index}{
-        width: (@col-grid-width + @col-gutter-width )* @index - @col-gutter-width;
-    }
+        width: (@col-grid-width + @col-gutter-width )* @index - @col-gutter-width; 
+    } 
 };
 
 .loop-grid-columns (@index, @class) when (@index >= 0){
@@ -952,15 +953,15 @@
 }
 
 .make-grid-width(@class) {
-    .loop-grid-columns(@grid-columns, @class);
+    .loop-grid-columns(@grid-columns, @class);   
 }
 
 .make-horizontal(@col) when (isnumber(@col)) {
-    width: unit(ceil(@col) * @col-grid-width, px);
+    width: unit(ceil(@col) * @col-grid-width, px); 
 }
 
 .make-vertical(@col) when (isnumber(@col)) {
-    height: unit(ceil(@col) * @col-grid-width, px);
+    height: unit(ceil(@col) * @col-grid-width, px); 
 }
 
 .unit-px(@value) {
@@ -1024,7 +1025,7 @@
 }
 
 .padding(@args, @unit){
-    .box-modle(@args, @unit);
+    .box-modle(@args, @unit); 
 }
 .get-column-three(@namespace, @left, @right, @gutter: 10px){
     @{namespace}{
@@ -1051,7 +1052,7 @@
     @{namespace}{
         .col2_left,
         .col2-left{
-            width: @left;
+            width: @left;     
         }
         .col2_right,
         .col2-right{
@@ -1129,7 +1130,7 @@
     }
 }
 .opacity (@opacity) {
-    opacity: @opacity;
+    opacity: @opacity; 
     //ie8
     @opacity-ie: @opacity * 100;
     filter: ~"alpha(opacity=@{opacity-ie})";
@@ -1171,7 +1172,7 @@
  * @date  2015-05-11
  */
 
-//  Table mixin
+//  Table mixin 
 
 .table-row-variant(@state; @background) {
   .table > thead > tr,
@@ -1275,8 +1276,8 @@
     zoom:1;
     &:before,
     &:after {
-       content: " ";
-       display: table;
+       content: " "; 
+       display: table; 
     }
     &:after {
         clear: both;
