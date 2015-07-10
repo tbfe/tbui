@@ -525,6 +525,9 @@
     &:active{
         text-decoration: none;
     }
+    &-disabled{
+        border: 1px solid transparent;
+    }
 }
 
 @default: {
@@ -546,7 +549,7 @@
         &:disabled,
         &-disabled{
             background: @default-bg-disabled;
-            border-bottom: 1px solid @default-border-disabled;
+            border-bottom-color: @default-border-disabled;
             color: @default-text;
             cursor: not-allowed;
         }
@@ -596,7 +599,7 @@
             @start-disabled: extract(@sub-bg-disabled, 1);
             @end-disabled: extract(@sub-bg-disabled, 2);
             #gradient .vertical(@start-disabled, @end-disabled, 0, 100%);
-            border: 1px solid @sub-border-disabled;
+            border-color: @sub-border-disabled;
             color: @sub-text-disabled;
             cursor: not-allowed;
         }
@@ -622,7 +625,7 @@
         &:disabled,
         &-disabled{
             background: @attention-bg-disabled;
-            border-bottom: 1px solid @attention-border-disabled;
+            border-bottom-color: @attention-border-disabled;
             color: @attention-text;
             cursor: not-allowed;
         }
@@ -647,7 +650,7 @@
         &:disabled,
         &-disabled{
             background: @encourage-bg-disabled;
-            border-bottom:1px solid @encourage-border-disabled;
+            border-bottom-color: @encourage-border-disabled;
             color: @encourage-text;
             cursor: not-allowed;
         }
