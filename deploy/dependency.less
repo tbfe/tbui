@@ -536,14 +536,14 @@
         color: @default-text;
         background: @default-bg;
         border-bottom-color: @default-border;
+        &:visited{
+            color: @default-text;
+        }
         &:hover,
         &:focus,
         &:active{
             background: @default-bg-hover;
             border-bottom-color: @default-border-hover;
-            color: @default-text;
-        }
-        &:visited{
             color: @default-text;
         }
         &:disabled,
@@ -562,12 +562,12 @@
         color: @disable-text;
         background: @disable-bg;
         border-color: @disable-border;
+        &:visited{
+            color: @disable-text;
+        }
         &:hover,
         &:focus{
             background: @disable-bg;
-            color: @disable-text;
-        }
-        &:visited{
             color: @disable-text;
         }
         &:active {
@@ -585,6 +585,9 @@
         #gradient .vertical(@start, @end, 0, 100%);
         color: @sub-text;
         border-color: @sub-border;
+        &:visited{
+            color: @sub-text;
+        }
         &:hover,
         &:active,
         &:focus {
@@ -603,9 +606,6 @@
             color: @sub-text-disabled;
             cursor: not-allowed;
         }
-        &:visited{
-            color: @sub-text;
-        }
     }
 };
 
@@ -615,6 +615,9 @@
         color: @attention-text;
         background: @attention-bg;
         border-bottom-color: @attention-border;
+        &:visited{
+            color: @attention-text;
+        }
         &:hover,
         &:focus,
         &:active {
@@ -629,9 +632,6 @@
             color: @attention-text;
             cursor: not-allowed;
         }
-        &:visited{
-            color: @attention-text;
-        }
     }
 };
 
@@ -640,6 +640,9 @@
         color: @encourage-text;
         background: @encourage-bg;
         border-bottom-color: @encourage-border;
+        &:visited{
+            color: @encourage-text;
+        }
         &:hover,
         &:focus,
         &:active {
@@ -654,9 +657,6 @@
             color: @encourage-text;
             cursor: not-allowed;
         }
-        &:visited{
-            color: @encourage-text;
-        }
     }
 };
 
@@ -664,12 +664,12 @@
     .btn-link {
         background: none;
         color: @btn-link-text;
+        &:visited{
+            color: @btn-link-text;
+        }
         &:hover,
         &:active,
         &:focus{
-            color: @btn-link-text;
-        }
-        &:visited{
             color: @btn-link-text;
         }
     }
