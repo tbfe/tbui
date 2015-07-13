@@ -557,3 +557,23 @@ html5 new: `type=datetime`,`type=datetime-local`,`type=date`,`type=month`,`type=
 }
 ```
 
+##提示框##
+
+提示框分为三种： `warning`, `error`, `success`
+> 警示条可以根据实际情况添加，即`ICONFONT_CLOSE`可以视情况使用。
+
+```
+<div class="warning-info-tip">
+   温馨提醒，我是活泼认真谨慎的FE妹纸。ICONFONT_CLOSE
+</div>
+
+<div class="error-info-tip">
+   断线了，我代码mabi还没有保存。ICONFONT_CLOSE
+</div>
+
+<div class="success-info-tip">
+   下班了，大家早点回去吧。ICONFONT_CLOSE
+</div>
+```
+<iframe height='236' scrolling='no' src='//codepen.io/yuanzhen/embed/YXvzyL/?height=236&theme-id=13754&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/YXvzyL/'>warning</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
