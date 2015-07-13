@@ -73,6 +73,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 .font-size-14(); // => font-size: 14px;
 .font-size-16(); // => font-size: 16px;
 .font-size-20(); // => font-size: 20px;
+.font-size-24(); // => font-size: 24px;
 ```
 
 ### font-family ###
@@ -484,6 +485,26 @@ html5 new: `type=datetime`,`type=datetime-local`,`type=date`,`type=month`,`type=
 
 <iframe height='307' scrolling='no' src='//codepen.io/yuanzhen/embed/oXqLpV/?height=307&theme-id=13754&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/oXqLpV/'>oXqLpV</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
+
+###复选框和单选框###
+
+使用场景： `type="radio"`,`type="checkbox"`
+
+包含两种状态： 正常状态， disabled状态
+
+```
+<!---checkbox 正常状态--->
+<label class="checkbox"><input type="checkbox" />selector</label>
+
+<!---checkbox disabled状态--->
+<label class="checkbox-disabled"><input type="checkbox" disabled />selector</label>
+
+<!---radio 正常状态--->
+<label class="radio"><input type="radio"  />selector</label>
+
+<!---radio disabled状态--->
+<label class="radio-disabled"><input type="radio" disabled />selector</label>k
+```
 
 ##分页（pagination）##
 
