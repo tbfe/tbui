@@ -551,9 +551,10 @@ html5 new: `type=datetime`,`type=datetime-local`,`type=date`,`type=month`,`type=
 * @text-color: 文字颜色
 * @background-hover-color: 背景hover颜色
 * @text-hover-color: 文字hover颜色
-* @border-color: 默认为none，可以设置颜色值 
+* @border-color: border颜色值 
+* @border-hover-color: border hover颜色值 
 */
-.gination-style(@background-color; @text-color; @background-hover-color; @text-hover-color; @border-color: none){
+.pagination-style(@background-color; @text-color; @border-color;  @background-hover-color; @text-hover-color; @border-hover-color){
 }
 ```
 
