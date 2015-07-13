@@ -35,6 +35,30 @@ tags:
 ```
 
 
+###左右图文(简易版)###
+
+> 使用方式： copy如下的DOM结构
+<iframe height='375' scrolling='no' src='http://sandbox.runjs.cn/show/25riqrnh' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+
+```
+<!--DOM结构如下，每一个media_vertical作为一个媒体组的一个对象-->
+ <div>
+    <img src="http://img.xiami.net/images/avatar_new/4/203227_1403877496_3.png" class="inline-block-middle" />
+    <div class="inline-block-middle">
+		<h3>fdsfgsdfssfdsfsdf</h3>
+        <p>ddddddddddddddddddddddddddzxxxfdg</p>
+        <p>未经佛说的话覅哦是的还附送</p>
+    </div>
+</div>
+
+.democss{
+    .inline-block-middle();
+}
+
+```
+
+
+
 ###上下图文（media-vertical）###
 > 使用方式： copy如下的DOM结构，配置mixins[.make-vetical-media(...)](http://baidu.com), 示例:
 > 需要注意的是，在DOM结构中的类`.media-caption`, `.media-absolute`已经设置position: absolute, 你只需要设置位置和其他属性值即可。
@@ -139,6 +163,9 @@ tags:
 }
 
 ```
+
+
+
 
 
 ###纵向媒体组_2###
