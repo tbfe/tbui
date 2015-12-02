@@ -21,7 +21,7 @@ cp -r setting/icon.js ../public/js
 cp -r setting/iconfont.js ../public/js 
 cp -r setting/variable.js ../public/js 
 cp -r combineLess/font ../public/css/
-//hexo d
+#hexo d
 git add dependency.less
 git commit -a -m 'add dependency'
 git push origin master
