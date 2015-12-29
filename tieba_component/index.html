@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>业务组件 | fe规范</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="/tbui/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/tbui/css/task.css" type="text/css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header" class="hdpage">
+  <div id="header-inner" class="inner">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      
+       <a class="main-nav-link" href="/tbui/base/">基础设置</a>
+      
+       <a class="main-nav-link" href="/tbui/base_component/">组件</a>
+      
+       <a class="main-nav-link" href="/tbui/tieba_component/">业务组件</a>
+      
+       <a class="main-nav-link" href="/tbui/script_component/">js组件</a>
+      
+       <a class="main-nav-link" href="/tbui/UE/">UE规范示例图</a>
+      
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+    </div>
+  </div>
+</header>
+
+    <div id="article" class="outer">
+      <div class="article-meta">
+        
+          <header class="article-header">
+            <h1 class="article-header" itemprop="name">
+              fe规范
+            </h1>
+          </header>
+        
+      </div>
+      <div class="article-main">
+        <div class="main"><article id="post-tieba_component" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+        
+          <p>##frs右侧规范（aside）##</p>
+<p>###上下图文对象###</p>
+<blockquote>
+<p>主要应用于吧主，友情贴吧等模块<br>使用方式： 直接copy下面的DOM结构</p>
+</blockquote>
+<iframe height="257" scrolling="no" src="//codepen.io/yuanzhen/embed/ByebaR/?height=257&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/ByebaR/" target="_blank" rel="external">medie_top_groups</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;ul class=&#34;aside-media-horizontal clearfix&#34;&#62;&#10;  &#60;li class=&#34;media-vertical&#34;&#62;&#10;    &#60;a class=&#34;media-top&#34; href=&#34;#&#34; target=&#34;&#34; title=&#34;&#34;&#62;&#10;      &#60;img src=&#34;6060.jpg&#34; alt=&#34;image&#34;&#62;&#60;/a&#62;&#10;    &#60;div class=&#34;text-overflow media-bottom&#34;&#62;&#10;      &#60;a href=&#34;#&#34; target=&#34;_blank&#34; class=&#34;&#34; title=&#34;&#19968;&#19981;&#23567;&#24515;&#29233;&#19978;&#20320;&#34;&#62;&#19968;&#19981;&#23567;&#24515;&#29233;&#19978;&#20320;&#60;/a&#62;&#10;    &#60;/div&#62;&#10;  &#60;/li&#62;&#10;&#60;/ul&#62;</span><br></pre></td></tr></table></figure>
+<p>###上下图文对象###</p>
+<blockquote>
+<p>目前平台化使用较多<br>使用方式： 直接copy下面的DOM结构</p>
+</blockquote>
+<iframe height="316" scrolling="no" src="//codepen.io/yuanzhen/embed/emabQv/?height=316&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/emabQv/" target="_blank" rel="external">thumbnail_top</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;a class=&#34;aside-thumbnail-120&#34;&#62;&#10;    &#60;img src=&#34;http://p6.qhimg.com/dr/360_210_/t019df57088b7ca51ab.jpg&#34; alt=&#34;image&#34;&#62;&#10;&#60;/a&#62;&#10;&#60;ul class=&#34;unordered-list-dot&#34;&#62;&#10;    &#60;li class=&#34;text-overflow&#34;&#62;&#60;a href=&#34;#&#34;&#62;&#33258;&#23450;&#20041;&#25991;&#23383;&#33258;&#23450;&#20041;&#25991;&#23383;&#33258;&#23450;&#20041;&#25991;&#23383;&#33258;&#23450;&#20041;&#25991;&#23383;&#60;/a&#62;&#60;/li&#62;&#10;&#60;/ul&#62;</span><br></pre></td></tr></table></figure>
+<p>###左右图文对象###</p>
+<blockquote>
+<p>略<br>使用方式： 直接copy下面的DOM结构<br>在规范中，支持两种图片尺寸的图文对象（60<em>60）或者（80</em>60）,只需要更换aside-media-vertical-60为aside-media-vertical-80即可，<br><strong>如果想支持更多尺寸的图片</strong>，请如下设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;ul class=&#34;yours-demo clearfix&#34;&#62;&#10;&#60;/ul&#62;&#10;.yours-demo&#123;&#10;    &#38;:extend(.aside-media-vertical-60 all);&#10;    li&#123;&#10;        .make-horizontal-media(80px, 60px, 10px);&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<iframe height="284" scrolling="no" src="//codepen.io/yuanzhen/embed/vEqEZj/?height=284&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/vEqEZj/" target="_blank" rel="external">aside_media_left_groups</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;ul class=&#34;aside-media-vertical-60 clearfix&#34;&#62;&#10;    &#60;li class=&#34;media-horizontal clearfix&#34;&#62;&#10;        &#60;a class=&#34;media-left&#34;&#62;&#10;          &#60;img src=&#34;http://imgsrc.baidu.com/forum/pic/item/aa64034f78f0f7362a4f09e20855b319eac4139b.jpg&#34; alt=&#34;image&#34; /&#62;&#10;          &#60;span class=&#34;media-caption&#34;&#62;&#60;/span&#62;&#10;        &#60;/a&#62;&#10;        &#60;div class=&#34;media-right&#34;&#62;&#10;          &#60;a class=&#34;text-overflow title&#34;&#62;&#33258;&#23450;&#20041;&#25991;&#23383;&#33258;&#23450;&#20041;&#25991;&#23383;&#33258;&#23450;&#20041;&#25991;&#23383;&#60;/a&#62;&#10;          &#60;p&#62;&#33258;&#23450;&#20041;&#25991;&#23383;&#33258;&#23450;&#20041;&#25991;&#23383;&#33258;&#23450;&#20041;&#25991;&#23383;&#60;/p&#62;&#10;        &#60;/div&#62;&#10;    &#60;/li&#62; &#10;&#60;/ul&#62;</span><br></pre></td></tr></table></figure>
+<p>###列表###</p>
+<iframe height="268" scrolling="no" src="//codepen.io/yuanzhen/embed/OPeVwN/?height=268&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/OPeVwN/" target="_blank" rel="external">OPeVwN</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;ul class=&#34;unordered-list-dot&#34;&#62;&#10;    &#60;li class=&#34;text-overflow&#34;&#62;&#60;a href=&#34;#&#34;&#62;&#33258;&#23450;&#20041;&#25991;&#23383;&#33258;&#23450;&#20041;&#25991;&#23383;&#60;/a&#62;&#60;/li&#62;&#10;    &#60;li class=&#34;text-overflow&#34;&#62;&#60;a href=&#34;#&#34;&#62;&#33258;&#23450;&#20041;&#25991;&#23383;&#33258;&#23450;&#20041;&#25991;&#23383;&#60;/a&#62;&#60;/li&#62;&#10;    &#60;li class=&#34;text-overflow&#34;&#62;&#60;a href=&#34;#&#34;&#62;&#33258;&#23450;&#20041;&#25991;&#23383;&#33258;&#23450;&#20041;&#25991;&#23383;&#60;/a&#62;&#60;/li&#62;&#10;&#60;/ul&#62;</span><br></pre></td></tr></table></figure>
+<p>##frs头部规范（head）##</p>
+
+          <div class="page-toc">
+               
+          </div>
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/tbui/script_component/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          js组件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/tbui/base/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">基础设置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</div>
+        
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 yuanzhen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/tbui/js/jquery.min.js"></script>
+
+
+
+<script src="/tbui/js/script.js" type="text/javascript"></script>
+<script src="/tbui/js/icon.js" type="text/javascript"></script>
+<script src="/tbui/js/iconfont.js" type="text/javascript"></script>
+<script src="/tbui/js/variable.js" type="text/javascript"></script>
+<script src="/tbui/js/task.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

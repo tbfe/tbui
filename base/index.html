@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>基础设置 | fe规范</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="/tbui/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/tbui/css/task.css" type="text/css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header" class="hdpage">
+  <div id="header-inner" class="inner">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      
+       <a class="main-nav-link" href="/tbui/base/">基础设置</a>
+      
+       <a class="main-nav-link" href="/tbui/base_component/">组件</a>
+      
+       <a class="main-nav-link" href="/tbui/tieba_component/">业务组件</a>
+      
+       <a class="main-nav-link" href="/tbui/script_component/">js组件</a>
+      
+       <a class="main-nav-link" href="/tbui/UE/">UE规范示例图</a>
+      
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+    </div>
+  </div>
+</header>
+
+    <div id="article" class="outer">
+      <div class="article-meta">
+        
+          <header class="article-header">
+            <h1 class="article-header" itemprop="name">
+              fe规范
+            </h1>
+          </header>
+        
+      </div>
+      <div class="article-main">
+        <div class="main"><article id="post-base" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+        
+          <p>##禁止使用##</p>
+<p>###禁止使用的rule###</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear: both | left | right | inherit  =&#62; // &#26367;&#25442;&#26041;&#26696; &#31867;clearfix&#10;text-overflow: ellipsis | hidden | inherit =&#62; //&#26367;&#25442;&#26041;&#26696; &#31867;text-overflow&#10;-webkit-line-clamp: &#60;number&#62; =&#62; //&#26367;&#25442;&#26041;&#26696;: .text-overflow(...);&#10;background-size: &#60;bg-size&#62; [ , &#60;bg-size&#62; ]*  =&#62; //&#26367;&#25442;&#26041;&#26696; .background-size(@image-url, @rest...)&#10;transition:&#60;single-transition&#62; [ &#8216;,&#8217; &#60;single-transition&#62; ]*  =&#62; //&#26367;&#25442;&#26041;&#26696;&#65306;animate.less&#10;transform: none | &#60;transform-list&#62; =&#62; //&#26367;&#25442;&#26041;&#26696;animate.less &#10;animate-name: &#60;single-animation-name&#62; [ &#8216;,&#8217; &#60;single-animation-name&#62; ]*  =&#62; //&#26367;&#25442;&#26041;&#26696;&#65306; animate.css&#22522;&#26412;&#21160;&#30011;&#24211;&#10;opacity: &#60;alphavalue&#62; | inherit =&#62; //&#26367;&#25442;&#26041;&#26696; .opacity(...)&#10;font:  =&#62; //&#26367;&#25442;&#26041;&#26696;mixin</span><br></pre></td></tr></table></figure>
+<p>###禁止使用的值###</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;border-radius: 4px;  =&#62; //&#26367;&#25442;&#26041;&#26696;: image-radius&#10;border-radius: 50%;  =&#62; //&#26367;&#25442;&#26041;&#26696;: image-round&#10;background-image: gradient =&#62; //&#26367;&#25442;&#26041;&#26696;&#65306;&#28176;&#21464; mixin</span><br></pre></td></tr></table></figure>
+<p>##重置设置##</p>
+<p>###<a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/style/normalize.less" target="_blank" rel="external">normalize.css/reset.css</a>###</p>
+<p>统一浏览器一致性，其中 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。<br>reset.css是符合贴吧业务具体需求的重置样式</p>
+<p>###<a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/style/reset.less" target="_blank" rel="external">entry</a>###</p>
+<ul>
+<li>在body上设置了<strong>字体大小</strong>12px, <strong>字体</strong>采用非衬线字体，<strong>字体色值</strong>为#333，<strong>行高</strong>22px</li>
+<li>设置了基本颜色 @link-color ，并且当链接处于 :hover 状态时才添加下划线</li>
+<li><code>&lt;ins&gt;</code>hover状态不添加下划线</li>
+</ul>
+<p>###基础色值###</p>
+<div id="color-setting-cnt"></div>
+
+<p>###基础icon###</p>
+<div id="icon-cnt"></div>
+
+<figure class="highlight"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/fis2/less/font.less" target="_blank" rel="external">source </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class="icon-vip1-16"&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
+<p>在dom上增加class， 即 icon－  ＋  icon图片下命名</p>
+<p>###iconfont###</p>
+<div id="icon-font-cnt"></div>
+
+<p>使用方式：<br>在代码中，使用 <code>ICONFONT_</code> + 对应的icon名称，例如ICONFONT_BELL， ICONFONT_PHONE 等, 编译阶段会相应的解析为<i class="iconfont">&#xe600;<i><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ICONFONT_BELL //&#32534;&#35793;&#20026; &#60;i class=&#34;iconfont&#34;&#62;&#38;#xe600;&#60;i/&#62;</span><br></pre></td></tr></table></figure></i></i></p>
+<p>##font##</p>
+<h3 id="font-size"><a href="#font-size" class="headerlink" title="font-size"></a>font-size</h3><figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less" target="_blank" rel="external">source </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.font-size-12</span>(); <span class="comment">// =&gt; font-size: 12px;</span></span><br><span class="line"><span class="class">.font-size-14</span>(); <span class="comment">// =&gt; font-size: 14px;</span></span><br><span class="line"><span class="class">.font-size-16</span>(); <span class="comment">// =&gt; font-size: 16px;</span></span><br><span class="line"><span class="class">.font-size-20</span>(); <span class="comment">// =&gt; font-size: 20px;</span></span><br><span class="line"><span class="class">.font-size-24</span>(); <span class="comment">// =&gt; font-size: 24px;</span></span><br></pre></td></tr></table></figure>
+<h3 id="font-family"><a href="#font-family" class="headerlink" title="font-family"></a>font-family</h3><ul>
+<li>非衬线字体</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less" target="_blank" rel="external">source </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.font-family-sans-serif</span>(); <span class="comment">// =&gt; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>衬线字体</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less" target="_blank" rel="external">source </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.font-family-serif</span>(); <span class="comment">// =&gt; font-family: Georgia, "Times New Roman", Times, serif;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>等宽字体</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less" target="_blank" rel="external">source </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.font-family-mono</span>(); <span class="comment">// =&gt; font-family: Menlo, Monaco, Consolas, "Courier New", monospace;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>微软雅黑</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less" target="_blank" rel="external">source </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.font-family-yahei</span>(); <span class="comment">// =&gt; font-family: "microsoft yahei" simhei sans-serif;</span></span><br></pre></td></tr></table></figure>
+<h3 id="line-height"><a href="#line-height" class="headerlink" title="line-height"></a>line-height</h3><figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less" target="_blank" rel="external">source </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.line-height-22</span>(); <span class="comment">// =&gt; line-height: 22px;</span></span><br><span class="line"><span class="class">.line-height-26</span>(); <span class="comment">// =&gt; line-height: 26px;</span></span><br></pre></td></tr></table></figure>
+<h3 id="font-weight"><a href="#font-weight" class="headerlink" title="font-weight"></a>font-weight</h3><figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less" target="_blank" rel="external">source </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.font-weight-normal</span>(); <span class="comment">// =&gt; font-weight: 400; </span></span><br><span class="line"><span class="class">.font-weight-bold</span>(); <span class="comment">// =&gt; font-weight: 700;</span></span><br></pre></td></tr></table></figure>
+<h3 id="u94FE_u63A5_u8272_u503C_u8BBE_u7F6E"><a href="#u94FE_u63A5_u8272_u503C_u8BBE_u7F6E" class="headerlink" title="链接色值设置"></a>链接色值设置</h3><figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less" target="_blank" rel="external">source </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.a-color</span>(<span class="variable">@link</span>: <span class="variable">@link-color</span>; <span class="variable">@hover</span>: <span class="variable">@link-color</span>; <span class="variable">@visited</span>: <span class="variable">@visited-color</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="u94FE_u63A5_u4E0B_u5212_u7EBF_u8BBE_u7F6E"><a href="#u94FE_u63A5_u4E0B_u5212_u7EBF_u8BBE_u7F6E" class="headerlink" title="链接下划线设置"></a>链接下划线设置</h3><figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/font.less" target="_blank" rel="external">source </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.a-decoration</span>(<span class="variable">@link</span>: none; <span class="variable">@hover</span>: underline);</span><br></pre></td></tr></table></figure>
+<p>##utility##</p>
+<p>可以使用以下两种方式调用: <code>.class-name</code> 和 <code>.mixins(...)</code></p>
+<p>###文本色值块###</p>
+<p>方法：添加<code>.class-name</code>类名的方式</p>
+<blockquote>
+<p><strong>注意： </strong>为了避免被覆盖，使用！important优先级<br>vip-red是超级用户经常会使用的类, 已经设置!important，不会被覆盖，请放心使用, 并且三态已经做处理</p>
+</blockquote>
+<figure class="highlight html"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"red-text"</span>&gt;</span>I am a demo ! <span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"orange-text"</span>&gt;</span>I am a demo ! <span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"vip-red"</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>I am a demo ! <span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe height="141" scrolling="no" src="//codepen.io/yuanzhen/embed/waKMQo/?height=141&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/waKMQo/" target="_blank" rel="external">waKMQo</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<p>###浮动###</p>
+<p>将元素向左或者向右浮动, <strong>注意：</strong>使用了!important，避免被覆盖</p>
+<ul>
+<li>添加<code>.pull-left</code>或者<code>.pull-right</code>类 </li>
+</ul>
+<figure class="highlight html"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"pull-left"</span>&gt;</span>float left...<span class="tag">&lt;/<span class="title">span</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"pull-right"</span>&gt;</span>float right...<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用<code>.pull-left()</code>或者<code>.pull-right()</code>方式 </li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/utility_compile.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.pull-left</span>(); <span class="comment">// =&gt; float: left</span></span><br><span class="line"><span class="class">.pull-right</span>(); <span class="comment">// =&gt; float: right</span></span><br></pre></td></tr></table></figure>
+<p>###清除浮动###</p>
+<p>通过为<code>父元素</code>添加 .clearfix 类可以很容易地清除浮动（float）。此类还可以作为 mixin 使用。</p>
+
+<ul>
+<li>添加<code>.clearfix</code>类</li>
+</ul>
+<figure class="highlight html"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"clearfix"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过调用<code>.clearfix()</code> mixins</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/utility_compile.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clearfix</span>();</span><br></pre></td></tr></table></figure>
+<p>###元素圆角###</p>
+<p>给元素增加圆角, 提供4px 和 50% 两种默认值</p>
+<ul>
+<li>添加<code>.image-radius</code> 或者  <code>.image-round</code> 类</li>
+</ul>
+<figure class="highlight html"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">class</span>=<span class="value">"image-radius"</span> /&gt;</span>   /*4px的圆角*/</span><br><span class="line"><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">class</span>=<span class="value">"image-round"</span> /&gt;</span>   /*50%的圆角*/</span><br></pre></td></tr></table></figure>
+<p>###图片替换###</p>
+<p>可以用来将元素的文本内容替换为一张背景图</p>
+<ul>
+<li>添加<code>.hide-text</code>类</li>
+</ul>
+<figure class="highlight html"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"hide-text"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>调用<code>.hide-text()</code> mixins</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.hide-text</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>###文字省略###</p>
+<p>设置在<code>dispaly: block</code>或者<code>dispaly: inline-block</code>且设置宽度</p>
+<ul>
+<li>添加<code>.text-overflow</code>, 用于<strong>单行</strong>文字省略。 </li>
+</ul>
+<figure class="highlight html"><figcaption><span>使用类名</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/style/utility.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"text-overflow"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>调用mixins <code>.text-overflow(...)</code></li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/utility_compile.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.text-overflow</span>(); </span><br><span class="line">&#125;</span><br><span class="line"><span class="class">.element</span>&#123;</span><br><span class="line">    <span class="class">.text-overflow</span>(<span class="number">2</span>); <span class="comment">// 传入参数，仅支持webkit，表示第几行省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>###合并icon</p>
+<ul>
+<li>合并icon尺寸不一致，需要提供宽高信息<br>@my-list: demo1 20px 30px; 会生成有问题</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/utility_compile.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用如下</span></span><br><span class="line"><span class="variable">@my-list:</span> demo1 <span class="number">20px</span> <span class="number">20px</span>,</span><br><span class="line">          demo2 <span class="number">20px</span> <span class="number">30px</span>; <span class="comment">//三个参数分别是value, width, height</span></span><br><span class="line"><span class="class">.icon-sprite-multi</span>(<span class="variable">@my-list</span>);</span><br></pre></td></tr></table></figure>
+<p>生成css文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.icon-demo1 &#123;&#10;  display: inline-block;&#10;  width: 20px;&#10;  height: 20px;&#10;  background: url(&#34;hfj/icon_demo1.png?__sprite&#34;);&#10;&#125;&#10;.icon-demo2 &#123;&#10;  display: inline-block;&#10;  width: 20px;&#10;  height: 30px;&#10;  background: url(&#34;hfj/icon_demo2.png?__sprite&#34;);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>合并icon仅提供图片信息</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/utility_compile.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用如下</span></span><br><span class="line"><span class="variable">@my-list:</span> <span class="string">"demo1"</span>, <span class="string">"demo2"</span>, <span class="string">"demo3"</span>;</span><br><span class="line"><span class="class">.icon-sprite-single</span>(<span class="variable">@my-list</span>);</span><br></pre></td></tr></table></figure>
+<p>生成css文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// .icon-demo1&#123;background: url(&#39;images/icon_demo1.png?__sprite&#39;)&#125;&#10;// .icon-demo2&#123;background: url(&#39;images/icon_demo2.png?__sprite&#39;)&#125;&#10;// .icon-demo3&#123;background: url(&#39;images/icon_demo3.png?__sprite&#39;)&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###opacity###</p>
+<figure class="highlight"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/opacity.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.opacity(.5)  // =&gt; opacity: .5</span><br><span class="line">.background-opacity(#fff, .5) =&gt; rgba(255, 255, 255, .5)</span><br></pre></td></tr></table></figure>
+<p>###渐变###</p>
+<p>linear渐变, 开始位置和结束位置已经默认设置为0和100%，如无变化，无需再设置</p>
+<ul>
+<li>从左到右横向linear渐变</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/gradient.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#gradient</span> <span class="class">.horizontal</span>(<span class="variable">@star-color</span>, <span class="variable">@end-color</span>, <span class="variable">@start-percent</span>, <span class="variable">@end-percent</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>从上到下纵向linear渐变</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/gradient.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#gradient</span> <span class="class">.vertical</span>(<span class="variable">@star-color</span>, <span class="variable">@end-color</span>, <span class="variable">@start-percent</span>, <span class="variable">@end-percent</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>径向渐变</li>
+</ul>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/gradient.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#gradient</span> <span class="class">.directional</span>(<span class="variable">@deg</span>, <span class="variable">@start-color</span>, <span class="variable">@end-color</span>);</span><br></pre></td></tr></table></figure>
+<p>###背景大小###</p>
+<p>.background-size(@image-url, @rest…);</p>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/fis2/less/utility_compile.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.background-size</span>(<span class="string">'test.png'</span>, <span class="number">50%</span> <span class="number">50%</span>);</span><br></pre></td></tr></table></figure>
+<p>生成css文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: url(&#39;test.png&#39;);&#10;background-size: 50% 50%;&#10;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;test.png&#39;, sizingMethod=&#39;scale&#39;);</span><br></pre></td></tr></table></figure></p>
+<p>##三角形##</p>
+<p>常用于一些小边角</p>
+<figure class="highlight less"><figcaption><span>示例</span><a href="http://gitlab.baidu.com/tbfe/tbui/blob/master/fis2/less/triangle.less" target="_blank" rel="external">source</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">* @param @direction 方向，提供 up, down, left, right四个方向</span><br><span class="line">* @param @width  横向长度 </span><br><span class="line">* @param @height  纵向长度 </span><br><span class="line">* @param @color 色值 </span><br><span class="line">*/</span></span><br><span class="line"><span class="class">.triangle</span>(<span class="variable">@direction</span>, <span class="variable">@width</span>, <span class="variable">@height</span>, <span class="variable">@color</span>);</span><br></pre></td></tr></table></figure>
+<iframe height="147" scrolling="no" src="//codepen.io/yuanzhen/embed/rVOdyO/?height=147&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/rVOdyO/" target="_blank" rel="external">rVOdyO</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<p>##bubble##</p>
+<iframe height="269" scrolling="no" src="//codepen.io/yuanzhen/embed/vORWYv/?height=269&theme-id=13754&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/vORWYv/" target="_blank" rel="external">vORWYv</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<p>##button##</p>
+<p>###跨浏览器展现###</p>
+<p>据bootstrap的介绍，<strong>强烈建议尽可能使用 <code>&lt;button&gt;</code>元素</strong>来获得在各个浏览器上获得相匹配的绘制效果。</p>
+<p>同时，如果并排按钮，建议使用同类型的标签，禁止lineheight的设置，因为在不同类型的按钮中，高度获取不一致</p>
+<p>###作为按钮的元素###</p>
+<p>为 <code>&lt;a&gt;</code>、<code>&lt;button&gt;</code>、<code>&lt;input type=&quot;submit&quot;&gt;</code>、<code>&lt;input type=&quot;button&quot;&gt;</code>或 <code>&lt;input type=&quot;reset&quot;&gt;</code>元素添加按钮类（button class）即可使用 基础库 提供的样式。</p>
+<p>###预定义样式###<br>在预定义样式中，<br>提供了<strong>四种样式</strong>类: <code>.btn-default</code>、<code>.btn-attention</code>、<code>.btn-encourage</code>, <code>.btn-sub</code>、<code>.btn-link</code><br>提供了<strong>三种尺寸</strong>类: <code>.btn-small</code>、<code>.btn-middle</code>、<code>.btn-large</code>、<code>.btn-larger</code> ,<br>这四种样式和尺寸可以随意搭配使用。</p>
+<p>样式默认设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;button class=&#34;btn-default btn-small&#34; &#62;&#24120;&#29992;&#34013;&#33394;(.btn-default)&#60;/button&#62;&#10;&#60;button class=&#34;btn-attention btn-small&#34; &#62;&#20851;&#27880;(.btn-attention)&#60;/button&#62;&#10;&#60;button class=&#34;btn-sub btn-small&#34; &#62;&#21103;&#25353;&#38062;(.btn-sub)&#60;/button&#62;&#10;&#60;a class=&#34;btn-link btn-small&#34; &#62;&#25991;&#23383;&#25353;&#38062;(.btn-link)&#60;/a&#62;</span><br></pre></td></tr></table></figure>
+<iframe height="368" scrolling="no" src="//codepen.io/yuanzhen/embed/YPMaar/?height=368&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/YPMaar/" target="_blank" rel="external">YPMaar</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+
+<p>尺寸默认设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;button class=&#34;btn-default btn-small&#34; &#62;&#24120;&#29992;&#23610;&#23544;(.btn-small)&#60;/button&#62; &#10;&#60;button class=&#34;btn-default btn-middle&#34; &#62;&#20013;&#25353;&#38062;(.btn-middle)&#60;/button&#62; &#10;&#60;button class=&#34;btn-default btn-large&#34; &#62;&#20013;&#25353;&#38062;(.btn-large)&#60;/button&#62; &#10;&#60;button class=&#34;btn-default btn-larger&#34; &#62;&#22823;&#25353;&#38062;(.btn-larger)&#60;/button&#62;</span><br></pre></td></tr></table></figure>
+<iframe height="289" scrolling="no" src="//codepen.io/yuanzhen/embed/QbmPXZ/?height=289&theme-id=13754&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/QbmPXZ/" target="_blank" rel="external">QbmPXZ</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<h3 id="u5E26icon_u7684_u6309_u94AE"><a href="#u5E26icon_u7684_u6309_u94AE" class="headerlink" title="带icon的按钮"></a>带icon的按钮</h3><p>可以使用sprite图片，同时可以使用iconfont</p>
+<p>ue规范为：</p>
+<blockquote>
+<p><code>.btn-small</code>  不允许使用icon<br><code>.btn-middle</code>  使用尺寸14<em>14的icon图片或者 font-size：14px的iconfont<br><code>.btn-large</code>, <code>.btn-larger</code>  使用尺寸16</em>16的icon图片或者 font-size：16px的iconfont</p>
+</blockquote>
+<p>如何使用icon图片？</p>
+<p>在<code>&lt;button&gt;</code>标签或者<code>&lt;a&gt;</code>里使用<code>&lt;i class=&quot;icon-*&quot;&gt;&lt;/i&gt;</code>, 表示相对应的图标</p>
+<blockquote>
+<p>class名必须以icon开头<br>如果基础库里已经有icon，则直接使用基础库里的icon， 否则，自己定义class名，<strong>注意：</strong>，自己定义的class名，仅需要定义<code>background: url()</code></p>
+</blockquote>
+<p>如何使用iconfont?</p>
+<p>在<code>&lt;button&gt;</code>标签或者<code>&lt;a&gt;</code>里直接使用<code>ICONFONT_*</code>,  表示相对应的iconfont</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!--btn-middle icon&#35774;&#32622;&#21644;iconfont&#35774;&#32622;--&#62;&#10;&#60;button class=&#34;btn-encourage btn-middle&#34; /&#62;&#60;i class=&#34;icon-tbean&#34;&#62;&#60;/i&#62;&#28155;&#21152;&#22270;&#29255;demo&#60;/button&#62;&#10;&#60;button class=&#34;btn-encourage btn-middle&#34; /&#62;ICONFONT_BELL&#28155;&#21152;&#22270;&#29255;demo&#60;/button&#62;&#10;&#10;&#60;!--btn-large icon&#35774;&#32622;&#21644;iconfont&#35774;&#32622;--&#62;&#10;&#60;button class=&#34;btn-encourage btn-large&#34; /&#62;&#60;i class=&#34;icon-tbean&#34;&#62;&#60;/i&#62;&#28155;&#21152;&#22270;&#29255;demo&#60;/button&#62;&#10;&#60;button class=&#34;btn-encourage btn-large&#34; /&#62;ICONFONT_BELL&#28155;&#21152;&#22270;&#29255;demo&#60;/button&#62;&#10;&#10;&#60;!--btn-larger icon&#35774;&#32622;&#21644;iconfont&#35774;&#32622;--&#62;&#10;&#60;button class=&#34;btn-encourage btn-larger&#34; /&#62;&#60;i class=&#34;icon-tbean&#34;&#62;&#60;/i&#62;&#28155;&#21152;&#22270;&#29255;demo&#60;/button&#62;&#10;&#60;button class=&#34;btn-encourage btn-larger&#34; /&#62;ICONFONT_BELL&#28155;&#21152;&#22270;&#29255;demo&#60;/button&#62;</span><br></pre></td></tr></table></figure>
+<iframe height="257" scrolling="no" src="//codepen.io/yuanzhen/embed/RPMdyX/?height=257&theme-id=13754&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/RPMdyX/" target="_blank" rel="external">RPMdyX</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<h3 id="u81EA_u5B9A_u4E49_u6309_u94AE"><a href="#u81EA_u5B9A_u4E49_u6309_u94AE" class="headerlink" title="自定义按钮"></a>自定义按钮</h3><p>自定义按钮提供了以下两种样式mixins</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#32431;&#33394;&#32972;&#26223;&#10;.btn-variant(@color, @bg-color, @border-color, @hover-color, @hover-bg-color, @hover-border-color)&#123;&#10;&#125;&#10;&#10;//&#28176;&#21464;&#32972;&#26223;&#10;.btn-styles(@color: #fff, @btn-color: #555) &#123;&#10;&#125;&#10;&#10;//@padding-vertical: btn&#19978;&#19979;&#38388;&#36317; &#10;//@padding-horizontal: btn&#27178;&#21521;&#38388;&#36317; &#10;//@line-height: btn&#23383;&#20307;&#22823;&#23567;&#10;//@font-size: btn&#23383;&#20307;&#22823;&#23567;&#10;//@border-radius: btn&#22278;&#35282;&#10;.btn-size(@padding-vertical, @padding-horizontal, @line-height, @font-size, @border-radius) &#123;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<iframe height="239" scrolling="no" src="//codepen.io/yuanzhen/embed/RNmjyZ/?height=239&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/RNmjyZ/" target="_blank" rel="external">RNmjyZ</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+
+<p>自定义按钮是以btn为基础，</p>
+<ul>
+<li><p>如果和预定义样式中的4类样式不一致，建议使用.btn-variant(…)或者.btn-styles(…)进行设置;</p>
+<blockquote>
+<p>如果使用自定义样式，请不要再添加.btn_default, .btn_sub等预定义样式</p>
+</blockquote>
+</li>
+<li><p>如果和预定义样式中的3类尺寸不一致，建议使用.btn-size(…)进行设置;</p>
+<blockquote>
+<p>如果使用自定义尺寸，请不要再添加.btn_small, .btn_middle等预定义尺寸</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;element class=&#34;btn element&#34;&#62;&#60;/element&#62;&#10;.element&#123;&#10;    .btn-variant(...); //or btn-styles(); &#35774;&#32622;&#32972;&#26223;&#39068;&#33394;&#65292;&#25991;&#23383;&#39068;&#33394;&#25110;&#32773;border&#33394;&#20540;&#65292;&#21442;&#25968;&#35831;&#30475;&#19979;&#38754;&#30340;mixins &#10;    .btn-size(...); //&#35774;&#32622;&#30418;&#27169;&#22411;&#22823;&#23567;&#21644;&#23383;&#20307;&#22823;&#23567;, &#21442;&#25968;&#35831;&#30475;&#19979;&#38754;&#30340;mixins&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##表单元素##</p>
+<p>###input输入类型###</p>
+<p>使用场景: </p>
+<p>html4.1: <code>type=text</code>,<code>type=password</code></p>
+<p>html5 new: <code>type=datetime</code>,<code>type=datetime-local</code>,<code>type=date</code>,<code>type=month</code>,<code>type=time</code>,<code>type=week</code>,<code>type=number</code>, <code>type=number</code>,<code>type=email</code>,<code>type=url</code>,<code>type=search</code>, <code>type=tel</code></p>
+<p>包含三种状态：正常状态， disabled状态， error状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!--&#27491;&#24120;&#29366;&#24577;--&#62;&#10;&#60;input type=&#34;text&#34; placeholder=&#34;&#35831;&#36755;&#20837;&#34; class=&#34;form-control&#34; /&#62;&#10;&#60;!--disabled&#29366;&#24577;--&#62;&#10;&#60;input type=&#34;text&#34; placeholder=&#34;&#35831;&#36755;&#20837;&#34; class=&#34;form-control-disabled&#34; disabled=&#34;disabled&#34; /&#62;&#10;&#60;!--error&#29366;&#24577;--&#62;&#10;&#60;input type=&#34;text&#34; placeholder=&#34;&#35831;&#36755;&#20837;&#34; class=&#34;form-control-error&#34; /&#62;</span><br></pre></td></tr></table></figure>
+<iframe height="307" scrolling="no" src="//codepen.io/yuanzhen/embed/oXqLpV/?height=307&theme-id=13754&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/oXqLpV/" target="_blank" rel="external">oXqLpV</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<p>###复选框和单选框###</p>
+<p>使用场景： <code>type=&quot;radio&quot;</code>,<code>type=&quot;checkbox&quot;</code></p>
+<p>包含两种状态： 正常状态， disabled状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!---checkbox &#27491;&#24120;&#29366;&#24577;---&#62;&#10;&#60;label class=&#34;checkbox&#34;&#62;&#60;input type=&#34;checkbox&#34; /&#62;selector&#60;/label&#62;&#10;&#10;&#60;!---checkbox disabled&#29366;&#24577;---&#62;&#10;&#60;label class=&#34;checkbox-disabled&#34;&#62;&#60;input type=&#34;checkbox&#34; disabled /&#62;selector&#60;/label&#62;&#10;&#10;&#60;!---radio &#27491;&#24120;&#29366;&#24577;---&#62;&#10;&#60;label class=&#34;radio&#34;&#62;&#60;input type=&#34;radio&#34;  /&#62;selector&#60;/label&#62;&#10;&#10;&#60;!---radio disabled&#29366;&#24577;---&#62;&#10;&#60;label class=&#34;radio-disabled&#34;&#62;&#60;input type=&#34;radio&#34; disabled /&#62;selector&#60;/label&#62;</span><br></pre></td></tr></table></figure>
+<iframe height="173" scrolling="no" src="//codepen.io/yuanzhen/embed/JdvrGX/?height=173&theme-id=13754&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/JdvrGX/" target="_blank" rel="external">radio</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<p>##分页（pagination）##</p>
+<p>提供带有展示页码的分页组件，其中php分页和js组件都是基于这个组件的样式</p>
+<p>###带页码的默认组件###</p>
+<blockquote>
+<p>使用方式：copy如下的DOM结构,</p>
+<ul>
+<li><code>.pagination-default</code>为了避免和之前的pagination造成中途，在pagination之后加了一个default的后缀</li>
+<li><code>.pagination-item</code>指普通的页签</li>
+<li><code>.pagination-current</code>指当前的页签</li>
+<li><code>.pagination-disabled</code>指禁用的页签</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;ul class=&#34;pagination-default clearfix&#34;&#62;&#10;    &#60;li&#62;&#60;a class=&#34;pagination-item&#34;&#62;&#60;/a&#62;&#60;/li&#62;&#10;    &#60;li&#62;&#60;a class=&#34;pagination-item pagination-current&#34;&#62;&#60;/a&#62;&#60;/li&#62;&#10;    &#60;li&#62;&#60;a class=&#34;pagination-item&#34;&#62;&#60;/a&#62;&#60;/li&#62;&#10;    &#60;li&#62;&#60;a class=&#34;pagination-item&#34;&#62;&#60;/a&#62;&#60;/li&#62;&#10;&#60;/ul&#62;</span><br></pre></td></tr></table></figure>
+<iframe height="115" scrolling="no" src="//codepen.io/yuanzhen/embed/VLLoLq/?height=115&theme-id=13754" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/VLLoLq/" target="_blank" rel="external">pagination</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+<p>###可配置选项###</p>
+<ul>
+<li><p>配置分页的尺寸<a href="http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/pagination.less" target="_blank" rel="external">.pagination-size(…)</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/**&#10;* @padding-vertical: &#27599;&#19968;&#20010;&#39029;&#31614;&#30340;&#19978;&#19979;&#38388;&#36317;&#10;* @padding-horizontal: &#27599;&#19968;&#20010;&#39029;&#31614;&#30340;&#24038;&#21491;&#38388;&#36317;&#10;* @font-size: &#23383;&#20307;&#22823;&#23567;&#10;*/&#10;.pagination-size(@padding-vertical; @padding-horizontal; @font-size)&#123;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置分页的样式 <a href="http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/pagination.less" target="_blank" rel="external">.pagination-style(…)</a></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/**&#10;* @background-color: &#32972;&#26223;&#39068;&#33394;&#10;* @text-color: &#25991;&#23383;&#39068;&#33394;&#10;* @background-hover-color: &#32972;&#26223;hover&#39068;&#33394;&#10;* @text-hover-color: &#25991;&#23383;hover&#39068;&#33394;&#10;* @border-color: border&#39068;&#33394;&#20540; &#10;* @border-hover-color: border hover&#39068;&#33394;&#20540; &#10;*/&#10;.pagination-style(@background-color; @text-color; @border-color;  @background-hover-color; @text-hover-color; @border-hover-color)&#123;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##提示框##</p>
+<p>提示框分为三种： <code>warning</code>, <code>error</code>, <code>success</code></p>
+<blockquote>
+<p>警示条可以根据实际情况添加，即<code>ICONFONT_CLOSE</code>可以视情况使用。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;warning-info-tip&#34;&#62;&#10;   &#28201;&#39336;&#25552;&#37266;&#65292;&#25105;&#26159;&#27963;&#27900;&#35748;&#30495;&#35880;&#24910;&#30340;FE&#22969;&#32440;&#12290;ICONFONT_CLOSE&#10;&#60;/div&#62;&#10;&#10;&#60;div class=&#34;error-info-tip&#34;&#62;&#10;   &#26029;&#32447;&#20102;&#65292;&#25105;&#20195;&#30721;mabi&#36824;&#27809;&#26377;&#20445;&#23384;&#12290;ICONFONT_CLOSE&#10;&#60;/div&#62;&#10;&#10;&#60;div class=&#34;success-info-tip&#34;&#62;&#10;   &#19979;&#29677;&#20102;&#65292;&#22823;&#23478;&#26089;&#28857;&#22238;&#21435;&#21543;&#12290;ICONFONT_CLOSE&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<iframe height="236" scrolling="no" src="//codepen.io/yuanzhen/embed/YXvzyL/?height=236&theme-id=13754&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/yuanzhen/pen/YXvzyL/" target="_blank" rel="external">warning</a> by yuanzhen (<a href="http://codepen.io/yuanzhen" target="_blank" rel="external">@yuanzhen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+          <div class="page-toc">
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#font-size"><span class="toc-number">1.</span> <span class="toc-text">font-size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font-family"><span class="toc-number">2.</span> <span class="toc-text">font-family</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#line-height"><span class="toc-number">3.</span> <span class="toc-text">line-height</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font-weight"><span class="toc-number">4.</span> <span class="toc-text">font-weight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u94FE_u63A5_u8272_u503C_u8BBE_u7F6E"><span class="toc-number">5.</span> <span class="toc-text">链接色值设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u94FE_u63A5_u4E0B_u5212_u7EBF_u8BBE_u7F6E"><span class="toc-number">6.</span> <span class="toc-text">链接下划线设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5E26icon_u7684_u6309_u94AE"><span class="toc-number">7.</span> <span class="toc-text">带icon的按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u81EA_u5B9A_u4E49_u6309_u94AE"><span class="toc-number">8.</span> <span class="toc-text">自定义按钮</span></a></li></ol> 
+          </div>
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/tbui/tieba_component/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          业务组件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/tbui/base_component/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">组件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</div>
+        
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 yuanzhen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/tbui/js/jquery.min.js"></script>
+
+
+
+<script src="/tbui/js/script.js" type="text/javascript"></script>
+<script src="/tbui/js/icon.js" type="text/javascript"></script>
+<script src="/tbui/js/iconfont.js" type="text/javascript"></script>
+<script src="/tbui/js/variable.js" type="text/javascript"></script>
+<script src="/tbui/js/task.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
