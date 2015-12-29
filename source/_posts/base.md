@@ -128,11 +128,11 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 .a-decoration(@link: none; @hover: underline);
 ```
 
-##utility##
+## utility ##
 
 可以使用以下两种方式调用: `.class-name` 和 `.mixins(...)`
 
-###文本色值块###
+### 文本色值块 ###
 
 方法：添加`.class-name`类名的方式
 
@@ -147,7 +147,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 <iframe height='141' scrolling='no' src='//codepen.io/yuanzhen/embed/waKMQo/?height=141&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/waKMQo/'>waKMQo</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-###浮动###
+### 浮动 ###
 
 将元素向左或者向右浮动, **注意：**使用了!important，避免被覆盖
 
@@ -165,7 +165,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 .pull-right(); // => float: right 
 ```
 
-###清除浮动###
+### 清除浮动 ###
 
 <p>通过为`父元素`添加 .clearfix 类可以很容易地清除浮动（float）。此类还可以作为 mixin 使用。</p>
 
@@ -181,7 +181,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 .clearfix(); 
 ```
 
-###元素圆角###
+### 元素圆角 ###
 
 给元素增加圆角, 提供4px 和 50% 两种默认值
 
@@ -192,7 +192,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
     <img src="" class="image-round" />   /*50%的圆角*/
 ```
 
-###图片替换###
+### 图片替换 ###
 
 可以用来将元素的文本内容替换为一张背景图
 
@@ -210,7 +210,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
    }
 ```
 
-###文字省略###
+### 文字省略 ###
 
 设置在`dispaly: block`或者`dispaly: inline-block`且设置宽度
 
@@ -231,7 +231,7 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
     }
 ```
 
-###合并icon
+### 合并icon ###
 
 *   合并icon尺寸不一致，需要提供宽高信息
 @my-list: demo1 20px 30px; 会生成有问题
@@ -275,36 +275,36 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 // .icon-demo3{background: url('images/icon_demo3.png?__sprite')}
 ```
 
-###opacity###
+### opacity ###
 
 ```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/opacity.less source
 .opacity(.5)  // => opacity: .5
 .background-opacity(#fff, .5) => rgba(255, 255, 255, .5)
 ```
 
-###渐变###
+### 渐变 ###
 
 linear渐变, 开始位置和结束位置已经默认设置为0和100%，如无变化，无需再设置
 
 *   从左到右横向linear渐变
 
 ```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/gradient.less source
-#gradient .horizontal(@star-color, @end-color, @start-percent, @end-percent);
+# gradient .horizontal(@star-color, @end-color, @start-percent, @end-percent);
 ```
 
 *   从上到下纵向linear渐变
 
 ```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/gradient.less source
-#gradient .vertical(@star-color, @end-color, @start-percent, @end-percent);
+# gradient .vertical(@star-color, @end-color, @start-percent, @end-percent);
 ```
 
 *   径向渐变
 
 ```less 示例 http://gitlab.baidu.com/tbfe/tbui/blob/master/mixin/gradient.less source
-#gradient .directional(@deg, @start-color, @end-color);
+# gradient .directional(@deg, @start-color, @end-color);
 ```
 
-###背景大小###
+### 背景大小 ###
 
 .background-size(@image-url, @rest...);
 
@@ -318,7 +318,7 @@ background-size: 50% 50%;
 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizingMethod='scale');
 ```
 
-##三角形##
+## 三角形 ##
 
 常用于一些小边角
 
@@ -334,24 +334,24 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='test.png', sizin
 <iframe height='147' scrolling='no' src='//codepen.io/yuanzhen/embed/rVOdyO/?height=147&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/rVOdyO/'>rVOdyO</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-##bubble##
+## bubble ##
 
 <iframe height='269' scrolling='no' src='//codepen.io/yuanzhen/embed/vORWYv/?height=269&theme-id=13754&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/vORWYv/'>vORWYv</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-##button##
+## button ##
 
-###跨浏览器展现###
+### 跨浏览器展现 ###
 
 据bootstrap的介绍，**强烈建议尽可能使用 `<button>`元素**来获得在各个浏览器上获得相匹配的绘制效果。
 
 同时，如果并排按钮，建议使用同类型的标签，禁止lineheight的设置，因为在不同类型的按钮中，高度获取不一致
 
-###作为按钮的元素###
+### 作为按钮的元素 ###
 
 为 `<a>`、`<button>`、`<input type="submit">`、`<input type="button">`或 `<input type="reset">`元素添加按钮类（button class）即可使用 基础库 提供的样式。
 
-###预定义样式###
+### 预定义样式 ###
 在预定义样式中，
 提供了**四种样式**类: `.btn-default`、`.btn-attention`、`.btn-encourage`, `.btn-sub`、`.btn-link`
 提供了**三种尺寸**类: `.btn-small`、`.btn-middle`、`.btn-large`、`.btn-larger` , 
@@ -463,8 +463,8 @@ ue规范为：
 ```
 
 
-##表单元素##
-###input输入类型###
+## 表单元素 ##
+### input输入类型 ###
 
 使用场景: 
 
@@ -486,33 +486,34 @@ html5 new: `type=datetime`,`type=datetime-local`,`type=date`,`type=month`,`type=
 <iframe height='307' scrolling='no' src='//codepen.io/yuanzhen/embed/oXqLpV/?height=307&theme-id=13754&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/oXqLpV/'>oXqLpV</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-###复选框和单选框###
+### 复选框和单选框 ###
 
 使用场景： `type="radio"`,`type="checkbox"`
 
 包含两种状态： 正常状态， disabled状态
 
 ```
-<!---checkbox 正常状态--->
+<!--checkbox 正常状态-->
 <label class="checkbox"><input type="checkbox" />selector</label>
 
-<!---checkbox disabled状态--->
+<!--checkbox disabled状态-->
 <label class="checkbox-disabled"><input type="checkbox" disabled />selector</label>
 
-<!---radio 正常状态--->
+<!--radio 正常状态-->
 <label class="radio"><input type="radio"  />selector</label>
 
-<!---radio disabled状态--->
+<!--radio disabled状态-->
 <label class="radio-disabled"><input type="radio" disabled />selector</label>
+
 ```
 <iframe height='173' scrolling='no' src='//codepen.io/yuanzhen/embed/JdvrGX/?height=173&theme-id=13754&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/JdvrGX/'>radio</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-##分页（pagination）##
+## 分页（pagination）##
 
 提供带有展示页码的分页组件，其中php分页和js组件都是基于这个组件的样式
 
-###带页码的默认组件###
+### 带页码的默认组件 ###
 
 > 使用方式：copy如下的DOM结构,
 *   `.pagination-default`为了避免和之前的pagination造成中途，在pagination之后加了一个default的后缀
@@ -531,14 +532,15 @@ html5 new: `type=datetime`,`type=datetime-local`,`type=date`,`type=month`,`type=
 <iframe height='115' scrolling='no' src='//codepen.io/yuanzhen/embed/VLLoLq/?height=115&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/VLLoLq/'>pagination</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-###可配置选项###
+### 可配置选项 ###
 *   配置分页的尺寸[.pagination-size(…)](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/pagination.less)
+
 ```
 /**
-* @padding-vertical: 每一个页签的上下间距
-* @padding-horizontal: 每一个页签的左右间距
-* @font-size: 字体大小
-*/
+  * @padding-vertical: 每一个页签的上下间距
+  * @padding-horizontal: 每一个页签的左右间距
+  * @font-size: 字体大小
+  */
 .pagination-size(@padding-vertical; @padding-horizontal; @font-size){
 }
 ```
@@ -547,18 +549,18 @@ html5 new: `type=datetime`,`type=datetime-local`,`type=date`,`type=month`,`type=
 
 ```
 /**
-* @background-color: 背景颜色
-* @text-color: 文字颜色
-* @background-hover-color: 背景hover颜色
-* @text-hover-color: 文字hover颜色
-* @border-color: border颜色值 
-* @border-hover-color: border hover颜色值 
-*/
+  * @background-color: 背景颜色
+  * @text-color: 文字颜色
+  * @background-hover-color: 背景hover颜色
+  * @text-hover-color: 文字hover颜色
+  * @border-color: border颜色值 
+  * @border-hover-color: border hover颜色值 
+  */
 .pagination-style(@background-color; @text-color; @border-color;  @background-hover-color; @text-hover-color; @border-hover-color){
 }
 ```
 
-##提示框##
+## 提示框 ##
 
 提示框分为三种： `warning`, `error`, `success`
 > 警示条可以根据实际情况添加，即`ICONFONT_CLOSE`可以视情况使用。
