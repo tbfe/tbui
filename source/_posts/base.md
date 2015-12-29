@@ -3,8 +3,8 @@ date: 2015-04-21 16:28:07
 order: 1 
 tags:
 ---
-##禁止使用##
-###禁止使用的rule###
+## 禁止使用 ##
+### 禁止使用的rule ###
 
 ```
 clear: both | left | right | inherit  => // 替换方案 类clearfix
@@ -19,7 +19,7 @@ font:  => //替换方案mixin
 
 ```
 
-###禁止使用的值###
+### 禁止使用的值 ###
 
 ```
 
@@ -29,23 +29,23 @@ background-image: gradient => //替换方案：渐变 mixin
 
 ```
 
-##重置设置##
+## 重置设置 ##
 
-###[normalize.css/reset.css](http://gitlab.baidu.com/tbfe/tbui/blob/master/style/normalize.less)###
+### [normalize.css/reset.css](http://gitlab.baidu.com/tbfe/tbui/blob/master/style/normalize.less)###
 
 统一浏览器一致性，其中 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
 reset.css是符合贴吧业务具体需求的重置样式
 
-###[entry](http://gitlab.baidu.com/tbfe/tbui/blob/master/style/reset.less)###
+### [entry](http://gitlab.baidu.com/tbfe/tbui/blob/master/style/reset.less)###
 
 *   在body上设置了**字体大小**12px, **字体**采用非衬线字体，**字体色值**为#333，**行高**22px
 *   设置了基本颜色 @link-color ，并且当链接处于 :hover 状态时才添加下划线
 *   `<ins>`hover状态不添加下划线
 
-###基础色值###
+### 基础色值 ###
 <div id="color-setting-cnt"></div>
 
-###基础icon###
+### 基础icon ###
 
 <div id="icon-cnt"></div>
 
@@ -54,7 +54,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 ```
 在dom上增加class， 即 icon－  ＋  icon图片下命名
 
-###iconfont###
+### iconfont ###
 
 <div id="icon-font-cnt"></div>
 
@@ -64,7 +64,7 @@ reset.css是符合贴吧业务具体需求的重置样式
 ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
 ```
 
-##font##
+## font ##
 
 ### font-size ### 
 

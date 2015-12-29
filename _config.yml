@@ -74,5 +74,5 @@ theme: tieba_fe
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:yuanzhen/tb_fe_component.git
+  repo: git@github.com:tbfe/tbui.git
   branch: gh-pages
