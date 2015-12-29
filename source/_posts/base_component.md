@@ -3,11 +3,12 @@ date: 2015-04-21 15:07:00
 order: 2 
 tags:
 ---
-##[图文（media）](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/media_compile.less)##
+## [图文（media）](http://gitlab.baidu.com/tbfe/build/blob/master/fis2/less/media_compile.less) ##
 
-###左右图文（media-horizontal）###
+### 左右图文（media-horizontal）###
 > 使用方式： copy如下的DOM结构，配置mixins[.make-horizontal-media(...)](http://baidu.com), 示例:
 > 需要注意的是，在DOM结构中的类`.media-caption`, `.media-absolute`已经设置position: absolute, 你只需要设置位置和其他属性值即可。
+
 ```
 /**
 * @width: 左侧图片的宽度
@@ -35,9 +36,10 @@ tags:
 ```
 
 
-###上下图文（media-vertical）###
+### 上下图文（media-vertical） ###
 > 使用方式： copy如下的DOM结构，配置mixins[.make-vetical-media(...)](http://baidu.com), 示例:
 > 需要注意的是，在DOM结构中的类`.media-caption`, `.media-absolute`已经设置position: absolute, 你只需要设置位置和其他属性值即可。
+
 ```
 /**
 * @width: top图片的宽度
@@ -64,14 +66,15 @@ tags:
 }
 ```
 
-##图文媒体组（media_groups）##
+## 图文媒体组（media_groups） ##
 
-###横向媒体组_1###
+### 横向媒体组_1 ###
 
 > 使用方式： copy如下的DOM结构，
 > * 配置mixins[.make-horizontal-lists(...)](http://baidu.com), 主要是设置media组的展示
 > * 配置mixins[.make-vetical-media(...)](http://baidu.com)，需要设置单个media的展示
 **注意：** .make-vetical-media(...)在上文已经介绍过，请参考。
+
 ```
 /**
 * @param @width: 每个media的宽度
@@ -107,7 +110,7 @@ tags:
 
 ```
 
-###横向媒体组_2###
+### 横向媒体组_2 ###
 
 > 使用方式： copy如下的DOM结构，
 > * 配置mixins[.make-horizontal-lists(...)](http://baidu.com), 主要是设置media组的展示
@@ -141,12 +144,13 @@ tags:
 ```
 
 
-###纵向媒体组_2###
+### 纵向媒体组_2 ###
 
 > 使用方式： copy如下的DOM结构，
 > * 配置mixins[.make-vertical-lists(...)](http://baidu.com), 主要是设置media组的展示
 > * 配置mixins[.make-horizontal-media(...)](http://baidu.com)，需要设置单个media的展示
 **注意：** .make-horizontal-media(...)在上文已经介绍过，请参考。
+
 ```
 /*
 * @param @height 每一个media的高度
@@ -177,9 +181,9 @@ tags:
 }
 ```
 
-##布局（layout）##
+## 布局（layout） ##
 
-###两栏布局###
+### 两栏布局 ###
 
 > 左边宽度固定，右侧不固定
 > 使用方式： copy如下的DOM结构，配置mixins[.get-column-two(...)](http://baidu.com), 示例:
@@ -200,7 +204,7 @@ tags:
 <iframe height='181' scrolling='no' src='//codepen.io/yuanzhen/embed/ByPGqm/?height=181&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/ByPGqm/'>layout</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-###三栏布局###
+### 三栏布局 ###
 
 > 左边和右侧固定，中间不固定，双飞翼布局
 > 使用方式： copy如下的DOM结构，配置mixins[get-column-three(...)](http://baidu.com), 示例:
@@ -227,7 +231,7 @@ tags:
 </iframe>
 
 
-##缩略图（thumbnail）##
+## 缩略图（thumbnail） ##
 参考了Boostrap缩略图, 并结合产品，设计仅需最少的标签就能展示带链接的图片。
 
 > 使用方式：
@@ -247,10 +251,10 @@ tags:
 }
 ```
 
-##表格（table）##
+## 表格（table） ##
 nothing
 ## 表单
-### 外联表单
+### 外联表单 ###
 > 外联表单样式，即label和表单元素不在同一行，使用于问卷及答题类表单样式
 
 ```
@@ -294,7 +298,7 @@ nothing
 <iframe height='492' scrolling='no' src='//codepen.io/dengxi/embed/JdEwWg/?height=492&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/dengxi/pen/JdEwWg/'>JdEwWg</a> by Daisy (<a href='http://codepen.io/dengxi'>@dengxi</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
-### 内联表单
+### 内联表单 ###
 > 内联表单样式，即label和表单元素在同一行，适用于贴吧大多数表单样式
 
 ```
@@ -345,7 +349,7 @@ nothing
 </iframe>
 
 
-##无序列表（list）##
+## 无序列表（list） ##
 无序列表预定义样式, 其中列表之前的符号，通过`::before`实现
 > **使用方式：** 
 *   方法一: copy代码区的html代码，其中在每条li上的[text_overflow](http://gitlab.baidu.com/tbfe/fis2/less/)样式可以自行选择
