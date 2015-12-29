@@ -3,9 +3,9 @@ date: 2015-04-21 16:36:03
 order: 3
 tags:
 ---
-##frs右侧规范（aside）##
+## frs右侧规范（aside）##
 
-###上下图文对象###
+### 上下图文对象 ###
 
 > 主要应用于吧主，友情贴吧等模块
 > 使用方式： 直接copy下面的DOM结构
@@ -25,7 +25,7 @@ tags:
 </ul>
 ```
 
-###上下图文对象###
+### 上下图文对象 ###
 
 > 目前平台化使用较多
 > 使用方式： 直接copy下面的DOM结构
@@ -40,10 +40,9 @@ tags:
 <ul class="unordered-list-dot">
     <li class="text-overflow"><a href="#">自定义文字自定义文字自定义文字自定义文字</a></li>
 </ul>
-
 ```
 
-###左右图文对象###
+### 左右图文对象 ###
 
 > 略
 > 使用方式： 直接copy下面的DOM结构
@@ -58,7 +57,6 @@ tags:
         .make-horizontal-media(80px, 60px, 10px);
     }
 }
-
 ```
 
 <iframe height='284' scrolling='no' src='//codepen.io/yuanzhen/embed/vEqEZj/?height=284&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/vEqEZj/'>aside_media_left_groups</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
@@ -79,7 +77,7 @@ tags:
 </ul>
 ```
 
-###列表###
+### 列表 ###
 
 <iframe height='268' scrolling='no' src='//codepen.io/yuanzhen/embed/OPeVwN/?height=268&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/OPeVwN/'>OPeVwN</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
@@ -92,4 +90,4 @@ tags:
 </ul>
 ```
 
-##frs头部规范（head）##
+## frs头部规范（head）##
