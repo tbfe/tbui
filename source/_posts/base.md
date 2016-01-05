@@ -144,11 +144,8 @@ ICONFONT_BELL //编译为 <i class="iconfont">&#xe600;<i/>
    <p class="orange-text">I am a demo ! </p>
    <a class="vip-red" href="#">I am a demo ! </a>
 ```
-<!-- <iframe height='141' scrolling='no' src='//codepen.io/yuanzhen/embed/waKMQo/?height=141&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/waKMQo/'>waKMQo</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe> -->
-<p class="red-text">I am a demo ! </p>
-<p class="orange-text">I am a demo ! </p>
-<a class="vip-red" href="#">I am a demo ! </a>
+<iframe height='141' scrolling='no' src='//codepen.io/yuanzhen/embed/waKMQo/?height=141&theme-id=13754' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yuanzhen/pen/waKMQo/'>waKMQo</a> by yuanzhen (<a href='http://codepen.io/yuanzhen'>@yuanzhen</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ### 浮动 ###
 
