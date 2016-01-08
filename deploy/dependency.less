@@ -526,6 +526,7 @@
         text-decoration: none;
     }
     &-disabled{
+        border-radius: 2px;
         border: 1px solid transparent;
     }
 }
@@ -579,10 +580,9 @@
 
 @sub: {
     .btn_sub,
-    .btn-sub {
-        @start: extract(@sub-bg, 1);
-        @end: extract(@sub-bg, 2);
-        #gradient .vertical(@start, @end, 0, 100%);
+    .btn-sub,
+    .btn-sub-b {
+        background-color: @sub-bg;
         color: @sub-text;
         border-color: @sub-border;
         &:visited{
@@ -591,20 +591,25 @@
         &:hover,
         &:active,
         &:focus {
-            @start-hover: extract(@sub-bg-hover, 1);
-            @end-hover: extract(@sub-bg-hover, 2);
-            #gradient .vertical(@start-hover, @end-hover, 0, 100%);
+            background-color: @sub-bg-hover;
             border-color: @sub-border-hover;
             color: @sub-text-hover;
         }
         &:disabled,
         &-disabled {
-            @start-disabled: extract(@sub-bg-disabled, 1);
-            @end-disabled: extract(@sub-bg-disabled, 2);
-            #gradient .vertical(@start-disabled, @end-disabled, 0, 100%);
+            background-color: @sub-bg-disabled;
             border-color: @sub-border-disabled;
             color: @sub-text-disabled;
             cursor: not-allowed;
+        }
+    }
+
+    .btn-sub-b {
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: @sub-b-border-hover;
+            color: @sub-b-text-hover;
         }
     }
 };
@@ -714,6 +719,7 @@
     .btn_attention,
     .btn-default,
     .btn-sub,
+    .btn-sub-b,
     .btn-attention,
     .btn-encourage,
     .btn-link {
@@ -733,6 +739,7 @@
     .btn_attention,
     .btn-default,
     .btn-sub,
+    .btn-sub-b,
     .btn-disable,
     .btn-disabled,
     .btn-attention,
@@ -1578,15 +1585,21 @@
 @encourage-border-hover: #d9652b;
 @encourage-border-disabled: #ebb498;
 
+@btn-bg: #fcfcfc, #f2f2f2;
+@btn-bg-hover: #f8f8f8, #e9e9e9;
+@btn-bg-disabled: #fff #fafafa;
 @sub-text: @gray-darker;
 @sub-text-hover: #3e89fa;
 @sub-text-disabled: #c3c3c3;
-@sub-bg: #fcfcfc, #f2f2f2;
-@sub-bg-hover: #f8f8f8, #e9e9e9;
-@sub-bg-disabled: #fff #fafafa;
+@sub-bg: @white-color;
+@sub-bg-hover: @white-color;
+@sub-bg-disabled: @white-color;
 @sub-border: #ccc;
 @sub-border-hover: #3e89fa;
 @sub-border-disabled: #d9d9d9;
+
+@sub-b-text-hover: @gray-darker;
+@sub-b-border-hover: #b3b3b3;
 
 @disable-text: @gray-lighter;
 @disable-bg: #dfdfdf;
